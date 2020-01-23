@@ -8,6 +8,7 @@
     "jest": true
   },
   "rules": {
+    "no-use-before-define": "warn",
     // Imports
     "import/prefer-default-export": 0,
     "import/no-extraneous-dependencies": 0,
@@ -16,6 +17,10 @@
     // React
     "react-hooks/rules-of-hooks": "error",
     "react-hooks/exhaustive-deps": "warn",
-    "react/jsx-filename-extension": 0
+    "react/jsx-filename-extension": 0,
+    "react/jsx-props-no-spreading": 0,
+    "react/button-has-type": 0,
+    "react/prop-types": "warn",
+    "react/jsx-fragments": 0
   }
 }
