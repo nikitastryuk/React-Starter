@@ -1,0 +1,20 @@
+{
+  "parser": "babel-eslint",
+  "extends": ["airbnb", "plugin:prettier/recommended", "prettier/react"],
+  "plugins": ["prettier", "react", "react-hooks"],
+  "env": {
+    "browser": true,
+    "node": true
+  },
+  "rules": {
+    // Imports
+    "import/prefer-default-export": 0,
+    "import/no-extraneous-dependencies": 0,
+    "import/no-dynamic-require": 0,
+    "global-require": 0,
+    // React
+    "react-hooks/rules-of-hooks": "error",
+    "react-hooks/exhaustive-deps": "warn",
+    "react/jsx-filename-extension": 0
+  }
+}
