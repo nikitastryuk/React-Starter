@@ -2,7 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { Minutes } from './Minutes';
 
-const p;
+console.log('test');
 
 const rootElement = document.getElementById('root');
 

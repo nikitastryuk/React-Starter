@@ -4,7 +4,8 @@
   "plugins": ["prettier", "react", "react-hooks"],
   "env": {
     "browser": true,
-    "node": true
+    "node": true,
+    "jest": true
   },
   "rules": {
     // Imports
