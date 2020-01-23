@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "scripts": {
     "dev": "webpack-dev-server --config webpack/webpack.config.js --env.env dev --open",
-    "build": "webpack --config webpack/webpack.config.js --env.env prod"
+    "build": "webpack --config webpack/webpack.config.js --env.env prod",
+    "lint:fix": "eslint . --fix"
   },
   "author": "Nikita Striuk",
   "license": "ISC",
@@ -24,6 +25,8 @@
     "eslint-plugin-react": "^7.18.0",
     "eslint-plugin-react-hooks": "^2.3.0",
     "html-webpack-plugin": "^3.2.0",
+    "husky": "^4.2.0",
+    "lint-staged": "^10.0.2",
     "prettier": "^1.19.1",
     "prop-types": "^15.7.2",
     "webpack": "^4.41.5",
