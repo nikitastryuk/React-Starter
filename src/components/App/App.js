@@ -1,15 +1,16 @@
 import React from 'react';
 import { BrowserRouter } from 'react-router-dom';
 
-import { RootRouteWithSubRoutes } from '../Routes/RootRouteWithSubRoutes';
-import { AppStateProvider } from './AppStateProvider';
+import { AuthProvider } from '../Auth/AuthProvider';
 import { RoutesPanel } from '../RoutesPanel/RoutesPanel';
-import { ROUTES } from '../Routes/routes';
+import { ROUTES } from '../Routes/experimental';
+import { authReducer, initialState } from '../Auth/useAuth';
+import { AppRoutes } from '../Routes/AppRoutes';
 
 export const App = () => {
   return (
     <React.Fragment>
-      <AppStateProvider reducer={() => {}} initialState={{}}>
+      <AuthProvider reducer={authReducer} initialState={initialState}>
         <BrowserRouter>
           <div
             style={{
@@ -19,10 +20,10 @@ export const App = () => {
             }}
           >
             <RoutesPanel routes={ROUTES} />
-            <RootRouteWithSubRoutes routes={ROUTES} />
+            <AppRoutes />
           </div>
         </BrowserRouter>
-      </AppStateProvider>
+      </AuthProvider>
     </React.Fragment>
   );
 };

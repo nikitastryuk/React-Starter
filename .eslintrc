@@ -9,6 +9,7 @@
   },
   "rules": {
     "no-use-before-define": "warn",
+    "no-unused-vars": "warn",
     // Imports
     "import/prefer-default-export": 0,
     "import/no-extraneous-dependencies": 0,
@@ -21,6 +22,7 @@
     "react/jsx-props-no-spreading": 0,
     "react/button-has-type": 0,
     "react/prop-types": "warn",
-    "react/jsx-fragments": 0
+    "react/jsx-fragments": 0,
+    "react/jsx-boolean-value": 0
   }
 }

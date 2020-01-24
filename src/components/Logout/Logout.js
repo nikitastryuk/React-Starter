@@ -1,12 +1,11 @@
 import React from 'react';
-import { useHistory } from 'react-router-dom';
+import { useAuth } from '../Auth/useAuth';
 
 export function Logout() {
-  const history = useHistory();
+  const [state, { logout }] = useAuth();
 
   function handleLogout() {
-    localStorage.removeItem('user');
-    history.push('/login');
+    logout();
   }
 
   return (

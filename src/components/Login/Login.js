@@ -1,33 +1,44 @@
 import React, { useState } from 'react';
-import { Redirect, useHistory } from 'react-router-dom';
-
+import { useHistory, Redirect } from 'react-router-dom';
 import { ROUTE_PATHS } from '../Routes/routePaths';
+import { useAuth } from '../Auth/useAuth';
+
+// Helper to simulate loading
+function sleep(sec) {
+  return new Promise(r => setTimeout(r, sec * 1000));
+}
 
 export function Login() {
-  const [user, updateUser] = useState('');
   const history = useHistory();
+  const [secretKey, setSecretKey] = useState('');
+  const [{ user, isLoading }, actions] = useAuth();
 
-  function handleLogin() {
-    localStorage.setItem('user', user);
-    history.push(ROUTE_PATHS.APP_MAIN);
+  if (user) {
+    return <Redirect to={ROUTE_PATHS.APP_MAIN} />;
   }
 
-  if (localStorage.getItem('user')) {
-    alert(
-      "You're already authenticated in localStorage and being redirected into the app.",
+  if (isLoading) {
+    return (
+      <div style={{ padding: 50 }}>
+        <h1>Loading...</h1>
+      </div>
     );
-    return <Redirect to={ROUTE_PATHS.APP_MAIN} />;
+  }
+
+  async function handleLogin() {
+    actions.loginStart();
+    await sleep(2);
+    actions.loginSuccess({ user: 'userData' });
+    history.push(ROUTE_PATHS.APP_MAIN);
   }
 
   return (
     <div style={{ padding: 50 }}>
-      <h1>Log In</h1>
-      <div>
-        <input value={user} onChange={e => updateUser(e.target.value)} />
-        <button disabled={!user} onClick={handleLogin}>
-          Log In
-        </button>
-      </div>
+      <h1>Enter secret key to authorize</h1>
+      <input value={secretKey} onChange={e => setSecretKey(e.target.value)} />
+      <button disabled={!secretKey} onClick={handleLogin}>
+        Log In
+      </button>
     </div>
   );
 }
