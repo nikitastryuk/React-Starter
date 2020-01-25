@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
-import { routeShape } from '../Routes/routeShape';
+import { routeShape } from 'components/Routes/routeShape';
 
 // Render a nested hierarchy of route configs with unknown depth/breadth
 export function RoutesPanel({ routes }) {

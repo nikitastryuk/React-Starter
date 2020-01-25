@@ -24,5 +24,12 @@
     "react/prop-types": "warn",
     "react/jsx-fragments": 0,
     "react/jsx-boolean-value": 0
+  },
+  "settings": {
+    "import/resolver": {
+      "node": {
+        "paths": ["src"]
+      }
+    }
   }
 }

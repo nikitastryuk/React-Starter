@@ -1,5 +1,6 @@
 import React from 'react';
-import { useAuth } from '../Auth/useAuth';
+
+import { useAuth } from 'components/Auth/useAuth';
 
 export function Logout() {
   const [state, { logout }] = useAuth();

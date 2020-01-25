@@ -3,13 +3,13 @@ import React from 'react';
 import { Route, Switch } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
-import { useAuth } from '../Auth/useAuth';
-import { Login } from '../Login/Login';
-import { Main } from '../Main/Main';
-import { Logout } from '../Logout/Logout';
-import { ROUTE_PATHS } from './routePaths';
-import { NotFound } from '../NotFound/NotFound';
-import { routeShape } from './routeShape';
+import { useAuth } from 'components/Auth/useAuth';
+import { Login } from 'components/Login/Login';
+import { Main } from 'components/Main/Main';
+import { Logout } from 'components/Logout/Logout';
+import { NotFound } from 'components/NotFound/NotFound';
+import { ROUTE_PATHS } from 'components/Routes/routePaths';
+import { routeShape } from 'components/Routes/routeShape';
 
 export const RouteWithSubRoutes = ({
   path,

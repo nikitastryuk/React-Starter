@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 import { useHistory, Redirect } from 'react-router-dom';
-import { ROUTE_PATHS } from '../Routes/routePaths';
-import { useAuth } from '../Auth/useAuth';
+
+import { ROUTE_PATHS } from 'components/Routes/routePaths';
+import { useAuth } from 'components/Auth/useAuth';
 
 // Helper to simulate loading
 function sleep(sec) {

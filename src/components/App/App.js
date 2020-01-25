@@ -1,11 +1,11 @@
 import React from 'react';
 import { BrowserRouter } from 'react-router-dom';
 
-import { AuthProvider } from '../Auth/AuthProvider';
-import { RoutesPanel } from '../RoutesPanel/RoutesPanel';
-import { ROUTES } from '../Routes/experimental';
-import { authReducer, initialState } from '../Auth/useAuth';
-import { AppRoutes } from '../Routes/AppRoutes';
+import { AuthProvider } from 'components/Auth/AuthProvider';
+import { RoutesPanel } from 'components/RoutesPanel/RoutesPanel';
+import { ROUTES } from 'components/Routes/experimental';
+import { authReducer, initialState } from 'components/Auth/useAuth';
+import { AppRoutes } from 'components/Routes/AppRoutes';
 
 export const App = () => {
   return (
