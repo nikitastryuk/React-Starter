@@ -1,15 +1,15 @@
 // TODO: Supports nesting and allows map routes array. Is it more scalable than basic approach?
-import React from 'react';
 import { Route, Switch } from 'react-router-dom';
 import PropTypes from 'prop-types';
+import React from 'react';
 
-import { useAuth } from 'components/Auth/useAuth';
 import { Login } from 'components/Login/Login';
-import { Main } from 'components/Main/Main';
 import { Logout } from 'components/Logout/Logout';
+import { Main } from 'components/Main/Main';
 import { NotFound } from 'components/NotFound/NotFound';
 import { ROUTE_PATHS } from 'components/Routes/routePaths';
 import { routeShape } from 'components/Routes/routeShape';
+import { useAuth } from 'components/Auth/useAuth';
 
 export const RouteWithSubRoutes = ({
   path,
@@ -46,6 +46,10 @@ export const PrivateRoute = ({ component, ...options }) => {
   const finalComponent = user ? component : Login;
 
   return <Route {...options} component={finalComponent} />;
+};
+
+PrivateRoute.propTypes = {
+  component: PropTypes.func.isRequired,
 };
 
 // An array of route configs, with nested objects/arrays in the same structure as app's routes

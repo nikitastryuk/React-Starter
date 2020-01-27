@@ -1,9 +1,9 @@
-import React from 'react';
+import { Redirect, Route } from 'react-router-dom';
 import PropTypes from 'prop-types';
-import { Route, Redirect } from 'react-router-dom';
+import React from 'react';
 
-import { useAuth } from 'components/Auth/useAuth';
 import { ROUTE_PATHS } from 'components/Routes/routePaths';
+import { useAuth } from 'components/Auth/useAuth';
 
 export const PrivateRoute = ({ component, path, exact }) => {
   const [{ user }] = useAuth();

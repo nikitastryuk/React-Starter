@@ -1,10 +1,10 @@
-import React, { useReducer } from 'react';
 import PropTypes from 'prop-types';
+import React, { useReducer } from 'react';
 
 import {
+  AuthContext,
   authReducer,
   initialState,
-  AuthContext,
 } from 'components/Auth/useAuth';
 
 export function AuthProvider({ children }) {

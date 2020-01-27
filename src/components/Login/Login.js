@@ -1,5 +1,5 @@
+import { Redirect, useHistory } from 'react-router-dom';
 import React, { useState } from 'react';
-import { useHistory, Redirect } from 'react-router-dom';
 
 import { ROUTE_PATHS } from 'components/Routes/routePaths';
 import { useAuth } from 'components/Auth/useAuth';

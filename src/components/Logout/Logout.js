@@ -2,10 +2,10 @@ import React from 'react';
 
 import { useAuth } from 'components/Auth/useAuth';
 
-import { styles } from './Logout.scss';
+import styles from './Logout.scss';
 
 export function Logout() {
-  const [state, { logout }] = useAuth();
+  const [, { logout }] = useAuth();
 
   function handleLogout() {
     logout();
