@@ -1,7 +1,9 @@
 import React from 'react';
 
+import styles from './NotFound.scss';
+
 export const NotFound = () => (
-  <div style={{ padding: 50 }}>
+  <div className={styles.SameClassname} style={{ padding: 50 }}>
     <h1>Not Found</h1>
   </div>
 );

@@ -2,6 +2,8 @@ import React from 'react';
 
 import { useAuth } from 'components/Auth/useAuth';
 
+import { styles } from './Logout.scss';
+
 export function Logout() {
   const [state, { logout }] = useAuth();
 
@@ -10,7 +12,7 @@ export function Logout() {
   }
 
   return (
-    <div style={{ padding: 50 }}>
+    <div className={styles.SameClassname} style={{ padding: 50 }}>
       <h1>Log Out</h1>
       <button onClick={handleLogout}>Log Out</button>
     </div>

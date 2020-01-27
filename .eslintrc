@@ -7,21 +7,24 @@
     "node": true,
     "jest": true
   },
+  "parserOptions": {
+    "ecmaVersion": 2020
+  },
   "rules": {
-    "no-use-before-define": "warn",
-    "no-unused-vars": "warn",
+    "no-use-before-define": 1,
+    "no-unused-vars": 1,
     // Imports
     "import/prefer-default-export": 0,
     "import/no-extraneous-dependencies": 0,
     "import/no-dynamic-require": 0,
     "global-require": 0,
     // React
-    "react-hooks/rules-of-hooks": "error",
-    "react-hooks/exhaustive-deps": "warn",
+    "react-hooks/rules-of-hooks": 2,
+    "react-hooks/exhaustive-deps": 1,
     "react/jsx-filename-extension": 0,
     "react/jsx-props-no-spreading": 0,
     "react/button-has-type": 0,
-    "react/prop-types": "warn",
+    "react/prop-types": 1,
     "react/jsx-fragments": 0,
     "react/jsx-boolean-value": 0
   },
