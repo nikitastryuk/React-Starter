@@ -3,11 +3,14 @@ import React from 'react';
 
 import { AppRoutes } from 'components/Routes/AppRoutes';
 import { AuthProvider } from 'components/Auth/AuthProvider';
+import { Navbar } from 'components/Navbar/Navbar';
 import { ROUTES } from 'components/Routes/experimental';
 import { RoutesPanel } from 'components/RoutesPanel/RoutesPanel';
 import { authReducer, initialState } from 'components/Auth/useAuth';
 
 export const App = () => {
+  // TODO: Theme-switcher
+  document.documentElement.setAttribute('data-theme', 'light');
   return (
     <React.Fragment>
       <AuthProvider reducer={authReducer} initialState={initialState}>
@@ -19,6 +22,7 @@ export const App = () => {
               alignItems: 'center',
             }}
           >
+            <Navbar />
             <RoutesPanel routes={ROUTES} />
             <AppRoutes />
           </div>

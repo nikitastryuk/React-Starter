@@ -1,4 +1,20 @@
+@import './colors.scss';
+
+:root {
+  --backgroundColor: #{$dark-80};
+}
+
+[data-theme='light'] {
+  --backgroundColor: #{$light-60};
+}
+
 html {
-  background: lightpink;
-  font-size: 10px;
+  background: var(--backgroundColor);
+  color: red;
+  font-size: 12px;
+  position: absolute;
+
+  .test {
+    color: rebeccapurple;
+  }
 }

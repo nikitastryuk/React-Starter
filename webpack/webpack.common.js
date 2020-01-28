@@ -1,3 +1,4 @@
+// TODO: Postcss?
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
@@ -7,6 +8,11 @@ module.exports = {
     path: path.resolve(__dirname, '../', 'dist'),
     publicPath: '/',
     filename: 'bundle.js',
+  },
+  optimization: {
+    splitChunks: {
+      chunks: 'all',
+    },
   },
   module: {
     rules: [

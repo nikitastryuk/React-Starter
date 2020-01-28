@@ -2,7 +2,7 @@ const webpack = require('webpack');
 
 module.exports = {
   mode: 'development',
-  devtool: 'eval-source-map',
+  devtool: 'inline-source-map',
   devServer: {
     contentBase: './dist',
     historyApiFallback: true,
@@ -26,6 +26,13 @@ module.exports = {
           },
           {
             loader: 'sass-loader',
+          },
+          {
+            loader: 'sass-resources-loader',
+            options: {
+              sourceMap: true,
+              resources: ['src/scss/spacings.scss'],
+            },
           },
         ],
       },
