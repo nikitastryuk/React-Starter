@@ -1,0 +1,25 @@
+@import './reset.scss';
+@import './colors.scss';
+@import './fonts.scss';
+
+:root {
+  // Main
+  --backgroundColor: #{$dark-80};
+  // Navbar
+  --navLinkColor: #{$dark-50};
+  --navLinkActiveColor: #{$dark-10};
+}
+
+[data-theme='light'] {
+  // Main
+  --backgroundColor: #{$light-40};
+  // Navbar
+  --navLinkColor: #{$light-80};
+  --navLinkActiveColor: #{$light-100};
+}
+
+html {
+  color: $black;
+  font-family: 'Bebas Neue', cursive;
+  background: var(--backgroundColor);
+}

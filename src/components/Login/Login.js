@@ -17,12 +17,12 @@ export function Login() {
   const [{ user, isLoading }, actions] = useAuth();
 
   if (user) {
-    return <Redirect to={ROUTE_PATHS.APP_MAIN} />;
+    return <Redirect to={ROUTE_PATHS.MAIN} />;
   }
 
   if (isLoading) {
     return (
-      <div style={{ padding: 50 }}>
+      <div className={styles.loadingContainer}>
         <h1>Loading...</h1>
       </div>
     );
@@ -32,11 +32,11 @@ export function Login() {
     actions.loginStart();
     await sleep(2);
     actions.loginSuccess({ user: 'userData' });
-    history.push(ROUTE_PATHS.APP_MAIN);
+    history.push(ROUTE_PATHS.MAIN);
   }
 
   return (
-    <div className={styles.SameClassname} style={{ padding: 50 }}>
+    <div className={styles.login}>
       <h1>Enter secret key to authorize</h1>
       <input value={secretKey} onChange={e => setSecretKey(e.target.value)} />
       <button disabled={!secretKey} onClick={handleLogin}>

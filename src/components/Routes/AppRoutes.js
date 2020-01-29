@@ -12,12 +12,8 @@ export function AppRoutes() {
   return (
     <Switch>
       <Route path={ROUTE_PATHS.LOGIN} exact={true} component={Login} />
-      <PrivateRoute path={ROUTE_PATHS.APP_MAIN} exact={true} component={Main} />
-      <PrivateRoute
-        path={ROUTE_PATHS.APP_LOGOUT}
-        exact={true}
-        component={Logout}
-      />
+      <PrivateRoute path={ROUTE_PATHS.MAIN} exact={true} component={Main} />
+      <PrivateRoute path={ROUTE_PATHS.LOGOUT} exact={true} component={Logout} />
       <Route component={NotFound} />
     </Switch>
   );

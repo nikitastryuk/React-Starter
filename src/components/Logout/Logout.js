@@ -12,7 +12,7 @@ export function Logout() {
   }
 
   return (
-    <div className={styles.SameClassname} style={{ padding: 50 }}>
+    <div className={styles.logout}>
       <h1>Log Out</h1>
       <button onClick={handleLogout}>Log Out</button>
     </div>

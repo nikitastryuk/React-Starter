@@ -1,0 +1,13 @@
+.navbar {
+  display: flex;
+  font-size: 20px;
+  .link {
+    color: var(--navLinkColor);
+    &:not(:last-child) {
+      margin-right: $spacing-05;
+    }
+  }
+  .active {
+    color: var(--navLinkActiveColor);
+  }
+}
