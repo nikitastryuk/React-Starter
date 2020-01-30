@@ -1,11 +1,13 @@
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
+const { DIST_DIR, SCSS_SPACINGS, POSTCSS_CONFIG_DIR } = require('./paths');
+
 module.exports = {
   mode: 'production',
   devtool: 'source-map',
   devServer: {
-    contentBase: './dist',
+    contentBase: DIST_DIR,
   },
   module: {
     rules: [
@@ -18,7 +20,7 @@ module.exports = {
             loader: 'postcss-loader',
             options: {
               config: {
-                path: './webpack',
+                path: POSTCSS_CONFIG_DIR,
               },
             },
           },
@@ -26,7 +28,7 @@ module.exports = {
           {
             loader: 'sass-resources-loader',
             options: {
-              resources: ['src/scss/spacings.scss'],
+              resources: [SCSS_SPACINGS],
             },
           },
         ],

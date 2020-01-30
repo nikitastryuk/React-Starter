@@ -1,10 +1,12 @@
 const webpack = require('webpack');
 
+const { DIST_DIR, SCSS_SPACINGS } = require('./paths');
+
 module.exports = {
   mode: 'development',
   devtool: 'inline-source-map',
   devServer: {
-    contentBase: './dist',
+    contentBase: DIST_DIR,
     historyApiFallback: true,
     hot: true,
   },
@@ -30,7 +32,7 @@ module.exports = {
           {
             loader: 'sass-resources-loader',
             options: {
-              resources: ['src/scss/spacings.scss'],
+              resources: [SCSS_SPACINGS],
             },
           },
         ],
