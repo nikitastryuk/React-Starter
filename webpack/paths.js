@@ -1,5 +1,5 @@
 // TODO: Add webpack paths
-const { resolve } = require('path');
+import { resolve } from 'path';
 
 module.exports = {
   output: resolve(__dirname, '../', 'dist'),

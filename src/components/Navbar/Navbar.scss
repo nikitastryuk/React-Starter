@@ -6,6 +6,9 @@
     &:not(:last-child) {
       margin-right: $spacing-05;
     }
+    &:hover {
+      color: var(--navLinkActiveColor);
+    }
   }
   .active {
     color: var(--navLinkActiveColor);

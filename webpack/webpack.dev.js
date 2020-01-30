@@ -30,7 +30,6 @@ module.exports = {
           {
             loader: 'sass-resources-loader',
             options: {
-              sourceMap: true,
               resources: ['src/scss/spacings.scss'],
             },
           },
