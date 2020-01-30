@@ -5,7 +5,6 @@ const { DIST_DIR, SCSS_SPACINGS, POSTCSS_CONFIG_DIR } = require('./paths');
 
 module.exports = {
   mode: 'production',
-  devtool: 'source-map',
   devServer: {
     contentBase: DIST_DIR,
   },

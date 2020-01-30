@@ -1,3 +1,6 @@
-module.exports = {
-  plugins: [require('autoprefixer')],
-};
+module.exports = () => ({
+  parser: false,
+  plugins: {
+    autoprefixer: true,
+  },
+});

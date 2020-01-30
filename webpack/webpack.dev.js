@@ -4,7 +4,7 @@ const { DIST_DIR, SCSS_SPACINGS } = require('./paths');
 
 module.exports = {
   mode: 'development',
-  devtool: 'inline-source-map',
+  devtool: 'cheap-module-source-map',
   devServer: {
     contentBase: DIST_DIR,
     historyApiFallback: true,
@@ -28,6 +28,9 @@ module.exports = {
           },
           {
             loader: 'sass-loader',
+            options: {
+              sourceMap: true,
+            },
           },
           {
             loader: 'sass-resources-loader',

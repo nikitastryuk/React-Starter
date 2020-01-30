@@ -6,13 +6,7 @@ module.exports = {
   entry: APP_ENTRY,
   output: {
     path: DIST_DIR,
-    publicPath: '/',
     filename: 'bundle.js',
-  },
-  optimization: {
-    splitChunks: {
-      chunks: 'all',
-    },
   },
   module: {
     rules: [
