@@ -1,8 +1,8 @@
-import { NavLink } from 'react-router-dom';
 import React from 'react';
 
 import { ROUTE_PATHS } from 'components/Routes/routePaths';
 
+import { NavbarLink } from './NavbarLink/NavbarLink';
 import styles from './Navbar.scss';
 
 const NAVBAR_ROUTES = [
@@ -14,15 +14,7 @@ const NAVBAR_ROUTES = [
 export const Navbar = () => (
   <nav className={styles.navbar}>
     {NAVBAR_ROUTES.map(route => (
-      <NavLink
-        key={`${route.path}.${route.label}`}
-        activeClassName={styles.active}
-        className={styles.link}
-        exact={true}
-        to={route.path}
-      >
-        {route.label}
-      </NavLink>
+      <NavbarLink key={`${route.path}.${route.label}`} route={route} />
     ))}
   </nav>
 );

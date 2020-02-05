@@ -6,8 +6,7 @@
       "module-resolver",
       {
         "alias": {
-          "components": "./src/components",
-          "scss": "./src/scss"
+          "components": "./src/components"
         }
       }
     ]

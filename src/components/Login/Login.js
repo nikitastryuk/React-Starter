@@ -6,7 +6,7 @@ import { useAuth } from 'components/Auth/useAuth';
 
 import styles from './Login.scss';
 
-// Helper to simulate loading
+// Simulate loading
 function sleep(sec) {
   return new Promise(r => setTimeout(r, sec * 1000));
 }

@@ -7,7 +7,7 @@ const PUBLIC_DIR = resolve(ROOT_DIR, './public');
 const APP_ENTRY = resolve(SRC_DIR, './index.js');
 const APP_TEMPLATE = resolve(PUBLIC_DIR, './index.html');
 const DIST_DIR = resolve(ROOT_DIR, './dist');
-const SCSS_SPACINGS = resolve(SRC_DIR, './scss/spacings.scss');
+const SCSS_SPACINGS = resolve(SRC_DIR, './scss/lib/spacings.scss');
 const POSTCSS_CONFIG_DIR = resolve(__dirname);
 
 module.exports = {

@@ -1,22 +1,7 @@
-@import './reset.scss';
-@import './colors.scss';
-@import './fonts.scss';
-
-:root {
-  // Main
-  --backgroundColor: #{$dark-80};
-  // Navbar
-  --navLinkColor: #{$dark-50};
-  --navLinkActiveColor: #{$dark-10};
-}
-
-[data-theme='light'] {
-  // Main
-  --backgroundColor: #{$light-40};
-  // Navbar
-  --navLinkColor: #{$light-80};
-  --navLinkActiveColor: #{$light-100};
-}
+// Fonts, colors, resets, spacings
+@import './lib/imports.scss';
+// Theme variables
+@import './theme/imports.scss';
 
 html {
   color: $black;

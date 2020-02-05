@@ -9,7 +9,8 @@
   padding: $spacing-10;
   font-size: 25px;
   background: lightgreen;
-  & > * {
+
+  > * {
     margin: $spacing-01 0;
   }
 }
