@@ -1,8 +1,8 @@
 .navbar {
   display: flex;
   font-size: 20px;
-  // navLink
+  /* navLink */
   a:not(:last-child) {
-    margin-right: $spacing-05;
+    margin-right: var(--spacing-05);
   }
 }

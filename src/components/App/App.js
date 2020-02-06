@@ -6,7 +6,7 @@ import { AuthProvider } from 'components/Auth/AuthProvider';
 import { Navbar } from 'components/Navbar/Navbar';
 import { authReducer, initialState } from 'components/Auth/useAuth';
 
-import styles from './App.scss';
+import styles from './App.css';
 
 export const App = () => {
   // TODO: Theme-switcher

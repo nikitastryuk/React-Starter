@@ -4,7 +4,7 @@ import React, { useState } from 'react';
 import { ROUTE_PATHS } from 'components/Routes/routePaths';
 import { useAuth } from 'components/Auth/useAuth';
 
-import styles from './Login.scss';
+import styles from './Login.css';
 
 // Simulate loading
 function sleep(sec) {

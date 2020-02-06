@@ -1,9 +1,11 @@
 const webpack = require('webpack');
 
-const { DIST_DIR, SCSS_SPACINGS } = require('./paths');
+const { DIST_DIR, POSTCSS_CONFIG_DIR } = require('./paths');
+
+const MODE = 'development';
 
 module.exports = {
-  mode: 'development',
+  mode: MODE,
   devtool: 'cheap-module-source-map',
   devServer: {
     contentBase: DIST_DIR,
@@ -13,7 +15,7 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.scss$/,
+        test: /\.css$/,
         use: [
           {
             loader: 'style-loader',
@@ -21,21 +23,16 @@ module.exports = {
           {
             loader: 'css-loader',
             options: {
-              modules: {
-                localIdentName: '[name]__[local]___[hash:base64:5]',
+              modules: true,
+            },
+          },
+          {
+            loader: 'postcss-loader',
+            options: {
+              config: {
+                path: POSTCSS_CONFIG_DIR,
+                ctx: { mode: MODE },
               },
-            },
-          },
-          {
-            loader: 'sass-loader',
-            options: {
-              sourceMap: true,
-            },
-          },
-          {
-            loader: 'sass-resources-loader',
-            options: {
-              resources: [SCSS_SPACINGS],
             },
           },
         ],

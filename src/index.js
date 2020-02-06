@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 
 import { App } from 'components/App/App';
 
-import './scss/main.scss';
+import './css/main.css';
 
 const rootElement = document.getElementById('root');
 

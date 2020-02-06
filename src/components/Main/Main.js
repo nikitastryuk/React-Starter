@@ -1,6 +1,6 @@
 import React from 'react';
 
-import styles from './Main.scss';
+import styles from './Main.css';
 
 export const Main = () => (
   <div className={styles.main}>

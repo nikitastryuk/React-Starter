@@ -1,0 +1,11 @@
+/* Fonts, colors, resets, spacings */
+@import './lib/imports.css';
+
+/* Theme variables */
+@import './theme/imports.css';
+
+html {
+  color: var(--black);
+  font-family: 'Bebas Neue', cursive;
+  background: var(--backgroundColor);
+}

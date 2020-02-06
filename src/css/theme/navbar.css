@@ -1,0 +1,9 @@
+:root {
+  --navLinkColor: var(--dark-60);
+  --navLinkActiveColor: var(--dark-50);
+}
+
+[data-theme='light'] {
+  --navLinkColor: var(--light-60);
+  --navLinkActiveColor: var(--light-50);
+}

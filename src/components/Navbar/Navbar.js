@@ -3,7 +3,7 @@ import React from 'react';
 import { ROUTE_PATHS } from 'components/Routes/routePaths';
 
 import { NavbarLink } from './NavbarLink/NavbarLink';
-import styles from './Navbar.scss';
+import styles from './Navbar.css';
 
 const NAVBAR_ROUTES = [
   { path: ROUTE_PATHS.LOGIN, label: 'LOGIN' },

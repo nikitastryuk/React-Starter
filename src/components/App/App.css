@@ -4,6 +4,6 @@
   align-items: center;
   justify-content: center;
   nav {
-    margin: $spacing-02 0;
+    margin: var(--spacing-02) 0;
   }
 }
