@@ -10,7 +10,7 @@ import styles from './App.css';
 
 export const App = () => {
   // TODO: Theme-switcher
-  document.documentElement.setAttribute('data-theme', 'light');
+  // document.documentElement.setAttribute('data-theme', 'light');
   return (
     <React.Fragment>
       <AuthProvider reducer={authReducer} initialState={initialState}>

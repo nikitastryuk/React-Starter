@@ -1,0 +1,6 @@
+:root {
+  --primaryButtonBackground: var(--dark-90);
+  --primaryButtonHoverBackgorund: var(--dark-70);
+  --buttonTextColor: var(--white);
+  --primaryButtonDisabledBackgorund: var(--dark-60);
+}

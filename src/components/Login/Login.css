@@ -10,7 +10,7 @@
   font-size: 25px;
   background: lightgreen;
 
-  > * {
-    margin: $spacing-01 0;
+  > *:not(:first-child) {
+    margin-top: var(--spacing-02);
   }
 }

@@ -1,0 +1,19 @@
+.button {
+  min-width: 100px;
+  padding: var(--spacing-02) var(--spacing-04);
+  color: var(--buttonTextColor);
+  font-weight: bold;
+  font-size: 14px;
+  border: none;
+  border-radius: 3px;
+  &.primary {
+    background: var(--primaryButtonBackground);
+    &:hover {
+      background: var(--primaryButtonHoverBackgorund);
+      cursor: pointer;
+    }
+    &.disabled {
+      background: var(--primaryButtonDisabledBackgorund);
+    }
+  }
+}

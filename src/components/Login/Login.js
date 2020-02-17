@@ -1,6 +1,7 @@
 import { Redirect, useHistory } from 'react-router-dom';
 import React, { useState } from 'react';
 
+import { BUTTON_VARIANTS, Button } from 'components/Button/Button';
 import { ROUTE_PATHS } from 'components/Routes/routePaths';
 import { useAuth } from 'components/Auth/useAuth';
 
@@ -39,9 +40,13 @@ export function Login() {
     <div className={styles.login}>
       <h1>Enter secret key to authorize</h1>
       <input value={secretKey} onChange={e => setSecretKey(e.target.value)} />
-      <button disabled={!secretKey} onClick={handleLogin}>
+      <Button
+        variant={BUTTON_VARIANTS.PRIMARY}
+        disabled={!secretKey}
+        onClick={handleLogin}
+      >
         Log In
-      </button>
+      </Button>
     </div>
   );
 }

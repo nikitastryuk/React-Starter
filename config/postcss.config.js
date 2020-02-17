@@ -4,7 +4,7 @@ module.exports = ({ options }) => {
     plugins: {
       'postcss-nested': true,
       autoprefixer: isProduction,
-      // cssnano: isProduction,
+      cssnano: isProduction,
     },
   };
 };

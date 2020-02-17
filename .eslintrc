@@ -13,6 +13,7 @@
   "rules": {
     "no-use-before-define": 1,
     "no-unused-vars": 1,
+    "jsx-a11y/control-has-associated-label": 0,
     // Imports
     "import/prefer-default-export": 0,
     "import/no-extraneous-dependencies": 0,
