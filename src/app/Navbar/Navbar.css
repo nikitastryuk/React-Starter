@@ -1,6 +1,7 @@
 .navbar {
   display: flex;
   font-size: 20px;
+  text-transform: uppercase;
 
   /* navLink */
   a:not(:last-child) {

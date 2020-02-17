@@ -9,7 +9,7 @@ export const BUTTON_VARIANTS = {
   SECONDARY: 'secondary',
 };
 
-export const Button = ({ variant, disabled, children, onClick }) => {
+export function Button({ variant, disabled, children, onClick }) {
   return (
     <button
       onClick={onClick}
@@ -21,7 +21,7 @@ export const Button = ({ variant, disabled, children, onClick }) => {
       {children}
     </button>
   );
-};
+}
 
 Button.propTypes = {
   variant: PropTypes.oneOf(Object.values(BUTTON_VARIANTS)).isRequired,

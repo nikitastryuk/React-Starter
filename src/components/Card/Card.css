@@ -4,9 +4,10 @@
   align-items: center;
   justify-content: center;
   width: 700px;
-  height: 200px;
-  padding: $spacing-10;
-  font-size: 25px;
+  height: 275px;
+  padding: var(--spacing-10);
+  font-size: 24px;
+  text-transform: uppercase;
   > *:not(:first-child) {
     margin-top: var(--spacing-02);
   }

@@ -5,6 +5,7 @@ import { BUTTON_VARIANTS, Button } from 'components/Button/Button';
 import { Card } from 'components/Card/Card';
 import { ROUTE_PATHS } from 'app/Routes/routePaths';
 import { useAuth } from 'app/Auth/useAuth';
+import { useTranslation } from 'react-i18next';
 
 import styles from './Login.css';
 
@@ -15,6 +16,7 @@ function sleep(sec) {
 
 export function Login() {
   const history = useHistory();
+  const { t } = useTranslation();
   const [secretKey, setSecretKey] = useState('');
   const [{ user, isLoading }, actions] = useAuth();
 
@@ -26,7 +28,7 @@ export function Login() {
     return (
       <div className={styles.loadingContainer}>
         <Card>
-          <h1>Loading...</h1>
+          <h1>{t('login.loading')}</h1>
         </Card>
       </div>
     );
@@ -42,14 +44,14 @@ export function Login() {
   return (
     <div className={styles.login}>
       <Card>
-        <h1>Enter secret key to authorize</h1>
+        <h1>{t('login.mainText')}</h1>
         <input value={secretKey} onChange={e => setSecretKey(e.target.value)} />
         <Button
           variant={BUTTON_VARIANTS.PRIMARY}
           disabled={!secretKey}
           onClick={handleLogin}
         >
-          Log In
+          {t('login.title')}
         </Button>
       </Card>
     </div>

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import classNames from 'classnames';
 
-import styles from './ThemeSwitch.css';
+import styles from './ThemeSwitcher.css';
 
 const THEMES = {
   LIGHT: 'light',
@@ -10,7 +10,7 @@ const THEMES = {
 
 const DEFAULT_THEME = THEMES.DARK;
 
-export function ThemeSwitch() {
+export function ThemeSwitcher() {
   const [currentTheme, setCurrentTheme] = useState(DEFAULT_THEME);
 
   function saveNewTheme(newTheme) {
@@ -19,7 +19,7 @@ export function ThemeSwitch() {
   }
 
   return (
-    <div className={styles.themeSwitch}>
+    <div className={styles.themeSwitcher}>
       <button
         className={classNames(styles.circle, styles.dark, {
           [styles.selected]: currentTheme === THEMES.DARK,
