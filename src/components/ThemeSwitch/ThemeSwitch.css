@@ -1,0 +1,26 @@
+.themeSwitch {
+  margin: var(--spacing-05) 0;
+  .circle {
+    display: block;
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    margin-left: var(--spacing-02);
+    border: none;
+    border-radius: 50%;
+    outline: none;
+  }
+  .light {
+    background-color: var(--light-80);
+    &.selected {
+      box-shadow: 0 0 0 2px var(--black);
+    }
+  }
+
+  .dark {
+    background-color: var(--dark-80);
+    &.selected {
+      box-shadow: 0 0 0 2px var(--white);
+    }
+  }
+}
