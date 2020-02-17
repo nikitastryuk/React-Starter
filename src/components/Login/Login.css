@@ -1,16 +1,4 @@
 .login,
 .loadingContainer {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  width: 700px;
-  height: 200px;
-  padding: $spacing-10;
-  font-size: 25px;
   background: lightgreen;
-
-  > *:not(:first-child) {
-    margin-top: var(--spacing-02);
-  }
 }

@@ -1,7 +1,11 @@
 :root {
-  --backgroundColor: var(--dark-80);
+  --backgroundColorPrimary: var(--dark-100);
+  --backgroundColorSecondary: var(--dark-90);
+  --textColor: var(--black);
 }
 
 [data-theme='light'] {
-  --backgroundColor: var(--light-100);
+  --backgroundColorPrimary: var(--light-100);
+  --backgroundColorSecondary: var(--light-90);
+  --textColor: var(--white);
 }

@@ -5,7 +5,7 @@
 @import './theme/imports.css';
 
 html {
-  color: var(--black);
+  color: var(--textColor);
   font-family: 'Bebas Neue', cursive;
   background: var(--backgroundColor);
 }

@@ -2,6 +2,7 @@ import { Redirect, useHistory } from 'react-router-dom';
 import React, { useState } from 'react';
 
 import { BUTTON_VARIANTS, Button } from 'components/Button/Button';
+import { Card } from 'components/Card/Card';
 import { ROUTE_PATHS } from 'components/Routes/routePaths';
 import { useAuth } from 'components/Auth/useAuth';
 
@@ -24,7 +25,9 @@ export function Login() {
   if (isLoading) {
     return (
       <div className={styles.loadingContainer}>
-        <h1>Loading...</h1>
+        <Card>
+          <h1>Loading...</h1>
+        </Card>
       </div>
     );
   }
@@ -38,15 +41,17 @@ export function Login() {
 
   return (
     <div className={styles.login}>
-      <h1>Enter secret key to authorize</h1>
-      <input value={secretKey} onChange={e => setSecretKey(e.target.value)} />
-      <Button
-        variant={BUTTON_VARIANTS.PRIMARY}
-        disabled={!secretKey}
-        onClick={handleLogin}
-      >
-        Log In
-      </Button>
+      <Card>
+        <h1>Enter secret key to authorize</h1>
+        <input value={secretKey} onChange={e => setSecretKey(e.target.value)} />
+        <Button
+          variant={BUTTON_VARIANTS.PRIMARY}
+          disabled={!secretKey}
+          onClick={handleLogin}
+        >
+          Log In
+        </Button>
+      </Card>
     </div>
   );
 }

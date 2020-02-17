@@ -1,6 +1,13 @@
 :root {
   --primaryButtonBackground: var(--dark-90);
-  --primaryButtonHoverBackgorund: var(--dark-70);
+  --primaryButtonHoverBackgorund: var(--dark-100);
   --buttonTextColor: var(--white);
-  --primaryButtonDisabledBackgorund: var(--dark-60);
+  --primaryButtonDisabledBackgorund: var(--dark-80);
+}
+
+[data-theme='light'] {
+  --primaryButtonBackground: var(--light-90);
+  --primaryButtonHoverBackgorund: var(--light-100);
+  --buttonTextColor: var(--black);
+  --primaryButtonDisabledBackgorund: var(--light-80);
 }

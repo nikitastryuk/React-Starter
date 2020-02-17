@@ -1,18 +1,13 @@
 :root {
   /* dark */
-  --dark-100: #121212; /* bg */
-  --dark-90: #1b1d21; /* page */
-  --dark-80: #232323; /* btn */
-  --dark-70: #565856; /* btn hover */
-  --dark-60: #d1d8dc;
+  --dark-100: #202124;
+  --dark-90: #35363a;
+  --dark-80: #515154;
 
   /* light */
-  --light-50: #596e79;
-  --light-60: #9ba8af;
-  --light-70: #d1d8dc;
-  --light-80: #e6e7e8;
-  --light-90: #f2f3f3;
-  --light-100: #fafafa; /* bg */
+  --light-100: #fafafa;
+  --light-90: #eee;
+  --light-80: #e0e0e0;
 
   /* base */
   --white: #fff;

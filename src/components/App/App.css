@@ -2,7 +2,13 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  width: 100%;
+  height: 100vh;
+  background: linear-gradient(
+    105deg,
+    var(--backgroundColorPrimary) 50%,
+    var(--backgroundColorSecondary) 0
+  );
   nav {
     margin: var(--spacing-02) 0;
   }
