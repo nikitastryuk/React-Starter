@@ -3,8 +3,8 @@ import React, { useState } from 'react';
 
 import { BUTTON_VARIANTS, Button } from 'components/Button/Button';
 import { Card } from 'components/Card/Card';
-import { ROUTE_PATHS } from 'components/Routes/routePaths';
-import { useAuth } from 'components/Auth/useAuth';
+import { ROUTE_PATHS } from 'app/Routes/routePaths';
+import { useAuth } from 'app/Auth/useAuth';
 
 import styles from './Login.css';
 

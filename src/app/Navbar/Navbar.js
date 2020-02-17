@@ -1,8 +1,8 @@
 import React from 'react';
 
-import { ROUTE_PATHS } from 'components/Routes/routePaths';
+import { NavbarLink } from 'app/Navbar/NavbarLink/NavbarLink';
+import { ROUTE_PATHS } from 'app/Routes/routePaths';
 
-import { NavbarLink } from './NavbarLink/NavbarLink';
 import styles from './Navbar.css';
 
 const NAVBAR_ROUTES = [

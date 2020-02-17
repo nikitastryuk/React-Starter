@@ -1,11 +1,7 @@
 import PropTypes from 'prop-types';
 import React, { useReducer } from 'react';
 
-import {
-  AuthContext,
-  authReducer,
-  initialState,
-} from 'components/Auth/useAuth';
+import { AuthContext, authReducer, initialState } from 'app/Auth/useAuth';
 
 export function AuthProvider({ children }) {
   const value = useReducer(authReducer, initialState);

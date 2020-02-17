@@ -1,10 +1,10 @@
 import { BrowserRouter } from 'react-router-dom';
 import React from 'react';
 
-import { AppRoutes } from 'components/Routes/AppRoutes';
-import { AuthProvider } from 'components/Auth/AuthProvider';
-import { Navbar } from 'components/Navbar/Navbar';
-import { authReducer, initialState } from 'components/Auth/useAuth';
+import { AppRoutes } from 'app/Routes/AppRoutes';
+import { AuthProvider } from 'app/Auth/AuthProvider';
+import { Navbar } from 'app/Navbar/Navbar';
+import { authReducer, initialState } from 'app/Auth/useAuth';
 
 import styles from './App.css';
 

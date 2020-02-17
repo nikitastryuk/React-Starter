@@ -1,12 +1,12 @@
 import { Route, Switch } from 'react-router-dom';
 import React from 'react';
 
-import { Login } from 'components/Login/Login';
-import { Logout } from 'components/Logout/Logout';
-import { Main } from 'components/Main/Main';
-import { NotFound } from 'components/NotFound/NotFound';
-import { PrivateRoute } from 'components/Routes/PrivateRoute';
-import { ROUTE_PATHS } from 'components/Routes/routePaths';
+import { Login } from 'pages/Login/Login';
+import { Logout } from 'pages/Logout/Logout';
+import { Main } from 'pages/Main/Main';
+import { NotFound } from 'pages/NotFound/NotFound';
+import { PrivateRoute } from 'app/Routes/PrivateRoute';
+import { ROUTE_PATHS } from 'app/Routes/routePaths';
 
 export function AppRoutes() {
   return (
