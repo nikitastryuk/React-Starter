@@ -2,7 +2,7 @@
   "name": "react-starter",
   "version": "1.0.0",
   "scripts": {
-    "dev": "webpack-dev-server --config config/webpack.config.js  --env.env dev --open",
+    "dev": "webpack-dev-server --config config/webpack.config.js --env.env dev --open",
     "build": "webpack --config config/webpack.config.js --env.env prod"
   },
   "author": "Nikita Striuk",
