@@ -7,8 +7,9 @@ import styles from './LanguageSwitcher.css';
 export function LanguageSwitcher() {
   const { i18n } = useTranslation();
 
-  function changeLanguage(code) {
-    i18n.changeLanguage(code);
+  function changeLanguage(lng) {
+    i18n.changeLanguage(lng);
+    localStorage.setItem('lng', lng);
   }
   return (
     <div className={styles.languageSwitcher}>

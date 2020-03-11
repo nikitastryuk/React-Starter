@@ -10,7 +10,8 @@ export function Main() {
   return (
     <div className={styles.main}>
       <Card>
-        <h1>{t('main.title')}</h1>
+        <h1>{t('main.title', { count: 0 })}</h1>
+        <h1>{t('main.items', { postProcess: 'interval', count: 0 })}</h1>
       </Card>
     </div>
   );
