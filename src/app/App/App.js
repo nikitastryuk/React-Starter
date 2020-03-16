@@ -1,7 +1,7 @@
 import { BrowserRouter } from 'react-router-dom';
 import React from 'react';
 
-import { AppRoutes } from 'app/Routes/AppRoutes';
+import { AppRoutes } from 'app/routes/AppRoutes';
 import { AuthProvider } from 'app/Auth/AuthProvider';
 import { LanguageSwitcher } from 'components/LanguageSwitcher/LanguageSwitcher';
 import { Navbar } from 'app/Navbar/Navbar';

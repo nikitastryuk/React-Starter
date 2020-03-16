@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { NavbarLink } from 'app/Navbar/NavbarLink/NavbarLink';
-import { ROUTE_PATHS } from 'app/Routes/routePaths';
+import { ROUTE_PATHS } from 'app/routes/routePaths';
 import { useTranslation } from 'react-i18next';
 
 import styles from './Navbar.css';

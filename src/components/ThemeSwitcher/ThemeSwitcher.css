@@ -9,6 +9,7 @@
     border: none;
     border-radius: 50%;
     outline: none;
+    cursor: pointer;
   }
   .light {
     background-color: var(--light-80);
