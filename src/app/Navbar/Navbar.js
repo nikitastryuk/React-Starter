@@ -17,7 +17,7 @@ export function Navbar() {
 
   return (
     <nav className={styles.navbar}>
-      {NAVBAR_ROUTES.map(route => (
+      {NAVBAR_ROUTES.map((route) => (
         <NavbarLink key={`${route.path}.${route.label}`} route={route} />
       ))}
     </nav>

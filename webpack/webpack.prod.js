@@ -1,12 +1,10 @@
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
-const { DIST_DIR, POSTCSS_CONFIG_DIR } = require('./paths');
-
-const MODE = 'production';
+const { DIST_DIR, POSTCSS_CONFIG_DIR, MODES } = require('./constants');
 
 module.exports = {
-  mode: MODE,
+  mode: MODES.PRODUCTION,
   devServer: {
     contentBase: DIST_DIR,
   },
@@ -22,7 +20,7 @@ module.exports = {
             options: {
               config: {
                 path: POSTCSS_CONFIG_DIR,
-                ctx: { mode: MODE },
+                ctx: { mode: MODES.PRODUCTION },
               },
             },
           },

@@ -1,6 +1,6 @@
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
-const { APP_ENTRY, DIST_DIR, APP_TEMPLATE } = require('./paths');
+const { APP_ENTRY, DIST_DIR, APP_TEMPLATE } = require('./constants');
 
 module.exports = {
   entry: APP_ENTRY,

@@ -1,7 +1,13 @@
 {
   "parser": "babel-eslint",
   "extends": ["airbnb", "plugin:prettier/recommended", "prettier/react"],
-  "plugins": ["prettier", "react", "react-hooks", "sort-imports-es6-autofix"],
+  "plugins": [
+    "prettier",
+    "react",
+    "react-hooks",
+    "sort-imports-es6-autofix",
+    "jest"
+  ],
   "env": {
     "browser": true,
     "node": true,
@@ -35,7 +41,13 @@
     "react/button-has-type": 0,
     "react/prop-types": 1,
     "react/jsx-fragments": 0,
-    "react/jsx-boolean-value": 0
+    "react/jsx-boolean-value": 0,
+    // Jest
+    "jest/no-disabled-tests": 1,
+    "jest/no-focused-tests": 2,
+    "jest/no-identical-title": 2,
+    "jest/prefer-to-have-length": 1,
+    "jest/valid-expect": 2
   },
   "settings": {
     "import/resolver": {

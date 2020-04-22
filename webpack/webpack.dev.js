@@ -1,11 +1,9 @@
 const webpack = require('webpack');
 
-const { DIST_DIR, POSTCSS_CONFIG_DIR } = require('./paths');
-
-const MODE = 'development';
+const { DIST_DIR, POSTCSS_CONFIG_DIR, MODES } = require('./constants');
 
 module.exports = {
-  mode: MODE,
+  mode: MODES.DEVELOPMENT,
   devtool: 'cheap-module-source-map',
   devServer: {
     contentBase: DIST_DIR,
@@ -33,7 +31,7 @@ module.exports = {
             options: {
               config: {
                 path: POSTCSS_CONFIG_DIR,
-                ctx: { mode: MODE },
+                ctx: { mode: MODES.DEVELOPMENT },
               },
             },
           },
