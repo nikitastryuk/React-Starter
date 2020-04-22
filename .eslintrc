@@ -6,12 +6,14 @@
     "react",
     "react-hooks",
     "sort-imports-es6-autofix",
-    "jest"
+    "jest",
+    "cypress"
   ],
   "env": {
     "browser": true,
     "node": true,
-    "jest": true
+    "jest": true,
+    "cypress/globals": true
   },
   "parserOptions": {
     "ecmaVersion": 2020
@@ -47,7 +49,12 @@
     "jest/no-focused-tests": 2,
     "jest/no-identical-title": 2,
     "jest/prefer-to-have-length": 1,
-    "jest/valid-expect": 2
+    "jest/valid-expect": 2,
+    // Cypress
+    "cypress/no-assigning-return-values": 2,
+    "cypress/no-unnecessary-waiting": 2,
+    "cypress/assertion-before-screenshot": 1,
+    "cypress/no-force": 1
   },
   "settings": {
     "import/resolver": {

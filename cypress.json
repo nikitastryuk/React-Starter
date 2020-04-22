@@ -1,0 +1,7 @@
+{
+  "baseUrl": "http://localhost:8080",
+  "integrationFolder": "tests/e2e",
+  "fixturesFolder": false,
+  "pluginsFile": false,
+  "supportFile": false
+}

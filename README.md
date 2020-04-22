@@ -7,6 +7,7 @@
 - EsLint / StyleLint / Prettier
 - Babel / Webpack / PostCss
 - Husky / Lint-staged
+- Jest / Cypress
 
 ## Running the Project
 
@@ -16,10 +17,8 @@ After installing modules, you're ready to start the project!
 | -------------- | -------------------------------------------------------------- |
 | `dev`          | Serves your app at `localhost:8080` with hot reloading enabled |
 | `build`        | Builds the application to ./dist                               |
-
-## Test
-
-In progress
+| `test`         | Runs all unit tests                                            |
+| `cypress`      | Opens cypress                                                  |
 
 ## Deploy
 

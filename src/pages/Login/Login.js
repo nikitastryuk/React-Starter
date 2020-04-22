@@ -11,7 +11,7 @@ import styles from './Login.css';
 
 // Simulate loading
 function sleep(sec) {
-  return new Promise(r => setTimeout(r, sec * 1000));
+  return new Promise((r) => setTimeout(r, sec * 1000));
 }
 
 export function Login() {
@@ -45,7 +45,10 @@ export function Login() {
     <div className={styles.login}>
       <Card>
         <h1>{t('login.mainText')}</h1>
-        <input value={secretKey} onChange={e => setSecretKey(e.target.value)} />
+        <input
+          value={secretKey}
+          onChange={(e) => setSecretKey(e.target.value)}
+        />
         <Button
           variant={BUTTON_VARIANTS.PRIMARY}
           disabled={!secretKey}
