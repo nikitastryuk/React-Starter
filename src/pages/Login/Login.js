@@ -9,11 +9,6 @@ import { useTranslation } from 'react-i18next';
 
 import styles from './Login.css';
 
-// Simulate loading
-function sleep(sec) {
-  return new Promise((r) => setTimeout(r, sec * 1000));
-}
-
 export function Login() {
   const history = useHistory();
   const { t } = useTranslation();
@@ -35,9 +30,7 @@ export function Login() {
   }
 
   async function handleLogin() {
-    actions.loginStart();
-    await sleep(2);
-    actions.loginSuccess({ user: 'userData' });
+    await actions.login({ secretKey });
     history.push(ROUTE_PATHS.MAIN);
   }
 

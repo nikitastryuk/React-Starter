@@ -1,5 +1,7 @@
 import { createContext, useContext } from 'react';
 
+import { loginWithSecretKey } from './authService';
+
 export const AuthContext = createContext();
 
 export const initialState = {
@@ -61,22 +63,23 @@ export function authReducer(state, action) {
 export function useAuth() {
   const [state, dispatch] = useContext(AuthContext);
 
-  const loginStart = () =>
-    dispatch({
-      type: ACTIONS.LOGIN_START,
-    });
-
-  const loginSuccess = ({ user }) =>
-    dispatch({
-      type: ACTIONS.LOGIN_SUCCESS,
-      user,
-    });
-
-  const loginError = ({ errorMessage }) =>
-    dispatch({
-      type: ACTIONS.LOGIN_ERROR,
-      errorMessage,
-    });
+  async function login({ secretKey }) {
+    try {
+      dispatch({
+        type: ACTIONS.LOGIN_START,
+      });
+      const { user } = await loginWithSecretKey({ secretKey });
+      dispatch({
+        type: ACTIONS.LOGIN_SUCCESS,
+        user,
+      });
+    } catch (error) {
+      dispatch({
+        type: ACTIONS.LOGIN_ERROR,
+        errorMessage: error.message,
+      });
+    }
+  }
 
   const logout = () =>
     dispatch({
@@ -86,9 +89,7 @@ export function useAuth() {
   return [
     state,
     {
-      loginStart,
-      loginSuccess,
-      loginError,
+      login,
       logout,
     },
   ];

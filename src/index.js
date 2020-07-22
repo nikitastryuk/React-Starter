@@ -8,4 +8,9 @@ import 'i18n/i18n';
 
 const rootElement = document.getElementById('root');
 
-ReactDOM.render(<App />, rootElement);
+ReactDOM.render(
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>,
+  rootElement,
+);
