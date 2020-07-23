@@ -5,13 +5,13 @@ import { BUTTON_VARIANTS, Button } from 'components/Button/Button';
 import { Card } from 'components/Card/Card';
 import { ROUTE_PATHS } from 'app/routes/routePaths';
 import { useAuth } from 'app/Auth/useAuth';
-// import { useTranslation } from 'react-i18next';
+import { useTranslation } from 'react-i18next';
 
 import styles from './Login.css';
 
 export function Login() {
   const history = useHistory();
-  // const { t } = useTranslation();
+  const { t } = useTranslation();
   const [secretKey, setSecretKey] = useState('');
   const [{ user, isLoading, error }, actions] = useAuth();
 
@@ -29,7 +29,7 @@ export function Login() {
     return (
       <div className={styles.loadingContainer}>
         <Card>
-          <h1>Loading...</h1>
+          <h1>{t('login.loading')}</h1>
         </Card>
       </div>
     );
@@ -47,7 +47,7 @@ export function Login() {
   return (
     <div className={styles.login}>
       <Card>
-        <h1>Enter secret key to authorize</h1>
+        <h1>{t('login.mainText')}</h1>
         <input
           data-testid="secret-key-input"
           value={secretKey}
@@ -58,7 +58,7 @@ export function Login() {
           disabled={!secretKey}
           onClick={handleLogin}
         >
-          Login
+          {t('login.buttonText')}
         </Button>
       </Card>
     </div>
