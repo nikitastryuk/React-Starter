@@ -5,28 +5,38 @@ import { BUTTON_VARIANTS, Button } from 'components/Button/Button';
 import { Card } from 'components/Card/Card';
 import { ROUTE_PATHS } from 'app/routes/routePaths';
 import { useAuth } from 'app/Auth/useAuth';
-import { useTranslation } from 'react-i18next';
+// import { useTranslation } from 'react-i18next';
 
 import styles from './Login.css';
 
 export function Login() {
   const history = useHistory();
-  const { t } = useTranslation();
+  // const { t } = useTranslation();
   const [secretKey, setSecretKey] = useState('');
-  const [{ user, isLoading }, actions] = useAuth();
+  const [{ user, isLoading, error }, actions] = useAuth();
 
-  if (user) {
-    return <Redirect to={ROUTE_PATHS.MAIN} />;
+  if (error) {
+    return (
+      <div className={styles.errorContainer}>
+        <Card>
+          <h1>{error}</h1>
+        </Card>
+      </div>
+    );
   }
 
   if (isLoading) {
     return (
       <div className={styles.loadingContainer}>
         <Card>
-          <h1>{t('login.loading')}</h1>
+          <h1>Loading...</h1>
         </Card>
       </div>
     );
+  }
+
+  if (user) {
+    return <Redirect to={ROUTE_PATHS.MAIN} />;
   }
 
   async function handleLogin() {
@@ -37,8 +47,9 @@ export function Login() {
   return (
     <div className={styles.login}>
       <Card>
-        <h1>{t('login.mainText')}</h1>
+        <h1>Enter secret key to authorize</h1>
         <input
+          data-testid="secret-key-input"
           value={secretKey}
           onChange={(e) => setSecretKey(e.target.value)}
         />
@@ -47,7 +58,7 @@ export function Login() {
           disabled={!secretKey}
           onClick={handleLogin}
         >
-          {t('login.title')}
+          Login
         </Button>
       </Card>
     </div>

@@ -7,7 +7,7 @@
 - EsLint / StyleLint / Prettier
 - Babel / Webpack / PostCss
 - Husky / Lint-staged
-- Jest / Cypress
+- Jest / Cypress / Rtl
 
 ## Running the Project
 
