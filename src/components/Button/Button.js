@@ -1,8 +1,7 @@
 import PropTypes from 'prop-types';
 import React from 'react';
-import classNames from 'classnames';
 
-import styles from './Button.css';
+import { StyledButton } from './StyledButton';
 
 export const BUTTON_VARIANTS = {
   PRIMARY: 'primary',
@@ -11,15 +10,9 @@ export const BUTTON_VARIANTS = {
 
 export function Button({ variant, disabled, children, onClick }) {
   return (
-    <button
-      onClick={onClick}
-      disabled={disabled}
-      className={classNames(styles.button, styles[variant], {
-        [styles.disabled]: disabled,
-      })}
-    >
+    <StyledButton onClick={onClick} disabled={disabled} variant={variant}>
       {children}
-    </button>
+    </StyledButton>
   );
 }
 

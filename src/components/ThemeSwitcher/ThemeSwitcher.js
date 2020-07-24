@@ -1,12 +1,8 @@
 import React, { useState } from 'react';
-import classNames from 'classnames';
 
-import styles from './ThemeSwitcher.css';
+import { THEMES } from 'app/ThemeProvider/ThemeProvider';
 
-const THEMES = {
-  LIGHT: 'light',
-  DARK: 'dark',
-};
+import { StyledCircleButton, StyledThemeSwitcher } from './StyledThemeSwitcher';
 
 const DEFAULT_THEME = THEMES.DARK;
 
@@ -19,19 +15,17 @@ export function ThemeSwitcher() {
   }
 
   return (
-    <div className={styles.themeSwitcher}>
-      <button
-        className={classNames(styles.circle, styles.dark, {
-          [styles.selected]: currentTheme === THEMES.DARK,
-        })}
+    <StyledThemeSwitcher>
+      <StyledCircleButton
+        colorTheme={THEMES.DARK}
+        selected={currentTheme === THEMES.DARK}
         onClick={() => saveNewTheme(THEMES.DARK)}
       />
-      <button
-        className={classNames(styles.circle, styles.light, {
-          [styles.selected]: currentTheme === THEMES.LIGHT,
-        })}
+      <StyledCircleButton
+        colorTheme={THEMES.LIGHT}
+        selected={currentTheme === THEMES.LIGHT}
         onClick={() => saveNewTheme(THEMES.LIGHT)}
       />
-    </div>
+    </StyledThemeSwitcher>
   );
 }

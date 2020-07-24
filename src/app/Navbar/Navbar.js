@@ -4,7 +4,7 @@ import { NavbarLink } from 'app/Navbar/NavbarLink/NavbarLink';
 import { ROUTE_PATHS } from 'app/routes/routePaths';
 import { useTranslation } from 'react-i18next';
 
-import styles from './Navbar.css';
+import { StyledNavbar } from './StyledNavbar';
 
 export function Navbar() {
   const { t } = useTranslation();
@@ -16,10 +16,10 @@ export function Navbar() {
   ];
 
   return (
-    <nav className={styles.navbar}>
+    <StyledNavbar>
       {NAVBAR_ROUTES.map((route) => (
         <NavbarLink key={`${route.path}.${route.label}`} route={route} />
       ))}
-    </nav>
+    </StyledNavbar>
   );
 }

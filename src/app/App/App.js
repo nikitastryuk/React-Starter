@@ -2,24 +2,28 @@ import { BrowserRouter } from 'react-router-dom';
 import React from 'react';
 
 import { AppRoutes } from 'app/routes/AppRoutes';
-import { AuthProvider, authReducer, initialState } from 'app/Auth/AuthProvider';
+import { AuthProvider } from 'app/Auth/AuthProvider';
 import { LanguageSwitcher } from 'components/LanguageSwitcher/LanguageSwitcher';
 import { Navbar } from 'app/Navbar/Navbar';
 import { ThemeSwitcher } from 'components/ThemeSwitcher/ThemeSwitcher';
 
-import styles from './App.css';
+import { AppThemeProvider } from 'app/ThemeProvider/ThemeProvider';
+
+import { StyledApp } from './StyledApp';
 
 export const App = () => {
   return (
-    <AuthProvider reducer={authReducer} initialState={initialState}>
+    <AppThemeProvider>
       <BrowserRouter>
-        <div className={styles.app}>
-          <LanguageSwitcher />
-          <ThemeSwitcher />
-          <Navbar />
-          <AppRoutes />
-        </div>
+        <AuthProvider>
+          <StyledApp>
+            <LanguageSwitcher />
+            <ThemeSwitcher />
+            <Navbar />
+            <AppRoutes />
+          </StyledApp>
+        </AuthProvider>
       </BrowserRouter>
-    </AuthProvider>
+    </AppThemeProvider>
   );
 };

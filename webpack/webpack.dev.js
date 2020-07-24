@@ -1,6 +1,6 @@
 const webpack = require('webpack');
 
-const { DIST_DIR, POSTCSS_CONFIG_DIR, MODES } = require('./constants');
+const { DIST_DIR, MODES } = require('./constants');
 
 module.exports = {
   mode: MODES.DEVELOPMENT,
@@ -23,15 +23,6 @@ module.exports = {
             options: {
               modules: {
                 localIdentName: '[local]--[hash:base64:5]',
-              },
-            },
-          },
-          {
-            loader: 'postcss-loader',
-            options: {
-              config: {
-                path: POSTCSS_CONFIG_DIR,
-                ctx: { mode: MODES.DEVELOPMENT },
               },
             },
           },

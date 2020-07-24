@@ -1,18 +1,17 @@
-import { NavLink } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import React from 'react';
 
-import styles from './NavbarLink.css';
+import { StyledNavbarLink } from './StyledNavbarLink';
 
 export const NavbarLink = ({ route }) => (
-  <NavLink
-    activeClassName={styles.active}
-    className={styles.navbarLink}
+  <StyledNavbarLink
+    activeClassName="active"
+    className="navbarLink"
     exact={true}
     to={route.path}
   >
     {route.label}
-  </NavLink>
+  </StyledNavbarLink>
 );
 
 NavbarLink.propTypes = {

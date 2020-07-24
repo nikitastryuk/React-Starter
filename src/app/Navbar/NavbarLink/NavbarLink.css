@@ -1,9 +1,0 @@
-.navbarLink {
-  color: var(--navLinkColor);
-  &:hover {
-    color: var(--navLinkActiveColor);
-  }
-}
-.active {
-  color: var(--navLinkActiveColor);
-}

@@ -1,10 +1,10 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 
-import styles from './Card.css';
+import { StyledCard } from './StyledCard';
 
 export function Card({ children }) {
-  return <div className={styles.card}>{children}</div>;
+  return <StyledCard>{children}</StyledCard>;
 }
 
 Card.propTypes = {
