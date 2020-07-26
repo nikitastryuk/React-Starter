@@ -5,7 +5,7 @@ import { render } from '@testing-library/react';
 import React from 'react';
 import userEvent from '@testing-library/user-event';
 
-import { AppThemeProvider } from 'app/ThemeProvider/ThemeProvider';
+import { AppThemeProvider } from 'app/theme/ThemeProvider';
 import { AuthContext } from 'app/Auth/AuthProvider';
 import { Login } from 'pages/Login/Login';
 import { ROUTE_PATHS } from 'app/routes/routePaths';
