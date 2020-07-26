@@ -3,9 +3,10 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import reset from 'styled-reset';
 
-import { THEME_MODES, useThemeMode } from './useThemeMode';
-import { getTheme } from './theme';
+import { THEME_MODES, useThemeMode } from 'app/theme/useThemeMode';
+import { getTheme } from 'app/theme/theme';
 
+// TODO: create file for global styles
 const GlobalStyle = createGlobalStyle`
   ${reset}
   body {

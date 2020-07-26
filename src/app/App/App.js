@@ -1,11 +1,11 @@
 import { BrowserRouter } from 'react-router-dom';
 import React from 'react';
 
+import { AppNavbar } from 'app/AppNavbar/AppNavbar';
 import { AppRoutes } from 'app/routes/AppRoutes';
 import { AppThemeProvider } from 'app/theme/ThemeProvider';
-import { AuthProvider } from 'app/Auth/AuthProvider';
+import { AuthProvider } from 'app/auth/AuthProvider';
 import { LanguageSwitcher } from 'components/LanguageSwitcher/LanguageSwitcher';
-import { Navbar } from 'app/Navbar/Navbar';
 import { ThemeSwitcher } from 'components/ThemeSwitcher/ThemeSwitcher';
 
 import { StyledApp } from './StyledApp';
@@ -18,7 +18,7 @@ export const App = () => {
           <StyledApp>
             <LanguageSwitcher />
             <ThemeSwitcher />
-            <Navbar />
+            <AppNavbar />
             <AppRoutes />
           </StyledApp>
         </AuthProvider>

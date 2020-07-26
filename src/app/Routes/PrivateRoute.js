@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import React from 'react';
 
 import { ROUTE_PATHS } from 'app/routes/routePaths';
-import { useAuth } from 'app/Auth/useAuth';
+import { useAuth } from 'app/auth/useAuth';
 
 export const PrivateRoute = ({ component, path, exact }) => {
   const [{ user }] = useAuth();

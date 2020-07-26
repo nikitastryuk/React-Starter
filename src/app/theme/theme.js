@@ -1,4 +1,4 @@
-import { THEME_MODES } from './useThemeMode';
+import { THEME_MODES } from 'app/theme/useThemeMode';
 
 function createLightPalette() {
   return {

@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-export const StyledNavbar = styled.nav`
+export const StyledAppNavbar = styled.nav`
   display: flex;
   font-size: 20px;
   text-transform: uppercase;
