@@ -1,7 +1,6 @@
 import styled from 'styled-components';
 
-// TODO: Dublicate
-const BUTTON_VARIANTS = {
+export const BUTTON_VARIANTS = {
   PRIMARY: 'primary',
   SECONDARY: 'secondary',
 };
@@ -37,11 +36,10 @@ export const StyledButton = styled.button`
   padding: ${({ theme }) => theme.spacing(2)} ${({ theme }) => theme.spacing(4)};
   font-weight: bold;
   font-size: 14px;
-
-  ${({ variant, theme, disabled }) =>
-    handleColoring(variant, disabled, theme.palette)};
-
   border: none;
   border-radius: 3px;
   outline: none;
+
+  ${({ variant, theme, disabled }) =>
+    handleColoring(variant, disabled, theme.palette)};
 `;

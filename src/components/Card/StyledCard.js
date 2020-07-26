@@ -8,7 +8,7 @@ export const StyledCard = styled.div`
   width: 700px;
   height: 275px;
   padding: 20px;
-  font-size: 24px;
+  font-size: 54px;
   text-transform: uppercase;
   > *:not(:first-child) {
     margin-top: ${({ theme }) => theme.spacing(2)};

@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import { THEMES } from 'app/ThemeProvider/ThemeProvider';
+import { THEME_MODES } from 'app/theme/ThemeProvider';
 
 function handleColoring(theme, selected, palette) {
   function getColoring(backgroundColor, boxShadowColor, hoverColor) {
@@ -9,13 +9,13 @@ function handleColoring(theme, selected, palette) {
     return `background: ${backgroundColor}; ${boxShadow}; ${hover};`;
   }
   switch (theme) {
-    case THEMES.LIGHT:
+    case THEME_MODES.LIGHT:
       return getColoring(
         palette.primary.main,
         palette.common.black,
         palette.primary.dark,
       );
-    case THEMES.DARK:
+    case THEME_MODES.DARK:
       return getColoring(
         palette.secondary.main,
         palette.common.white,

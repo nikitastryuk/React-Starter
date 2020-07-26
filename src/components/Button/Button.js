@@ -1,12 +1,7 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 
-import { StyledButton } from './StyledButton';
-
-export const BUTTON_VARIANTS = {
-  PRIMARY: 'primary',
-  SECONDARY: 'secondary',
-};
+import { BUTTON_VARIANTS, StyledButton } from './StyledButton';
 
 export function Button({ variant, disabled, children, onClick }) {
   return (
@@ -26,3 +21,5 @@ Button.propTypes = {
 Button.defaultProps = {
   disabled: false,
 };
+
+export { BUTTON_VARIANTS };
