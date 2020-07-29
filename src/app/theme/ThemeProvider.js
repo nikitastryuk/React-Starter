@@ -24,7 +24,6 @@ export function AppThemeProvider({ children }) {
       >
         {children}
       </ThemeProvider>
-      ;
     </React.Fragment>
   );
 }

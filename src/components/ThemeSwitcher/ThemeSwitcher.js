@@ -10,12 +10,12 @@ export function ThemeSwitcher() {
   return (
     <StyledThemeSwitcher>
       <StyledCircleButton
-        colorTheme={THEME_MODES.DARK}
+        selectedThemeMode={THEME_MODES.DARK}
         selected={themeMode === THEME_MODES.DARK}
         onClick={() => setThemeMode(THEME_MODES.DARK)}
       />
       <StyledCircleButton
-        colorTheme={THEME_MODES.LIGHT}
+        selectedThemeMode={THEME_MODES.LIGHT}
         selected={themeMode === THEME_MODES.LIGHT}
         onClick={() => setThemeMode(THEME_MODES.LIGHT)}
       />

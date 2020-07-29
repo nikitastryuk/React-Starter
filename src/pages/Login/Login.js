@@ -58,7 +58,7 @@ export function Login() {
           onChange={(e) => setSecretKey(e.target.value)}
         />
         <Button
-          variant={BUTTON_VARIANTS.SECONDARY}
+          variant={BUTTON_VARIANTS.PRIMARY}
           disabled={!secretKey}
           onClick={handleLogin}
         >
