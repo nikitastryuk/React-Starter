@@ -2,15 +2,15 @@ import { Card } from 'components/Card/Card';
 import { useTranslation } from 'react-i18next';
 import React from 'react';
 
-import styles from './NotFound.css';
+import { StyledNotFound } from './StyledNotFound';
 
 export function NotFound() {
   const { t } = useTranslation();
   return (
-    <div className={styles.notFound}>
+    <StyledNotFound>
       <Card>
         <h1>{t('notFound.title')}</h1>
       </Card>
-    </div>
+    </StyledNotFound>
   );
 }

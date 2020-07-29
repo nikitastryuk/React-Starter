@@ -1,37 +1,24 @@
-import React, { useState } from 'react';
-import classNames from 'classnames';
+import React, { useContext } from 'react';
 
-import styles from './ThemeSwitcher.css';
+import { THEME_MODES } from 'app/theme/ThemeProvider';
+import { ThemeContext } from 'styled-components';
 
-const THEMES = {
-  LIGHT: 'light',
-  DARK: 'dark',
-};
-
-const DEFAULT_THEME = THEMES.DARK;
+import { StyledCircleButton, StyledThemeSwitcher } from './StyledThemeSwitcher';
 
 export function ThemeSwitcher() {
-  const [currentTheme, setCurrentTheme] = useState(DEFAULT_THEME);
-
-  function saveNewTheme(newTheme) {
-    setCurrentTheme(newTheme);
-    document.documentElement.setAttribute('data-theme', newTheme);
-  }
-
+  const { themeMode, setThemeMode } = useContext(ThemeContext);
   return (
-    <div className={styles.themeSwitcher}>
-      <button
-        className={classNames(styles.circle, styles.dark, {
-          [styles.selected]: currentTheme === THEMES.DARK,
-        })}
-        onClick={() => saveNewTheme(THEMES.DARK)}
+    <StyledThemeSwitcher>
+      <StyledCircleButton
+        selectedThemeMode={THEME_MODES.DARK}
+        selected={themeMode === THEME_MODES.DARK}
+        onClick={() => setThemeMode(THEME_MODES.DARK)}
       />
-      <button
-        className={classNames(styles.circle, styles.light, {
-          [styles.selected]: currentTheme === THEMES.LIGHT,
-        })}
-        onClick={() => saveNewTheme(THEMES.LIGHT)}
+      <StyledCircleButton
+        selectedThemeMode={THEME_MODES.LIGHT}
+        selected={themeMode === THEME_MODES.LIGHT}
+        onClick={() => setThemeMode(THEME_MODES.LIGHT)}
       />
-    </div>
+    </StyledThemeSwitcher>
   );
 }

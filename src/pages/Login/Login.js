@@ -4,10 +4,14 @@ import React, { useState } from 'react';
 import { BUTTON_VARIANTS, Button } from 'components/Button/Button';
 import { Card } from 'components/Card/Card';
 import { ROUTE_PATHS } from 'app/routes/routePaths';
-import { useAuth } from 'app/Auth/useAuth';
+import { useAuth } from 'app/auth/useAuth';
 import { useTranslation } from 'react-i18next';
 
-import styles from './Login.css';
+import {
+  StyledLogin,
+  StyledLoginError,
+  StyledLoginLoading,
+} from './StyledLogin';
 
 export function Login() {
   const history = useHistory();
@@ -17,21 +21,21 @@ export function Login() {
 
   if (error) {
     return (
-      <div className={styles.errorContainer}>
+      <StyledLoginError>
         <Card>
           <h1>{error}</h1>
         </Card>
-      </div>
+      </StyledLoginError>
     );
   }
 
   if (isLoading) {
     return (
-      <div className={styles.loadingContainer}>
+      <StyledLoginLoading>
         <Card>
           <h1>{t('login.loading')}</h1>
         </Card>
-      </div>
+      </StyledLoginLoading>
     );
   }
 
@@ -45,7 +49,7 @@ export function Login() {
   }
 
   return (
-    <div className={styles.login}>
+    <StyledLogin>
       <Card>
         <h1>{t('login.mainText')}</h1>
         <input
@@ -61,6 +65,6 @@ export function Login() {
           {t('login.buttonText')}
         </Button>
       </Card>
-    </div>
+    </StyledLogin>
   );
 }

@@ -1,7 +1,7 @@
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
-const { DIST_DIR, POSTCSS_CONFIG_DIR, MODES } = require('./constants');
+const { DIST_DIR, MODES } = require('./constants');
 
 module.exports = {
   mode: MODES.PRODUCTION,
@@ -12,19 +12,7 @@ module.exports = {
     rules: [
       {
         test: /\.css$/,
-        use: [
-          MiniCssExtractPlugin.loader,
-          'css-loader',
-          {
-            loader: 'postcss-loader',
-            options: {
-              config: {
-                path: POSTCSS_CONFIG_DIR,
-                ctx: { mode: MODES.PRODUCTION },
-              },
-            },
-          },
-        ],
+        use: [MiniCssExtractPlugin.loader, 'css-loader'],
       },
     ],
   },

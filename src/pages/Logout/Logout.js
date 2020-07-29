@@ -2,10 +2,10 @@ import React from 'react';
 
 import { BUTTON_VARIANTS, Button } from 'components/Button/Button';
 import { Card } from 'components/Card/Card';
-import { useAuth } from 'app/Auth/useAuth';
+import { useAuth } from 'app/auth/useAuth';
 import { useTranslation } from 'react-i18next';
 
-import styles from './Logout.css';
+import { StyledLogout } from './StyledLogout';
 
 export function Logout() {
   const [, { logout }] = useAuth();
@@ -16,13 +16,13 @@ export function Logout() {
   }
 
   return (
-    <div className={styles.logout}>
+    <StyledLogout>
       <Card>
         <h1>{t('logout.title')}</h1>
         <Button variant={BUTTON_VARIANTS.PRIMARY} onClick={handleLogout}>
           {t('logout.buttonText')}
         </Button>
       </Card>
-    </div>
+    </StyledLogout>
   );
 }

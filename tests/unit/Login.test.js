@@ -5,7 +5,8 @@ import { render } from '@testing-library/react';
 import React from 'react';
 import userEvent from '@testing-library/user-event';
 
-import { AuthContext } from 'app/Auth/AuthProvider';
+import { AppThemeProvider } from 'app/theme/ThemeProvider';
+import { AuthContext } from 'app/auth/AuthProvider';
 import { Login } from 'pages/Login/Login';
 import { ROUTE_PATHS } from 'app/routes/routePaths';
 import i18n from 'i18n/i18n';
@@ -21,11 +22,13 @@ function renderWithProviders(
   const history = createMemoryHistory();
   // eslint-disable-next-line react/prop-types
   const Wrapper = ({ children }) => (
-    <AuthContext.Provider value={[state, mockedDispatch]}>
+    <AppThemeProvider>
       <Router history={history}>
-        <I18nextProvider i18n={i18n}>{children}</I18nextProvider>
+        <AuthContext.Provider value={[state, mockedDispatch]}>
+          <I18nextProvider i18n={i18n}>{children}</I18nextProvider>
+        </AuthContext.Provider>
       </Router>
-    </AuthContext.Provider>
+    </AppThemeProvider>
   );
   return {
     ...render(Component, { wrapper: Wrapper }),

@@ -1,25 +1,13 @@
 import PropTypes from 'prop-types';
 import React from 'react';
-import classNames from 'classnames';
 
-import styles from './Button.css';
-
-export const BUTTON_VARIANTS = {
-  PRIMARY: 'primary',
-  SECONDARY: 'secondary',
-};
+import { BUTTON_VARIANTS, StyledButton } from './StyledButton';
 
 export function Button({ variant, disabled, children, onClick }) {
   return (
-    <button
-      onClick={onClick}
-      disabled={disabled}
-      className={classNames(styles.button, styles[variant], {
-        [styles.disabled]: disabled,
-      })}
-    >
+    <StyledButton onClick={onClick} disabled={disabled} variant={variant}>
       {children}
-    </button>
+    </StyledButton>
   );
 }
 
@@ -33,3 +21,5 @@ Button.propTypes = {
 Button.defaultProps = {
   disabled: false,
 };
+
+export { BUTTON_VARIANTS };

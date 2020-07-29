@@ -1,25 +1,30 @@
 import { BrowserRouter } from 'react-router-dom';
 import React from 'react';
 
+import { AppNavbar } from 'app/AppNavbar/AppNavbar';
 import { AppRoutes } from 'app/routes/AppRoutes';
-import { AuthProvider, authReducer, initialState } from 'app/Auth/AuthProvider';
+import { AppThemeProvider } from 'app/theme/ThemeProvider';
+import { AuthProvider } from 'app/auth/AuthProvider';
+import { GlobalStyle } from 'app/GlobalStyle';
 import { LanguageSwitcher } from 'components/LanguageSwitcher/LanguageSwitcher';
-import { Navbar } from 'app/Navbar/Navbar';
 import { ThemeSwitcher } from 'components/ThemeSwitcher/ThemeSwitcher';
 
-import styles from './App.css';
+import { StyledApp } from './StyledApp';
 
 export const App = () => {
   return (
-    <AuthProvider reducer={authReducer} initialState={initialState}>
+    <AppThemeProvider>
+      <GlobalStyle />
       <BrowserRouter>
-        <div className={styles.app}>
-          <LanguageSwitcher />
-          <ThemeSwitcher />
-          <Navbar />
-          <AppRoutes />
-        </div>
+        <AuthProvider>
+          <StyledApp>
+            <LanguageSwitcher />
+            <ThemeSwitcher />
+            <AppNavbar />
+            <AppRoutes />
+          </StyledApp>
+        </AuthProvider>
       </BrowserRouter>
-    </AuthProvider>
+    </AppThemeProvider>
   );
 };

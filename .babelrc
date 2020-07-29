@@ -1,7 +1,18 @@
 {
   "presets": ["@babel/preset-env", "@babel/preset-react"],
   "plugins": [
-    "@babel/plugin-transform-runtime",
+    [
+      "babel-plugin-styled-components",
+      {
+        "ssr": false
+      }
+    ],
+    [
+      "@babel/plugin-transform-runtime",
+      {
+        "regenerator": true
+      }
+    ],
     [
       "module-resolver",
       {
@@ -9,7 +20,8 @@
           "components": "./src/components",
           "app": "./src/app",
           "pages": "./src/pages",
-          "i18n": "./src/i18n"
+          "i18n": "./src/i18n",
+          "utils": "./src/utils"
         }
       }
     ]

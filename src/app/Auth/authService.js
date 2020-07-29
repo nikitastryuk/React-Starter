@@ -5,6 +5,6 @@ export function loginWithSecretKey({ secretKey }) {
     return new Error('Secret key is required');
   }
   return new Promise((resolve) =>
-    setTimeout(() => resolve({ user: 'userData' }), TIMEOUT_IN_SECONDS * 1000),
+    setTimeout(() => resolve({ user: 'user' }), TIMEOUT_IN_SECONDS * 1000),
   );
 }
