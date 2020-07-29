@@ -1,12 +1,9 @@
-export const styledMap = (...args) => (props) => {
-  const mapOfStyles = args[args.length - 1];
-  if (args[0] && typeof args[0] === 'string') {
-    const val = props[args[0]];
+import get from 'lodash.get';
 
-    return mapOfStyles[val]
-      ? mapOfStyles[val]
-      : new Error('Wrong property name');
+export const styledMap = (propertyName, stylesSet) => (props) => {
+  if (propertyName && typeof propertyName === 'string') {
+    const value = get(props, propertyName);
+    return get(stylesSet, value);
   }
-
-  return new Error('Property name is required');
+  throw new Error('Wrong arguments');
 };

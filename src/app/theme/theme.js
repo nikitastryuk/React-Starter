@@ -7,9 +7,9 @@ function createLightPalette() {
       white: '#fff',
     },
     primary: {
-      light: '#4791db',
-      main: '#1976d2',
-      dark: '#115293',
+      light: '#fafafa',
+      main: '#eee',
+      dark: '#e0e0e0',
     },
     secondary: {
       light: '#e33371',
@@ -46,9 +46,9 @@ function createDarkPalette() {
       white: '#fff',
     },
     primary: {
-      light: '#a6d4fa',
-      main: '#90caf9',
-      dark: '#648dae',
+      light: '#515154',
+      main: '#35363a',
+      dark: '#202124',
     },
     secondary: {
       light: '#f6a5c0',
