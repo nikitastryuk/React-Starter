@@ -5,7 +5,7 @@ export const styledMap = (...args) => (props) => {
 
     return mapOfStyles[val]
       ? mapOfStyles[val]
-      : new Error('Wrong property name is provided');
+      : new Error('Wrong property name');
   }
 
   return new Error('Property name is required');

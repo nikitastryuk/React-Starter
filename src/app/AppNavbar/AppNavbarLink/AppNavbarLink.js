@@ -4,12 +4,7 @@ import React from 'react';
 import { StyledAppNavbarLink } from './StyledAppNavbarLink';
 
 export const AppNavbarLink = ({ route }) => (
-  <StyledAppNavbarLink
-    activeClassName="active"
-    className="navbarLink"
-    exact={true}
-    to={route.path}
-  >
+  <StyledAppNavbarLink activeClassName="active" exact={true} to={route.path}>
     {route.label}
   </StyledAppNavbarLink>
 );
