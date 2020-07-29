@@ -1,8 +1,8 @@
 import { useContext } from 'react';
 
-import { ACTIONS, AuthContext } from './AuthProvider';
+import { ACTIONS, AuthContext } from 'app/auth/AuthProvider';
 
-import { loginWithSecretKey } from './authService';
+import { loginWithSecretKey } from 'app/auth/authService';
 
 export function useAuth() {
   const [state, dispatch] = useContext(AuthContext);

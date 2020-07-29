@@ -1,12 +1,12 @@
 import React from 'react';
 
-import { NavbarLink } from 'app/Navbar/NavbarLink/NavbarLink';
+import { AppNavbarLink } from 'app/AppNavbar/AppNavbarLink/AppNavbarLink';
 import { ROUTE_PATHS } from 'app/routes/routePaths';
 import { useTranslation } from 'react-i18next';
 
-import styles from './Navbar.css';
+import styles from './AppNavbar.css';
 
-export function Navbar() {
+export function AppNavbar() {
   const { t } = useTranslation();
 
   const NAVBAR_ROUTES = [
@@ -18,7 +18,7 @@ export function Navbar() {
   return (
     <nav className={styles.navbar}>
       {NAVBAR_ROUTES.map((route) => (
-        <NavbarLink key={`${route.path}.${route.label}`} route={route} />
+        <AppNavbarLink key={`${route.path}.${route.label}`} route={route} />
       ))}
     </nav>
   );

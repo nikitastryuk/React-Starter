@@ -5,7 +5,7 @@ import { render } from '@testing-library/react';
 import React from 'react';
 import userEvent from '@testing-library/user-event';
 
-import { AuthContext } from 'app/Auth/AuthProvider';
+import { AuthContext } from 'app/auth/AuthProvider';
 import { Login } from 'pages/Login/Login';
 import { ROUTE_PATHS } from 'app/routes/routePaths';
 import i18n from 'i18n/i18n';

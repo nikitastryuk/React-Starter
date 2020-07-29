@@ -1,8 +1,10 @@
 import PropTypes from 'prop-types';
 import React, { createContext, useReducer } from 'react';
 
+const LOCAL_STORAGE_KEY = 'user';
+
 export const initialState = {
-  user: localStorage.getItem('user') || null,
+  user: localStorage.getItem(LOCAL_STORAGE_KEY) || null,
   isLoading: false,
   error: null,
 };
@@ -26,7 +28,7 @@ export function authReducer(state, action) {
     }
     case ACTIONS.LOGIN_SUCCESS: {
       const { user } = action;
-      localStorage.setItem('user', user);
+      localStorage.setItem(LOCAL_STORAGE_KEY, user);
       return {
         user,
         isLoading: false,
