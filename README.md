@@ -2,10 +2,10 @@
 
 ## Tech Stack
 
-- React / React Router
+- React / React Router / Styled-components
 - React-i18next
 - EsLint / StyleLint / Prettier
-- Babel / Webpack / PostCss
+- Babel / Webpack 
 - Husky / Lint-staged
 - Jest / Cypress / Rtl
 
