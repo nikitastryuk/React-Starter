@@ -1,25 +1,10 @@
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
-const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const { merge } = require('webpack-merge');
 
-const { DIST_DIR, MODES } = require('./constants');
+const { MODES } = require('./constants');
+const commonConfig = require('./webpack.common.js');
 
-module.exports = {
+module.exports = merge(commonConfig, {
   mode: MODES.PRODUCTION,
-  devServer: {
-    contentBase: DIST_DIR,
-  },
-  module: {
-    rules: [
-      {
-        test: /\.css$/,
-        use: [MiniCssExtractPlugin.loader, 'css-loader'],
-      },
-    ],
-  },
-  plugins: [
-    new CleanWebpackPlugin(),
-    new MiniCssExtractPlugin({
-      filename: 'css/[name].css',
-    }),
-  ],
-};
+  plugins: [new CleanWebpackPlugin()],
+});

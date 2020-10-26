@@ -8,13 +8,13 @@ import { getTheme } from 'app/theme/theme';
 export function AppThemeProvider({ children }) {
   const [themeMode, setThemeMode] = useThemeMode();
   return (
-    <React.Fragment>
+    <>
       <ThemeProvider
         theme={{ themeMode, setThemeMode, ...getTheme(themeMode) }}
       >
         {children}
       </ThemeProvider>
-    </React.Fragment>
+    </>
   );
 }
 

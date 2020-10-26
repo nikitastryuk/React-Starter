@@ -1,14 +1,28 @@
 {
   "parser": "babel-eslint",
-  "extends": ["airbnb", "plugin:prettier/recommended", "prettier/react"],
+  // Extends uses a config file which applies set of rules.
+  "extends": [
+    "airbnb",
+    "airbnb/hooks",
+    "plugin:cypress/recommended",
+    "plugin:testing-library/recommended",
+    "plugin:jest/recommended",
+    "plugin:prettier/recommended",
+    // // If you extend a config which uses a plugin, it is recommended to add "prettier/that-plugin" (if available).
+    // // For example, eslint-config-airbnb enables eslint-plugin-react rules, so "prettier/react" is needed.
+    "prettier/react"
+  ],
+  // Plugin provides a set of rules to apply manually.
   "plugins": [
-    "prettier",
     "react",
     "react-hooks",
-    "sort-imports-es6-autofix",
+    "cypress",
+    "testing-library",
     "jest",
-    "cypress"
+    "prettier",
+    "sort-imports-es6-autofix"
   ],
+  // An environment defines global variables that are predefined.
   "env": {
     "browser": true,
     "node": true,
@@ -16,34 +30,32 @@
     "cypress/globals": true
   },
   "parserOptions": {
-    "ecmaVersion": 2020
+    "ecmaVersion": 2021
   },
   "rules": {
     "no-use-before-define": 1,
     "no-unused-vars": 1,
-    "jsx-a11y/control-has-associated-label": 0,
     // Imports
     "import/prefer-default-export": 0,
     "import/no-extraneous-dependencies": 0,
-    "import/no-dynamic-require": 0,
-    "global-require": 0,
     "sort-imports-es6-autofix/sort-imports-es6": [
       2,
       {
         "ignoreCase": false,
         "ignoreMemberSort": false,
-        "memberSyntaxSortOrder": ["none", "all", "multiple", "single"]
+        "memberSyntaxSortOrder": [
+          "none",
+          "all",
+          "multiple",
+          "single"
+        ]
       }
     ],
     // React
-    "react-hooks/rules-of-hooks": 2,
     "react-hooks/exhaustive-deps": 1,
     "react/jsx-filename-extension": 0,
-    "react/jsx-props-no-spreading": 0,
     "react/button-has-type": 0,
     "react/prop-types": 1,
-    "react/jsx-fragments": 0,
-    "react/jsx-boolean-value": 0,
     // Jest
     "jest/no-disabled-tests": 1,
     "jest/no-focused-tests": 2,
@@ -59,7 +71,9 @@
   "settings": {
     "import/resolver": {
       "node": {
-        "paths": ["src"]
+        "paths": [
+          "src"
+        ]
       }
     }
   }

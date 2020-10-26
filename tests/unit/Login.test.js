@@ -6,9 +6,9 @@ import React from 'react';
 import userEvent from '@testing-library/user-event';
 
 import { AppThemeProvider } from 'app/theme/ThemeProvider';
-import { AuthContext } from 'app/auth/AuthProvider';
+import { AuthContext } from 'app/Auth/AuthProvider';
 import { Login } from 'pages/Login/Login';
-import { ROUTE_PATHS } from 'app/routes/routePaths';
+import { ROUTE_PATHS } from 'app/Routes/routePaths';
 import i18n from 'i18n/i18n';
 
 function renderWithProviders(
