@@ -23,10 +23,10 @@ module.exports = {
     new webpack.ProgressPlugin({
       activeModules: true,
     }),
-    new ESLintPlugin(),
     new HtmlWebpackPlugin({
       template: APP_TEMPLATE,
       favicon: FAV_ICON,
     }),
+    new ESLintPlugin(),
   ],
 };

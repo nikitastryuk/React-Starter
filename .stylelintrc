@@ -1,8 +1,8 @@
 {
   "extends": [
-    "stylelint-config-styled-components",
     "stylelint-config-standard",
-    "stylelint-config-prettier",
+    "stylelint-config-styled-components",
     "stylelint-config-rational-order"
+    "stylelint-config-prettier",
   ]
 }
