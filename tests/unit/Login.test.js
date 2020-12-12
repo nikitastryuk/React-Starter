@@ -2,7 +2,6 @@ import { I18nextProvider } from 'react-i18next';
 import { Router } from 'react-router-dom';
 import { createMemoryHistory } from 'history';
 import { render } from '@testing-library/react';
-import React from 'react';
 import userEvent from '@testing-library/user-event';
 
 import { AppThemeProvider } from 'app/theme/ThemeProvider';
