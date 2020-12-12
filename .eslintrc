@@ -56,7 +56,7 @@
     "react/jsx-filename-extension": 0,
     "react/button-has-type": 0,
     "react/prop-types": 1,
-    "react/react-in-jsx-scope": 2,
+    "react/react-in-jsx-scope": 0,
     // Jest
     "jest/no-disabled-tests": 1,
     "jest/no-focused-tests": 2,

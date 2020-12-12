@@ -9,8 +9,6 @@ import { ThemeSwitcher } from 'components/ThemeSwitcher/ThemeSwitcher';
 
 import { StyledApp } from './StyledApp';
 
-console.log(2);
-
 export const App = () => {
   return (
     <AppThemeProvider>
