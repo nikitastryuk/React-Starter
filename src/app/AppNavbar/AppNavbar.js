@@ -1,5 +1,3 @@
-import React from 'react';
-
 import { AppNavbarLink } from 'app/AppNavbar/AppNavbarLink/AppNavbarLink';
 import { ROUTE_PATHS } from 'app/Routes/routePaths';
 import { useTranslation } from 'react-i18next';

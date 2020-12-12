@@ -1,5 +1,5 @@
 import { Redirect, useHistory } from 'react-router-dom';
-import React, { useState } from 'react';
+import { useState } from 'react';
 
 import { BUTTON_VARIANTS, Button } from 'components/Button/Button';
 import { Card } from 'components/Card/Card';
@@ -7,11 +7,7 @@ import { ROUTE_PATHS } from 'app/Routes/routePaths';
 import { useAuth } from 'app/Auth/useAuth';
 import { useTranslation } from 'react-i18next';
 
-import {
-  StyledLogin,
-  StyledLoginError,
-  StyledLoginLoading,
-} from './StyledLogin';
+import { StyledLogin, StyledLoginError, StyledLoginLoading } from './StyledLogin';
 
 export function Login() {
   const history = useHistory();
@@ -52,16 +48,8 @@ export function Login() {
     <StyledLogin>
       <Card>
         <h1>{t('login.mainText')}</h1>
-        <input
-          data-testid="secret-key-input"
-          value={secretKey}
-          onChange={(e) => setSecretKey(e.target.value)}
-        />
-        <Button
-          variant={BUTTON_VARIANTS.PRIMARY}
-          disabled={!secretKey}
-          onClick={handleLogin}
-        >
+        <input data-testid="secret-key-input" value={secretKey} onChange={(e) => setSecretKey(e.target.value)} />
+        <Button variant={BUTTON_VARIANTS.PRIMARY} disabled={!secretKey} onClick={handleLogin}>
           {t('login.buttonText')}
         </Button>
       </Card>

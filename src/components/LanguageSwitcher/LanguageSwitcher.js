@@ -1,5 +1,4 @@
 import { useTranslation } from 'react-i18next';
-import React from 'react';
 
 import { LANGUAGES } from 'i18n/i18n';
 
@@ -14,12 +13,8 @@ export function LanguageSwitcher() {
   }
   return (
     <StyledLanguageSwitcher>
-      <button onClick={() => changeLanguage(LANGUAGES.RU)}>
-        {LANGUAGES.RU}
-      </button>
-      <button onClick={() => changeLanguage(LANGUAGES.EN)}>
-        {LANGUAGES.EN}
-      </button>
+      <button onClick={() => changeLanguage(LANGUAGES.RU)}>{LANGUAGES.RU}</button>
+      <button onClick={() => changeLanguage(LANGUAGES.EN)}>{LANGUAGES.EN}</button>
     </StyledLanguageSwitcher>
   );
 }

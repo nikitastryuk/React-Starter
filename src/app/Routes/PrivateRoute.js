@@ -1,6 +1,5 @@
 import { Redirect, Route } from 'react-router-dom';
 import PropTypes from 'prop-types';
-import React from 'react';
 
 import { ROUTE_PATHS } from 'app/Routes/routePaths';
 import { useAuth } from 'app/Auth/useAuth';

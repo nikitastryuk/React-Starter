@@ -1,6 +1,5 @@
 import { Card } from 'components/Card/Card';
 import { useTranslation } from 'react-i18next';
-import React from 'react';
 
 import { StyledNotFound } from './StyledNotFound';
 

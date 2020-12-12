@@ -1,5 +1,4 @@
 import { Route, Switch } from 'react-router-dom';
-import React from 'react';
 
 import { Login } from 'pages/Login/Login';
 import { Logout } from 'pages/Logout/Logout';

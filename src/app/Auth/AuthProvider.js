@@ -1,5 +1,5 @@
+import { createContext, useReducer } from 'react';
 import PropTypes from 'prop-types';
-import React, { createContext, useReducer } from 'react';
 
 const LOCAL_STORAGE_KEY = 'user';
 
