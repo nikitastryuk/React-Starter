@@ -6,10 +6,10 @@ import { BrowserRouter } from 'react-router-dom';
 import { GlobalStyle } from 'app/GlobalStyle';
 import { LanguageSwitcher } from 'components/LanguageSwitcher/LanguageSwitcher';
 import { ThemeSwitcher } from 'components/ThemeSwitcher/ThemeSwitcher';
+import React from 'react';
 
 import { StyledApp } from './StyledApp';
 
-console.log(1);
 export const App = () => {
   return (
     <AppThemeProvider>
