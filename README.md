@@ -13,13 +13,12 @@
 > ### Babel
 >
 > - **@babel/core** // Compiler core
-> - **babel-eslint** // Compiler parser
 > - **@babel/plugin-proposal-nullish-coalescing-operator** // Enable let foo = object.foo ?? "default"; syntax.
 > - **@babel/plugin-proposal-optional-chaining** // Enable const baz = obj?.foo?.bar?; syntax.
 > - **@babel/plugin-syntax-dynamic-import** // Enable dynamic imports.
+> - **@babel/plugin-transform-runtime** // Enable async await support.
 > - **@babel/preset-env** // Allows to use the latest JavaScript and makes bundle smaller.
 > - **@babel/preset-react** // Allows to use React.
-> - **babel-loader**
 > - **babel-plugin-module-resolver** // Lets to specify all the folders you need shortcuts (aliases) for your module imports.
 > - **babel-plugin-styled-components** // Allows to use Styled-components.
 
@@ -34,6 +33,8 @@
 > - **clean-webpack-plugin** // Plugin to remove/clean your build folder(s).
 
 > ### EsLint
+>
+> - **babel-eslint** // Compiler parser
 >
 > #### Airbnb
 >

@@ -13,10 +13,7 @@ import i18n from 'i18n/i18n';
 
 function renderWithProviders(
   Component,
-  {
-    state = { user: null, loading: false, error: null },
-    mockedDispatch = jest.fn(),
-  },
+  { state = { user: null, loading: false, error: null }, mockedDispatch = jest.fn() },
 ) {
   // TODO: Centralize history object to guarantee that all test and application code is dealing with the same history object.
   const history = createMemoryHistory();
@@ -40,10 +37,7 @@ describe('Login page', () => {
   it('should suggest to login if there is no user', async () => {
     const mockedDispatch = jest.fn();
     const state = { user: null, loading: false, error: null };
-    const { getByText, getByRole, getByTestId } = renderWithProviders(
-      <Login />,
-      { state, mockedDispatch },
-    );
+    const { getByText, getByRole, getByTestId } = renderWithProviders(<Login />, { state, mockedDispatch });
     expect(getByText('Enter secret key to authorize')).toBeInTheDocument();
     const button = getByRole('button');
     expect(button).toBeDisabled();
