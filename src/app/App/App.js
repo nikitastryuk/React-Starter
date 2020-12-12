@@ -10,8 +10,6 @@ import React from 'react';
 
 import { StyledApp } from './StyledApp';
 
-console.log(1);
-
 export const App = () => {
   return (
     <AppThemeProvider>
