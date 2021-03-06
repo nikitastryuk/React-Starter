@@ -1,7 +1,7 @@
 import { useContext } from 'react';
 
-import { ACTIONS, AuthContext } from 'app/Auth/AuthProvider';
-import { AuthApi } from 'app/Auth/authApi';
+import { ACTIONS, AuthContext } from 'app/auth/AuthProvider';
+import { AuthApi } from 'app/auth/authApi';
 
 export function useAuth() {
   const [state, dispatch] = useContext(AuthContext);
@@ -11,10 +11,10 @@ export function useAuth() {
       dispatch({
         type: ACTIONS.LOGIN_START,
       });
-      const { user } = await AuthApi.login({ username: 'Username', password: secretKey });
+      const { data } = await AuthApi.login({ username: 'Username', password: secretKey });
       dispatch({
         type: ACTIONS.LOGIN_SUCCESS,
-        user,
+        user: data.username,
       });
     } catch (error) {
       dispatch({

@@ -3,8 +3,8 @@ import { useState } from 'react';
 
 import { BUTTON_VARIANTS, Button } from 'components/Button/Button';
 import { Card } from 'components/Card/Card';
-import { ROUTE_PATHS } from 'app/routes/routePaths';
-import { useAuth } from 'app/Auth/useAuth';
+import { ROUTE_PATHS } from 'app/routing/routePaths';
+import { useAuth } from 'app/auth/useAuth';
 import { useTranslation } from 'react-i18next';
 
 import { StyledLogin, StyledLoginError, StyledLoginLoading } from './StyledLogin';

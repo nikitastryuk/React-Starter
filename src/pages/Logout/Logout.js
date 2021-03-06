@@ -2,7 +2,7 @@ import { useTranslation } from 'react-i18next';
 
 import { BUTTON_VARIANTS, Button } from 'components/Button/Button';
 import { Card } from 'components/Card/Card';
-import { useAuth } from 'app/Auth/useAuth';
+import { useAuth } from 'app/auth/useAuth';
 
 import { StyledLogout } from './StyledLogout';
 

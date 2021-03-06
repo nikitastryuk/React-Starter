@@ -1,11 +1,11 @@
 import { Route } from 'react-router-dom';
 import { Switch } from 'react-router';
 
-import { RouteWithSubRoutes } from 'app/routes/RouteWithSubRoutes';
-import { routes } from 'app/routes/routes';
+import { RouteWithSubRoutes } from 'app/routing/RouteWithSubRoutes';
+import { routes } from 'app/routing/routes';
 import NotFound from 'pages/NotFound/NotFound';
 
-export const Router = () => {
+export function Router() {
   return (
     <Switch>
       {routes.map((route) => (
@@ -14,4 +14,4 @@ export const Router = () => {
       <Route component={NotFound} />
     </Switch>
   );
-};
+}

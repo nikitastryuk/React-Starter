@@ -2,10 +2,10 @@ import { Redirect, Route } from 'react-router-dom';
 import { Suspense } from 'react';
 import PropTypes from 'prop-types';
 
-import { ROUTE_PATHS } from 'app/routes/routePaths';
-import { useAuth } from 'app/Auth/useAuth';
+import { ROUTE_PATHS } from 'app/routing/routePaths';
+import { useAuth } from 'app/auth/useAuth';
 
-export const RouteWithSubRoutes = (route) => {
+export function RouteWithSubRoutes(route) {
   const [{ user }] = useAuth();
 
   return (
@@ -31,7 +31,7 @@ export const RouteWithSubRoutes = (route) => {
     }
     return route.component && <route.component {...props} routes={route.routes} />;
   }
-};
+}
 
 export const routeShape = PropTypes.shape({
   path: PropTypes.string.isRequired,
