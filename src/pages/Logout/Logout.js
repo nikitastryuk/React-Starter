@@ -1,16 +1,18 @@
+import { useDispatch } from 'react-redux';
+import { useTranslation } from 'react-i18next';
+
 import { BUTTON_VARIANTS, Button } from 'components/Button/Button';
 import { Card } from 'components/Card/Card';
-import { useAuth } from 'app/Auth/useAuth';
-import { useTranslation } from 'react-i18next';
+import { logOutUser } from 'store/auth/authActions';
 
 import { StyledLogout } from './StyledLogout';
 
 export default function Logout() {
-  const [, { logout }] = useAuth();
+  const dispatch = useDispatch();
   const { t } = useTranslation();
 
   function handleLogout() {
-    logout();
+    dispatch(logOutUser());
   }
 
   return (

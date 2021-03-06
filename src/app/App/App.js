@@ -1,29 +1,30 @@
-import { AppNavbar } from 'app/AppNavbar/AppNavbar';
+import { Provider } from 'react-redux';
 
+import { AppNavbar } from 'app/AppNavbar/AppNavbar';
 import { AppThemeProvider } from 'app/theme/ThemeProvider';
-import { AuthProvider } from 'app/Auth/AuthProvider';
 import { BrowserRouter } from 'react-router-dom';
 import { GlobalStyle } from 'app/GlobalStyle';
 import { LanguageSwitcher } from 'components/LanguageSwitcher/LanguageSwitcher';
 import { Router } from 'app/routes/Router';
 import { ThemeSwitcher } from 'components/ThemeSwitcher/ThemeSwitcher';
+import { store } from 'store/store';
 
 import { StyledApp } from './StyledApp';
 
-export const App = () => {
+export function App() {
   return (
-    <AppThemeProvider>
-      <GlobalStyle />
-      <BrowserRouter>
-        <AuthProvider>
+    <Provider store={store}>
+      <AppThemeProvider>
+        <GlobalStyle />
+        <BrowserRouter>
           <StyledApp>
             <LanguageSwitcher />
             <ThemeSwitcher />
             <AppNavbar />
             <Router />
           </StyledApp>
-        </AuthProvider>
-      </BrowserRouter>
-    </AppThemeProvider>
+        </BrowserRouter>
+      </AppThemeProvider>
+    </Provider>
   );
-};
+}

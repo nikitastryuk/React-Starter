@@ -1,10 +1,13 @@
 import { Redirect, useHistory } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
 import { useState } from 'react';
 
 import { BUTTON_VARIANTS, Button } from 'components/Button/Button';
 import { Card } from 'components/Card/Card';
 import { ROUTE_PATHS } from 'app/routes/routePaths';
-import { useAuth } from 'app/Auth/useAuth';
+// import { useAuth } from 'app/Auth/useAuth';
+import { loginUser } from 'store/auth/authActions';
+import { useAuth } from 'hooks/useAuth';
 import { useTranslation } from 'react-i18next';
 
 import { StyledLogin, StyledLoginError, StyledLoginLoading } from './StyledLogin';
@@ -12,20 +15,21 @@ import { StyledLogin, StyledLoginError, StyledLoginLoading } from './StyledLogin
 export default function Login() {
   const history = useHistory();
   const { t } = useTranslation();
+  const dispatch = useDispatch();
+  const { auth, isAuthenticated } = useAuth();
   const [secretKey, setSecretKey] = useState('');
-  const [{ user, isLoading, error }, actions] = useAuth();
 
-  if (error) {
+  if (auth.error) {
     return (
       <StyledLoginError>
         <Card>
-          <h1>{error}</h1>
+          <h1>{auth.error}</h1>
         </Card>
       </StyledLoginError>
     );
   }
 
-  if (isLoading) {
+  if (auth.loading) {
     return (
       <StyledLoginLoading>
         <Card>
@@ -35,12 +39,12 @@ export default function Login() {
     );
   }
 
-  if (user) {
+  if (isAuthenticated) {
     return <Redirect to={ROUTE_PATHS.MAIN} />;
   }
 
   async function handleLogin() {
-    await actions.login({ secretKey });
+    await dispatch(loginUser({ username: 'username', password: 'password' }));
     history.push(ROUTE_PATHS.MAIN);
   }
 
