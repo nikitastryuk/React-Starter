@@ -21,6 +21,7 @@
 > - **@babel/preset-react** // Allows to use React.
 > - **babel-plugin-module-resolver** // Lets to specify all the folders you need shortcuts (aliases) for your module imports.
 > - **babel-plugin-styled-components** // Allows to use Styled-components.
+> - **transform-react-remove-prop-types** // Removes Prop Types in production mode.
 
 > ### Webpack
 >

@@ -1,8 +1,8 @@
+import { BrowserRouter } from 'react-router-dom';
 import { Provider } from 'react-redux';
 
 import { AppNavbar } from 'app/AppNavbar/AppNavbar';
 import { AppThemeProvider } from 'app/theme/ThemeProvider';
-import { BrowserRouter } from 'react-router-dom';
 import { GlobalStyle } from 'app/GlobalStyle';
 import { LanguageSwitcher } from 'components/LanguageSwitcher/LanguageSwitcher';
 import { Router } from 'app/routes/Router';
