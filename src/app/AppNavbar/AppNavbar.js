@@ -1,5 +1,5 @@
 import { AppNavbarLink } from 'app/AppNavbar/AppNavbarLink/AppNavbarLink';
-import { ROUTE_PATHS } from 'app/Routes/routePaths';
+import { ROUTE_PATHS } from 'app/routes/routePaths';
 import { useTranslation } from 'react-i18next';
 
 import { StyledAppNavbar } from './StyledAppNavbar';

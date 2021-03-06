@@ -3,7 +3,7 @@ import { useTranslation } from 'react-i18next';
 
 import { StyledNotFound } from './StyledNotFound';
 
-export function NotFound() {
+export default function NotFound() {
   const { t } = useTranslation();
   return (
     <StyledNotFound>

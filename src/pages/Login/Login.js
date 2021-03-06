@@ -3,13 +3,13 @@ import { useState } from 'react';
 
 import { BUTTON_VARIANTS, Button } from 'components/Button/Button';
 import { Card } from 'components/Card/Card';
-import { ROUTE_PATHS } from 'app/Routes/routePaths';
+import { ROUTE_PATHS } from 'app/routes/routePaths';
 import { useAuth } from 'app/Auth/useAuth';
 import { useTranslation } from 'react-i18next';
 
 import { StyledLogin, StyledLoginError, StyledLoginLoading } from './StyledLogin';
 
-export function Login() {
+export default function Login() {
   const history = useHistory();
   const { t } = useTranslation();
   const [secretKey, setSecretKey] = useState('');

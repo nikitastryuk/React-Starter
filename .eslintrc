@@ -4,13 +4,10 @@
   "extends": [
     "airbnb",
     "airbnb/hooks",
+    "plugin:prettier/recommended",
     "plugin:cypress/recommended",
     "plugin:testing-library/recommended",
-    "plugin:jest/recommended",
-    "plugin:prettier/recommended",
-    // // If you extend a config which uses a plugin, it is recommended to add "prettier/that-plugin" (if available).
-    // // For example, eslint-config-airbnb enables eslint-plugin-react rules, so "prettier/react" is needed.
-    "prettier/react"
+    "plugin:jest/recommended"
   ],
   // Plugin provides a set of rules to apply manually.
   "plugins": [
@@ -33,7 +30,12 @@
     "ecmaVersion": 2021
   },
   "rules": {
-    "no-use-before-define": 1,
+    "no-use-before-define": [
+      2,
+      {
+        "functions": false
+      }
+    ],
     "no-unused-vars": 1,
     // Imports
     "import/prefer-default-export": 0,
@@ -57,6 +59,7 @@
     "react/button-has-type": 0,
     "react/prop-types": 1,
     "react/react-in-jsx-scope": 0,
+    "react/jsx-props-no-spreading": 0,
     // Jest
     "jest/no-disabled-tests": 1,
     "jest/no-focused-tests": 2,

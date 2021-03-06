@@ -8,7 +8,7 @@ module.exports = {
   entry: APP_ENTRY,
   output: {
     path: DIST_DIR,
-    filename: '[name].bundle.[chunkhash].js',
+    filename: '[name].bundle.[contenthash].js',
   },
   module: {
     rules: [

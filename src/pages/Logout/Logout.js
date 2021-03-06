@@ -5,7 +5,7 @@ import { useTranslation } from 'react-i18next';
 
 import { StyledLogout } from './StyledLogout';
 
-export function Logout() {
+export default function Logout() {
   const [, { logout }] = useAuth();
   const { t } = useTranslation();
 
