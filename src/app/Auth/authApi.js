@@ -1,7 +1,7 @@
 const REQUEST_TIMEOUT = 2000;
 
 export class AuthApi {
-  static loginUser({ username, password }) {
+  static login({ username, password }) {
     return new Promise((resolve, reject) =>
       setTimeout(() => {
         resolve({ data: { accessToken: 'accessToken', username: 'Nikita' } });

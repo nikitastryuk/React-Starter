@@ -3,10 +3,10 @@ import { Suspense } from 'react';
 import PropTypes from 'prop-types';
 
 import { ROUTE_PATHS } from 'app/routes/routePaths';
-import { useAuth } from 'hooks/useAuth';
+import { useAuth } from 'app/Auth/useAuth';
 
 export const RouteWithSubRoutes = (route) => {
-  const { isAuthenticated } = useAuth();
+  const [{ user }] = useAuth();
 
   return (
     <Suspense fallback={route.fallback ?? <div>Loading...</div>}>
@@ -23,7 +23,7 @@ export const RouteWithSubRoutes = (route) => {
       return <Redirect to={route.redirect} />;
     }
     if (route.private) {
-      return isAuthenticated ? (
+      return user ? (
         route.component && <route.component {...props} routes={route.routes} />
       ) : (
         <Redirect to={ROUTE_PATHS.LOGIN} />
