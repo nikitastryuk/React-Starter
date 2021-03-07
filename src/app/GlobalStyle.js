@@ -1,9 +1,15 @@
 import { createGlobalStyle } from 'styled-components';
 import reset from 'styled-reset';
 
+import BebasNeue from './BebasNeue-Regular.ttf';
+
 export const GlobalStyle = createGlobalStyle`
-  ${reset}
+  ${reset};
+  @font-face {
+    font-family: 'BebasNeue';
+    src: url(${BebasNeue}) format('truetype');
+  }
   body {
-    font-family: 'Bebas Neue', cursive;
+    font-family: 'BebasNeue', sans-serif;
   }
 `;
