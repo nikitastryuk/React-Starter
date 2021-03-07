@@ -12,6 +12,7 @@ export function AppNavbar() {
     { path: ROUTE_PATHS.LOGIN, label: t('navbar.login') },
     { path: ROUTE_PATHS.MAIN, label: t('navbar.main') },
     { path: ROUTE_PATHS.LOGOUT, label: t('navbar.logout') },
+    { path: ROUTE_PATHS.LOGOUT_SUB_ROUTE, label: 'Logout sub' },
   ];
 
   return (

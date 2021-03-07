@@ -5,9 +5,11 @@ import PropTypes from 'prop-types';
 import { ROUTE_PATHS } from 'app/routing/routePaths';
 import { useAuth } from 'app/auth/useAuth';
 
+// A special wrapper for <Route> that knows how to
+// handle "sub"-routes by passing them in a `routes`
+// prop to the component it renders.
 export function RouteWithSubRoutes(route) {
   const [{ user }] = useAuth();
-
   return (
     <Suspense fallback={route.fallback ?? <div>Loading...</div>}>
       <Route path={route.path} render={renderRoute} />

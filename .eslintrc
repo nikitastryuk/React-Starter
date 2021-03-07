@@ -29,7 +29,17 @@
   "parserOptions": {
     "ecmaVersion": 2021
   },
+  "settings": {
+    "import/resolver": {
+      "node": {
+        "paths": [
+          "src"
+        ]
+      }
+    }
+  },
   "rules": {
+    // Js
     "no-use-before-define": [
       2,
       {
@@ -37,6 +47,7 @@
       }
     ],
     "no-unused-vars": 1,
+    "no-debugger": 0,
     // Imports
     "import/prefer-default-export": 0,
     "import/no-extraneous-dependencies": 0,
@@ -71,14 +82,5 @@
     "cypress/no-unnecessary-waiting": 2,
     "cypress/assertion-before-screenshot": 1,
     "cypress/no-force": 1
-  },
-  "settings": {
-    "import/resolver": {
-      "node": {
-        "paths": [
-          "src"
-        ]
-      }
-    }
   }
 }
