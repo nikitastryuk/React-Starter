@@ -1,6 +1,7 @@
+import { LANGUAGES } from 'i18n/i18n';
 import { useTranslation } from 'react-i18next';
 
-import { LANGUAGES } from 'i18n/i18n';
+import { BUTTON_VARIANTS, Button } from 'components/Button/Button';
 
 import { StyledLanguageSwitcher } from './StyledLanguageSwitcher';
 
@@ -13,8 +14,12 @@ export function LanguageSwitcher() {
   }
   return (
     <StyledLanguageSwitcher>
-      <button onClick={() => changeLanguage(LANGUAGES.RU)}>{LANGUAGES.RU}</button>
-      <button onClick={() => changeLanguage(LANGUAGES.EN)}>{LANGUAGES.EN}</button>
+      <Button variant={BUTTON_VARIANTS.PRIMARY} onClick={() => changeLanguage(LANGUAGES.RU)}>
+        {LANGUAGES.RU}
+      </Button>
+      <Button variant={BUTTON_VARIANTS.PRIMARY} onClick={() => changeLanguage(LANGUAGES.EN)}>
+        {LANGUAGES.EN}
+      </Button>
     </StyledLanguageSwitcher>
   );
 }

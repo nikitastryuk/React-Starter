@@ -4,10 +4,8 @@ import styled from 'styled-components';
 
 import { ROUTE_PATHS } from 'app/routing/routePaths';
 
-import {
-  MainLayoutSidebarNavigationLink,
-  StyledMainLayoutSidebarNavigationLink,
-} from './MainLayoutSidebarNavigationLink';
+import { MainLayoutSidebarNavigationLink } from './MainLayoutSidebarNavigationLink';
+import { StyledMainLayoutSidebarNavigationLink } from './StyledMainLayoutSidebarNavigationLink';
 
 const StyledSidebarNavigation = styled.nav`
   display: flex;

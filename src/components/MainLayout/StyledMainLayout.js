@@ -12,6 +12,9 @@ export const StyledMainLayoutToolbar = styled.div`
   position: absolute;
   top: ${({ theme }) => theme.spacing(2)};
   right: ${({ theme }) => theme.spacing(2)};
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 `;
 
 export const StyledMainLayoutPage = styled.div`
@@ -20,7 +23,6 @@ export const StyledMainLayoutPage = styled.div`
   align-items: center;
   justify-content: center;
   height: 100%;
-  color: white;
   font-size: 150px;
   text-align: center;
 `;
