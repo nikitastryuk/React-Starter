@@ -20,7 +20,7 @@ const StyledSidebarNavigation = styled.nav`
 export function SidebarNavigation() {
   const { t } = useTranslation();
 
-  const NAVBAR_ROUTES = [
+  const SIDEBAR_ROUTES = [
     { path: ROUTE_PATHS.LOGIN, label: t('sidebar.navigation.login'), icon: <Apple /> },
     { path: ROUTE_PATHS.MAIN, label: t('sidebar.navigation.main'), icon: <Digg /> },
     { path: 'test1', label: 'Test 1', icon: <Amazon /> },
@@ -32,7 +32,7 @@ export function SidebarNavigation() {
 
   return (
     <StyledSidebarNavigation>
-      {NAVBAR_ROUTES.map((route) => (
+      {SIDEBAR_ROUTES.map((route) => (
         <MainLayoutSidebarNavigationLink key={`${route.path}.${route.label}`} route={route} />
       ))}
     </StyledSidebarNavigation>

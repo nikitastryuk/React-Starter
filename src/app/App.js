@@ -16,8 +16,8 @@ const queryClient = new QueryClient();
 function AppRoutes() {
   return (
     <Switch>
-      {routes.map((route) => (
-        <RouteWithSubRoutes key={route.path} {...route} />
+      {routes.map((route, index) => (
+        <RouteWithSubRoutes key={`${route.path}${index}`} {...route} />
       ))}
       <Route component={NotFound} />
     </Switch>

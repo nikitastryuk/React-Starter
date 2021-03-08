@@ -1,18 +1,18 @@
 import PropTypes from 'prop-types';
 
 import {
-  StyledAppNavbarLinkContent,
-  StyledAppNavbarLinkLabel,
+  StyleMainLayoutSidebarNavigationLinkContent,
+  StyleMainLayoutSidebarNavigationLinkLabel,
   StyledMainLayoutSidebarNavigationLink,
 } from './StyledMainLayoutSidebarNavigationLink';
 
 export function MainLayoutSidebarNavigationLink({ route }) {
   return (
     <StyledMainLayoutSidebarNavigationLink activeClassName="active" exact to={route.path}>
-      <StyledAppNavbarLinkContent>
+      <StyleMainLayoutSidebarNavigationLinkContent>
         {route.icon}
-        <StyledAppNavbarLinkLabel>{route.label}</StyledAppNavbarLinkLabel>
-      </StyledAppNavbarLinkContent>
+        <StyleMainLayoutSidebarNavigationLinkLabel>{route.label}</StyleMainLayoutSidebarNavigationLinkLabel>
+      </StyleMainLayoutSidebarNavigationLinkContent>
     </StyledMainLayoutSidebarNavigationLink>
   );
 }

@@ -9,11 +9,11 @@ const borderColor = theming('themeMode', {
   [THEME_MODES.DARK]: ({ theme }) => theme.palette.common.white,
 });
 
-export const StyledAppNavbarLinkLabel = styled.span`
+export const StyleMainLayoutSidebarNavigationLinkLabel = styled.span`
   margin-left: ${({ theme }) => theme.spacing(2)};
 `;
 
-export const StyledAppNavbarLinkContent = styled.div`
+export const StyleMainLayoutSidebarNavigationLinkContent = styled.div`
   display: flex;
   align-items: center;
 `;

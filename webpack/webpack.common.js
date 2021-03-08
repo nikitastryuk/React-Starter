@@ -31,6 +31,6 @@ module.exports = {
       template: APP_TEMPLATE,
       favicon: FAV_ICON,
     }),
-    new ESLintPlugin(),
+    new ESLintPlugin({ failOnError: false }),
   ],
 };
