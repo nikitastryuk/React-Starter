@@ -2,7 +2,7 @@ const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ESLintPlugin = require('eslint-webpack-plugin');
 
-const { APP_ENTRY, DIST_DIR, APP_TEMPLATE, FAV_ICON } = require('./constants');
+const { APP_ENTRY, DIST_DIR, APP_TEMPLATE, FAV_ICON } = require('./webpack.constants');
 
 module.exports = {
   entry: APP_ENTRY,

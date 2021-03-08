@@ -7,7 +7,7 @@ import userEvent from '@testing-library/user-event';
 import { AppThemeProvider } from 'app/theme/ThemeProvider';
 import { AuthContext } from 'app/auth/AuthProvider';
 import { ROUTE_PATHS } from 'app/routing/routePaths';
-import Login from 'pages/Login/Login';
+import Login from 'pages/Login';
 import i18n from 'i18n/i18n';
 
 function renderWithProviders(

@@ -6,21 +6,21 @@ export const en = {
       items: '(0)[no items];(1)[one item];(2-7)[a few items];(7-inf)[a lot of items];',
     },
     login: {
+      title: 'Press button to authorize',
       buttonText: 'Login',
       loading: 'Loading...',
-      mainText: 'Enter secret key to authorize',
-    },
-    logout: {
-      title: 'Logout',
-      buttonText: 'Logout',
     },
     notFound: {
       title: 'Not found',
     },
-    navbar: {
+    sidebar: {
       login: 'Login',
       main: 'Main',
-      logout: 'Logout',
+      logout: 'Log out',
+      navigation: {
+        login: 'Login',
+        main: 'Main',
+      },
     },
   },
 };

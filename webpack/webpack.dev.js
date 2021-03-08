@@ -1,7 +1,7 @@
 const webpack = require('webpack');
 const { merge } = require('webpack-merge');
 
-const { DIST_DIR, MODES } = require('./constants');
+const { DIST_DIR, MODES } = require('./webpack.constants');
 const commonConfig = require('./webpack.common.js');
 
 module.exports = merge(commonConfig, {

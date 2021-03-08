@@ -1,15 +1,16 @@
 import { createGlobalStyle } from 'styled-components';
 import reset from 'styled-reset';
 
-import BebasNeue from './BebasNeue-Regular.ttf';
+import Roboto from '../assets/fonts/Roboto-Regular.ttf';
 
 export const GlobalStyle = createGlobalStyle`
   ${reset};
+
   @font-face {
-    font-family: 'BebasNeue';
-    src: url(${BebasNeue}) format('truetype');
+    font-family: 'Roboto';
+    src: url(${Roboto}) format('truetype');
   }
   body {
-    font-family: 'BebasNeue', sans-serif;
+    font-family: 'Roboto', sans-serif;
   }
 `;

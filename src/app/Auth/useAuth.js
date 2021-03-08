@@ -6,12 +6,12 @@ import { AuthApi } from 'app/auth/authApi';
 export function useAuth() {
   const [state, dispatch] = useContext(AuthContext);
 
-  async function login({ secretKey }) {
+  async function login() {
     try {
       dispatch({
         type: ACTIONS.LOGIN_START,
       });
-      const { data } = await AuthApi.login({ username: 'Username', password: secretKey });
+      const { data } = await AuthApi.login({ username: 'Username', password: 'Password' });
       dispatch({
         type: ACTIONS.LOGIN_SUCCESS,
         user: data.username,
