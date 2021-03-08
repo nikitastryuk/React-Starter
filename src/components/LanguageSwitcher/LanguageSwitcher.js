@@ -6,10 +6,6 @@ import { BUTTON_VARIANTS, Button } from 'components/Button/Button';
 export function LanguageSwitcher() {
   const { i18n } = useTranslation();
 
-  function changeLanguage(lng) {
-    i18n.changeLanguage(lng);
-    localStorage.setItem('lng', lng);
-  }
   return (
     <div>
       <Button variant={BUTTON_VARIANTS.PRIMARY} onClick={() => changeLanguage(LANGUAGES.RU)}>
@@ -20,4 +16,9 @@ export function LanguageSwitcher() {
       </Button>
     </div>
   );
+
+  function changeLanguage(lng) {
+    i18n.changeLanguage(lng);
+    localStorage.setItem('lng', lng);
+  }
 }

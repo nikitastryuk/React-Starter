@@ -36,14 +36,9 @@ describe('Login page', () => {
   it('should suggest to login if there is no user', async () => {
     const mockedDispatch = jest.fn();
     const state = { user: null, loading: false, error: null };
-    const { getByText, getByRole, getByTestId } = renderWithProviders(<Login />, { state, mockedDispatch });
-    expect(getByText('Enter secret key to authorize')).toBeInTheDocument();
+    const { getByText, getByRole } = renderWithProviders(<Login />, { state, mockedDispatch });
+    expect(getByText('Press button to authorize')).toBeInTheDocument();
     const button = getByRole('button');
-    expect(button).toBeDisabled();
-    const input = getByTestId('secret-key-input');
-    userEvent.paste(input, 'secret key');
-    expect(input).toHaveValue('secret key');
-    expect(button).toBeEnabled();
     userEvent.click(button);
     expect(mockedDispatch).toHaveBeenCalled();
   });

@@ -11,6 +11,7 @@ export const GlobalStyle = createGlobalStyle`
     src: url(${Roboto}) format('truetype');
   }
   body {
+    overflow: hidden;
     font-family: 'Roboto', sans-serif;
   }
 `;
