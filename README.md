@@ -22,8 +22,8 @@ After installing modules, you're ready to start the project!
 | `build`        | Builds the application to ./dist                               |
 | `test:unit`    | Runs all unit tests                                            |
 | `cypress`      | Opens cypress                                                  |
-| `lint:js`      | Runs linter for js                                             |
-| `lint:style`   | Runs linter for js                                             |
+| `lint:js`      | Runs eslint                                                    |
+| `lint:style`   | Runs stylelint                                                 |
 
 ## Deploy
 
