@@ -1,16 +1,17 @@
 import { useTranslation } from 'react-i18next';
-import i18n from 'i18n/i18n';
 
 import { StyledMainLayoutPage } from 'components/MainLayout/StyledMainLayout';
 
-const TEST = i18n.t('main.hi');
+const TEST_LABELS = {
+  HI: 'main.title',
+};
 
 export default function Main() {
   const { t } = useTranslation();
 
   return (
     <StyledMainLayoutPage>
-      {TEST}
+      {t(TEST_LABELS.HI)}
       <h1>{t('main.title')}</h1>
       <h1>{t('main.items', { postProcess: 'interval', count: 0 })}</h1>
     </StyledMainLayoutPage>

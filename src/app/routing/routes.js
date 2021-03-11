@@ -11,6 +11,7 @@ export const routes = [
       {
         path: ROUTE_PATHS.LOGIN,
         component: Login,
+        redirect: '/',
         exact: true,
       },
       {
