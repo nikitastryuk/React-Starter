@@ -14,7 +14,6 @@ export const en = {
       title: 'Not found',
     },
     sidebar: {
-      login: 'Login',
       main: 'Main',
       logout: 'Log out',
       navigation: {

@@ -24,10 +24,8 @@ export default class LocalStorage {
     localStorage.removeItem(key);
   }
 
-  static clearAll() {
-    const allItems = { ...this.getAllItems() };
+  static clear() {
     localStorage.clear();
-    return allItems;
   }
 
   static getAllItems() {

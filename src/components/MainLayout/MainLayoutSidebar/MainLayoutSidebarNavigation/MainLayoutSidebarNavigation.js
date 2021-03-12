@@ -1,4 +1,4 @@
-import { Airbnb, Algolia, Amazon, Apple, CreativeCommons, Digg, Figma } from '@styled-icons/boxicons-logos';
+import { Airbnb, Algolia, Amazon, CreativeCommons, Digg, Figma } from '@styled-icons/boxicons-logos';
 import { useTranslation } from 'react-i18next';
 import styled from 'styled-components';
 
@@ -21,7 +21,6 @@ export function SidebarNavigation() {
   const { t } = useTranslation();
 
   const SIDEBAR_ROUTES = [
-    { path: ROUTE_PATHS.LOGIN, label: t('sidebar.navigation.login'), icon: <Apple /> },
     { path: ROUTE_PATHS.MAIN, label: t('sidebar.navigation.main'), icon: <Digg /> },
     { path: 'test1', label: 'Test 1', icon: <Amazon /> },
     { path: 'test2', label: 'Test 2', icon: <Algolia /> },

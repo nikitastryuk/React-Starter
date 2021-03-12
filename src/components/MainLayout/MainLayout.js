@@ -1,15 +1,12 @@
-import { Route, Switch } from 'react-router';
 import PropTypes from 'prop-types';
 
 import { LanguageSwitcher } from 'components/LanguageSwitcher/LanguageSwitcher';
 import { MainLayoutSidebar } from 'components/MainLayout/MainLayoutSidebar/MainLayoutSidebar';
-import { RouteWithSubRoutes, routeShape } from 'app/routing/RouteWithSubRoutes';
 import { ThemeSwitcher } from 'components/ThemeSwitcher/ThemeSwitcher';
-import NotFound from 'pages/NotFound';
 
 import { StyledMainLayout, StyledMainLayoutContent, StyledMainLayoutToolbar } from './StyledMainLayout';
 
-export function MainLayout({ routes }) {
+export function MainLayout({ children }) {
   return (
     <StyledMainLayout>
       <MainLayoutSidebar />
@@ -18,18 +15,11 @@ export function MainLayout({ routes }) {
         <ThemeSwitcher />
       </StyledMainLayoutToolbar>
 
-      <StyledMainLayoutContent>
-        <Switch>
-          {routes.map((route) => (
-            <RouteWithSubRoutes key={route.path} {...route} />
-          ))}
-          <Route component={NotFound} />
-        </Switch>
-      </StyledMainLayoutContent>
+      <StyledMainLayoutContent>{children}</StyledMainLayoutContent>
     </StyledMainLayout>
   );
 }
 
 MainLayout.propTypes = {
-  routes: PropTypes.arrayOf(routeShape).isRequired,
+  children: PropTypes.node.isRequired,
 };

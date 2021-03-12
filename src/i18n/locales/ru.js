@@ -14,7 +14,6 @@ export const ru = {
       title: 'Не найдено',
     },
     sidebar: {
-      login: 'Логин',
       main: 'Главная',
       logout: 'Выйти',
       navigation: {
