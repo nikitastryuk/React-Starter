@@ -27,14 +27,4 @@ export default class LocalStorage {
   static clear() {
     localStorage.clear();
   }
-
-  static getAllItems() {
-    return Object.keys(localStorage).reduce(
-      (previous, current) => ({
-        ...previous,
-        [current]: this.getItem(current),
-      }),
-      {},
-    );
-  }
 }

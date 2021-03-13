@@ -48,7 +48,7 @@ export default function Login() {
   );
 
   async function handleLogin() {
-    await actions.login();
+    await actions.loginUser();
     history.push(ROUTE_PATHS.MAIN);
   }
 }

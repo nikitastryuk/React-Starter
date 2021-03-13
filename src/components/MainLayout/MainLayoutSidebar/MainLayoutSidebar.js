@@ -11,7 +11,7 @@ import {
 
 export function MainLayoutSidebar() {
   const { t } = useTranslation();
-  const [, { logout }] = useAuth();
+  const [, actions] = useAuth();
 
   return (
     <StyledMainLayoutSidebar>
@@ -24,6 +24,6 @@ export function MainLayoutSidebar() {
   );
 
   function handleLogout() {
-    logout();
+    actions.logoutUser();
   }
 }

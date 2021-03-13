@@ -1,69 +1,82 @@
-import { createContext, useReducer } from 'react';
+import { createContext, useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 
-const LOCAL_STORAGE_KEY = 'user';
-
-export const initialState = {
-  user: localStorage.getItem(LOCAL_STORAGE_KEY) || null,
-  isLoading: false,
-  error: null,
-};
+import { ACCESS_TOKEN_LS_KEY, REFRESH_TOKEN_LS_KEY } from 'constants';
+import { AuthApi } from 'app/auth/authApi';
+import ls from 'utils/localStorage';
 
 export const AuthContext = createContext();
 
-export const ACTIONS = {
-  LOGIN_START: 'LOGIN_START',
-  LOGIN_SUCCESS: 'LOGIN_SUCCESS',
-  LOGIN_ERROR: 'LOGIN_ERROR',
-  LOGOUT: 'LOGOUT',
-};
+export function AuthProvider({ children }) {
+  // TODO: Use useAsync hook for data/loading/error state
+  const [user, setUser] = useState(null);
+  const [isLoading, setIsLoading] = useState(null);
+  const [isUserLoading, setIsUserLoading] = useState(false);
+  const [error, setError] = useState(null);
 
-export function authReducer(state, action) {
-  switch (action.type) {
-    case ACTIONS.LOGIN_START: {
-      return {
-        error: null,
-        isLoading: true,
-      };
+  useEffect(() => {
+    if (ls.getItem(ACCESS_TOKEN_LS_KEY) && ls.getItem(REFRESH_TOKEN_LS_KEY)) {
+      getUser();
     }
-    case ACTIONS.LOGIN_SUCCESS: {
-      const { user } = action;
-      localStorage.setItem(LOCAL_STORAGE_KEY, user);
-      return {
-        user,
-        isLoading: false,
-        error: null,
-      };
-    }
+  }, []);
 
-    case ACTIONS.LOGOUT: {
-      localStorage.clear();
-      return {
-        user: null,
-        error: null,
-        isLoading: false,
-      };
-    }
+  // TODO: Loading styles/translation
+  if (isUserLoading) {
+    return 'Loading...';
+  }
 
-    case ACTIONS.LOGIN_ERROR: {
-      const error = action.payload;
-      localStorage.clear();
-      return {
-        user: null,
-        error,
-        isLoading: false,
-      };
-    }
+  return (
+    <AuthContext.Provider
+      value={[
+        { user, isLoading, error },
+        { loginUser, logoutUser, refreshUserToken },
+      ]}
+    >
+      {children}
+    </AuthContext.Provider>
+  );
 
-    default: {
-      return new Error('Wrong action');
+  async function loginUser() {
+    try {
+      setIsLoading(true);
+      const { data } = await AuthApi.loginUser({ username: 'Username', password: 'Password' });
+      setAuthTokens(data);
+      setUser(data.user);
+    } catch (e) {
+      setError(e);
+    }
+    setIsLoading(false);
+  }
+
+  async function getUser() {
+    setIsUserLoading(true);
+    const { data } = await AuthApi.getUser();
+    setUser(data.user);
+    setIsUserLoading(false);
+  }
+
+  async function refreshUserToken() {
+    try {
+      const response = await AuthApi.refreshUserToken({ refreshToken: ls.getItem(REFRESH_TOKEN_LS_KEY) });
+      setAuthTokens(response.data);
+      return response.data.accessToken;
+    } catch (e) {
+      return logoutUser();
     }
   }
-}
 
-export function AuthProvider({ children }) {
-  const value = useReducer(authReducer, initialState);
-  return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
+  async function logoutUser() {
+    setUser(null);
+    ls.removeItem(ACCESS_TOKEN_LS_KEY);
+    ls.removeItem(REFRESH_TOKEN_LS_KEY);
+    // Do not await (supposed to reset tokens on backend)
+    AuthApi.logoutUser();
+  }
+
+  function setAuthTokens({ refreshToken, accessToken }) {
+    ls.setItem(ACCESS_TOKEN_LS_KEY, accessToken);
+    ls.setItem(REFRESH_TOKEN_LS_KEY, refreshToken);
+  }
 }
 
 AuthProvider.propTypes = {
