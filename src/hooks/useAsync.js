@@ -1,14 +1,11 @@
-import { useCallback, useState } from 'react';
+import { useCallback } from 'react';
 
-// Example usage:
-// const {data, error, status, run} = useAsync()
-// React.useEffect(() => {
-//   run(fetchData())
-// }, [run])
+import { useSafeState } from 'hooks/useSafeState';
+
 function useAsync(initialState) {
-  const [data, setData] = useState(initialState?.data ?? null);
-  const [isLoading, setIsLoading] = useState(initialState?.isLoading ?? false);
-  const [error, setError] = useState(initialState?.error ?? null);
+  const [data, setData] = useSafeState(initialState?.data ?? null);
+  const [isLoading, setIsLoading] = useSafeState(initialState?.isLoading ?? false);
+  const [error, setError] = useSafeState(initialState?.error ?? null);
 
   const run = useCallback(
     async (promise) => {

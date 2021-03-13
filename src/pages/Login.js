@@ -1,9 +1,7 @@
-import { useHistory } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import styled from 'styled-components';
 
 import { BUTTON_VARIANTS, Button } from 'components/Button/Button';
-import { ROUTE_PATHS } from 'app/routing/routePaths';
 import { StyledMainLayoutPage } from 'components/MainLayout/StyledMainLayout';
 import { useAsync } from 'hooks/useAsync';
 import { useAuth } from 'hooks/useAuth';
@@ -13,7 +11,6 @@ const StyledLogin = styled.nav`
 `;
 
 export default function Login() {
-  const history = useHistory();
   const { t } = useTranslation();
   const { loginUser } = useAuth();
   const { isLoading, run, error } = useAsync();
@@ -46,7 +43,6 @@ export default function Login() {
   );
 
   async function handleLogin() {
-    await run(loginUser());
-    history.push(ROUTE_PATHS.MAIN);
+    run(loginUser());
   }
 }

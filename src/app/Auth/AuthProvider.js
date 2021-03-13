@@ -36,6 +36,7 @@ export function AuthProvider({ children }) {
   async function loginUser() {
     const { data } = await AuthApi.loginUser({ username: 'Username', password: 'Password' });
     setAuthTokens(data);
+    // This triggers AuthenticatedApp Redirect before loginUser ends
     setData(data.user);
   }
 
