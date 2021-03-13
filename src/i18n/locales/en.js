@@ -5,6 +5,9 @@ export const en = {
       title: 'Main',
       items: '(0)[no items];(1)[one item];(2-7)[a few items];(7-inf)[a lot of items];',
     },
+    auth: {
+      loading: 'Loading...',
+    },
     login: {
       title: 'Press button to authorize',
       buttonText: 'Login',

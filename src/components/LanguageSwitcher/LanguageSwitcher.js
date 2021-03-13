@@ -19,6 +19,5 @@ export function LanguageSwitcher() {
 
   function changeLanguage(lng) {
     i18n.changeLanguage(lng);
-    localStorage.setItem('lng', lng);
   }
 }

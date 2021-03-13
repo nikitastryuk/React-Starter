@@ -6,7 +6,7 @@
 
 import axios from 'utils/axios';
 
-const REQUEST_TIMEOUT = 2000;
+const REQUEST_TIMEOUT = 1500;
 
 const USER = {
   id: 1,
@@ -26,6 +26,16 @@ export class AuthApi {
         });
       }, REQUEST_TIMEOUT),
     );
+  }
+
+  static loginUserSync({ username, password }) {
+    return {
+      data: {
+        accessToken: 'accessToken',
+        refreshToken: 'refreshToken',
+        user: USER,
+      },
+    };
   }
 
   static getUser() {

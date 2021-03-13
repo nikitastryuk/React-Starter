@@ -1,11 +1,12 @@
-import { Redirect, useHistory } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import styled from 'styled-components';
 
 import { BUTTON_VARIANTS, Button } from 'components/Button/Button';
 import { ROUTE_PATHS } from 'app/routing/routePaths';
 import { StyledMainLayoutPage } from 'components/MainLayout/StyledMainLayout';
-import { useAuth } from 'app/auth/useAuth';
+import { useAsync } from 'hooks/useAsync';
+import { useAuth } from 'hooks/useAuth';
 
 const StyledLogin = styled.nav`
   display: flex;
@@ -14,7 +15,8 @@ const StyledLogin = styled.nav`
 export default function Login() {
   const history = useHistory();
   const { t } = useTranslation();
-  const [{ user, isLoading, error }, actions] = useAuth();
+  const { loginUser } = useAuth();
+  const { isLoading, run, error } = useAsync();
 
   if (error) {
     return (
@@ -32,10 +34,6 @@ export default function Login() {
     );
   }
 
-  if (user) {
-    return <Redirect to={ROUTE_PATHS.MAIN} />;
-  }
-
   return (
     <StyledMainLayoutPage>
       <StyledLogin>
@@ -48,7 +46,7 @@ export default function Login() {
   );
 
   async function handleLogin() {
-    await actions.loginUser();
+    await run(loginUser());
     history.push(ROUTE_PATHS.MAIN);
   }
 }

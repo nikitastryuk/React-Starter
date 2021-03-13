@@ -1,8 +1,9 @@
 import { useTranslation } from 'react-i18next';
 
-import { useAuth } from 'app/auth/useAuth';
+import { useAuth } from 'hooks/useAuth';
 
 import { SidebarNavigation } from './MainLayoutSidebarNavigation/MainLayoutSidebarNavigation';
+
 import {
   StyledMainLayoutSidebar,
   StyledMainLayoutSidebarLogo,
@@ -11,7 +12,7 @@ import {
 
 export function MainLayoutSidebar() {
   const { t } = useTranslation();
-  const [, actions] = useAuth();
+  const { logoutUser } = useAuth();
 
   return (
     <StyledMainLayoutSidebar>
@@ -24,6 +25,6 @@ export function MainLayoutSidebar() {
   );
 
   function handleLogout() {
-    actions.logoutUser();
+    logoutUser();
   }
 }

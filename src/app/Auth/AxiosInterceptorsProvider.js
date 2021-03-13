@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 
 import { ACCESS_TOKEN_LS_KEY, REFRESH_TOKEN_LS_KEY } from 'constants';
-import { useAuth } from 'app/auth/useAuth';
+import { useAuth } from 'hooks/useAuth';
 import axios from 'utils/axios';
 import ls from 'utils/localStorage';
 
@@ -16,7 +16,7 @@ const AUTHORIZATION_PREFIX = 'Bearer';
 // 4. No/Expired/Invalid refresh token - 401, logout()
 
 export function AxiosInterceptorsProvider({ children }) {
-  const [, { logoutUser, refreshUserToken }] = useAuth();
+  const { logoutUser, refreshUserToken } = useAuth();
 
   useEffect(() => {
     // Request interceptor for API calls

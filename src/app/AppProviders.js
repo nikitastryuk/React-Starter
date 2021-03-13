@@ -14,15 +14,15 @@ const queryClient = new QueryClient();
 export function AppProviders({ children }) {
   return (
     <QueryClientProvider client={queryClient}>
-      <AuthProvider>
-        <AxiosInterceptorsProvider>
-          <AppThemeProvider>
-            <GlobalStyle />
-            <BrowserRouter>{children}</BrowserRouter>
-          </AppThemeProvider>
-        </AxiosInterceptorsProvider>
-      </AuthProvider>
-      <ReactQueryDevtools />
+      <AppThemeProvider>
+        <GlobalStyle />
+        <BrowserRouter>
+          <AuthProvider>
+            <AxiosInterceptorsProvider>{children}</AxiosInterceptorsProvider>
+          </AuthProvider>
+        </BrowserRouter>
+        <ReactQueryDevtools />
+      </AppThemeProvider>
     </QueryClientProvider>
   );
 }

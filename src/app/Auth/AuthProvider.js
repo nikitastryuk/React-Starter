@@ -1,58 +1,42 @@
-import { createContext, useEffect, useState } from 'react';
+import { createContext, useEffect } from 'react';
+import { useTranslation } from 'react-i18next';
 import PropTypes from 'prop-types';
 
 import { ACCESS_TOKEN_LS_KEY, REFRESH_TOKEN_LS_KEY } from 'constants';
 import { AuthApi } from 'app/auth/authApi';
+import { StyledApp } from 'app/StyledApp';
+import { StyledMainLayoutPage } from 'components/MainLayout/StyledMainLayout';
+import { useAsync } from 'hooks/useAsync';
 import ls from 'utils/localStorage';
 
 export const AuthContext = createContext();
 
 export function AuthProvider({ children }) {
-  // TODO: Use useAsync hook for data/loading/error state
-  const [user, setUser] = useState(null);
-  const [isLoading, setIsLoading] = useState(null);
-  const [isUserLoading, setIsUserLoading] = useState(false);
-  const [error, setError] = useState(null);
+  const { t } = useTranslation();
+  const { data: user, setData, isLoading, run } = useAsync({ isLoading: !!areAuthTokensPresent() });
 
   useEffect(() => {
-    if (ls.getItem(ACCESS_TOKEN_LS_KEY) && ls.getItem(REFRESH_TOKEN_LS_KEY)) {
-      getUser();
+    if (areAuthTokensPresent()) {
+      run(AuthApi.getUser());
     }
-  }, []);
+  }, [run]);
 
-  // TODO: Loading styles/translation
-  if (isUserLoading) {
-    return 'Loading...';
+  if (isLoading) {
+    return (
+      <StyledApp>
+        <StyledMainLayoutPage style={{ height: '100vh' }}>{t('auth.loading')}</StyledMainLayoutPage>;
+      </StyledApp>
+    );
   }
 
   return (
-    <AuthContext.Provider
-      value={[
-        { user, isLoading, error },
-        { loginUser, logoutUser, refreshUserToken },
-      ]}
-    >
-      {children}
-    </AuthContext.Provider>
+    <AuthContext.Provider value={{ user, loginUser, logoutUser, refreshUserToken }}>{children}</AuthContext.Provider>
   );
 
   async function loginUser() {
-    try {
-      setIsLoading(true);
-      const { data } = await AuthApi.loginUser({ username: 'Username', password: 'Password' });
-      setAuthTokens(data);
-      setUser(data.user);
-    } catch (e) {
-      setError(e);
-    }
-    setIsLoading(false);
-  }
-
-  async function getUser() {
-    setIsUserLoading(true);
-    const { data } = await AuthApi.getUser();
-    setUser(data.user);
-    setIsUserLoading(false);
+    const { data } = await AuthApi.loginUser({ username: 'Username', password: 'Password' });
+    setAuthTokens(data);
+    setData(data.user);
   }
 
   async function refreshUserToken() {
@@ -66,7 +50,7 @@ export function AuthProvider({ children }) {
   }
 
   async function logoutUser() {
-    setUser(null);
+    setData(null);
     ls.removeItem(ACCESS_TOKEN_LS_KEY);
     ls.removeItem(REFRESH_TOKEN_LS_KEY);
     // Do not await (supposed to reset tokens on backend)
@@ -76,6 +60,10 @@ export function AuthProvider({ children }) {
   function setAuthTokens({ refreshToken, accessToken }) {
     ls.setItem(ACCESS_TOKEN_LS_KEY, accessToken);
     ls.setItem(REFRESH_TOKEN_LS_KEY, refreshToken);
+  }
+
+  function areAuthTokensPresent() {
+    return !!(ls.getItem(ACCESS_TOKEN_LS_KEY) && ls.getItem(REFRESH_TOKEN_LS_KEY));
   }
 }
 
