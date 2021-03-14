@@ -11,7 +11,9 @@ export const THEME_MODES = {
 const DEFAULT_THEME_MODE = THEME_MODES.DARK;
 
 export const useThemeMode = () => {
-  const [themeMode, setThemeMode] = useState(ls.getItem(THEME_LS_KEY) ?? DEFAULT_THEME_MODE);
+  // https://reactjs.org/docs/hooks-reference.html#lazy-initial-state
+  // Lazy initial state
+  const [themeMode, setThemeMode] = useState(() => ls.getItem(THEME_LS_KEY) ?? DEFAULT_THEME_MODE);
 
   useEffect(() => {
     ls.setItem(THEME_LS_KEY, themeMode);

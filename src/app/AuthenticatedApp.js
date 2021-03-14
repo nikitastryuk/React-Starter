@@ -6,6 +6,11 @@ import { ROUTE_PATHS } from 'app/routing/routePaths';
 import Main from 'pages/Main';
 import NotFound from 'pages/NotFound';
 
+// Just for testing the Error boundary
+// function Bomb() {
+//   throw new Error('💥 CABOOM 💥');
+// }
+
 export default function AuthenticatedApp() {
   return (
     <MainLayout>

@@ -29,6 +29,41 @@ export function AuthProvider({ children }) {
     );
   }
 
+  // TODO: Test Memoization benefits before adding the complexity
+  // const loginUser = useCallback(async () => {
+  //   const { data } = await AuthApi.loginUser({ username: 'Username', password: 'Password' });
+  //   setAuthTokens(data);
+  //   setData(data.user);
+  // }, [setData]);
+
+  // const logoutUser = useCallback(() => {
+  //   setData(null);
+  //   ls.removeItem(ACCESS_TOKEN_LS_KEY);
+  //   ls.removeItem(REFRESH_TOKEN_LS_KEY);
+  //   // Do not await (supposed to reset tokens on backend)
+  //   AuthApi.logoutUser();
+  // }, [setData]);
+
+  // const refreshUserToken = useCallback(async () => {
+  //   try {
+  //     const response = await AuthApi.refreshUserToken({ refreshToken: ls.getItem(REFRESH_TOKEN_LS_KEY) });
+  //     setAuthTokens(response.data);
+  //     return response.data.accessToken;
+  //   } catch (e) {
+  //     return logoutUser();
+  //   }
+  // }, [logoutUser]);
+
+  // const value = useMemo(
+  //   () => ({
+  //     user,
+  //     loginUser,
+  //     logoutUser,
+  //     refreshUserToken,
+  //   }),
+  //   [user, loginUser, logoutUser, refreshUserToken],
+  // );
+
   return (
     <AuthContext.Provider value={{ user, loginUser, logoutUser, refreshUserToken }}>{children}</AuthContext.Provider>
   );

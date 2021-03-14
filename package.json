@@ -21,6 +21,7 @@
     "i18next-intervalplural-postprocessor": "3.0.0",
     "react": "17.0.1",
     "react-dom": "17.0.1",
+    "react-error-boundary": "3.1.1",
     "react-i18next": "11.8.10",
     "react-query": "3.12.1",
     "react-router-dom": "5.2.0",
