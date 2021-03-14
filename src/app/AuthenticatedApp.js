@@ -6,7 +6,7 @@ import { ROUTE_PATHS } from 'app/routing/routePaths';
 import Main from 'pages/Main';
 import NotFound from 'pages/NotFound';
 
-export function AuthenticatedApp() {
+export default function AuthenticatedApp() {
   return (
     <MainLayout>
       <Switch>

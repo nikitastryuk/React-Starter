@@ -1,6 +1,6 @@
 import { createGlobalStyle } from 'styled-components';
 import reset from 'styled-reset';
-
+// TODO: Good way to use fonts?
 import Roboto from '../assets/fonts/Roboto-Regular.ttf';
 
 export const GlobalStyle = createGlobalStyle`

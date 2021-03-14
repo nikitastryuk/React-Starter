@@ -6,11 +6,7 @@ import { getTheme } from 'app/theme/theme';
 
 export function AppThemeProvider({ children }) {
   const [themeMode, setThemeMode] = useThemeMode();
-  return (
-    <>
-      <ThemeProvider theme={{ themeMode, setThemeMode, ...getTheme(themeMode) }}>{children}</ThemeProvider>
-    </>
-  );
+  return <ThemeProvider theme={{ themeMode, setThemeMode, ...getTheme(themeMode) }}>{children}</ThemeProvider>;
 }
 
 AppThemeProvider.propTypes = {
