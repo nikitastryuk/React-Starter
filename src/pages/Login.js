@@ -43,6 +43,7 @@ export default function Login() {
   );
 
   async function handleLogin() {
+    // Redirect happens inside AuthenticatedApp component
     run(loginUser());
   }
 }
