@@ -1,5 +1,6 @@
 import { Redirect, Switch } from 'react-router';
 import { Route } from 'react-router-dom';
+import { memo } from 'react';
 
 import { MainLayout } from 'components/MainLayout/MainLayout';
 import { ROUTE_PATHS } from 'app/routing/routePaths';
@@ -11,7 +12,7 @@ import NotFound from 'pages/NotFound';
 //   throw new Error('💥 CABOOM 💥');
 // }
 
-export default function AuthenticatedApp() {
+function AuthenticatedApp() {
   return (
     <MainLayout>
       <Switch>
@@ -22,3 +23,5 @@ export default function AuthenticatedApp() {
     </MainLayout>
   );
 }
+
+export default memo(AuthenticatedApp);

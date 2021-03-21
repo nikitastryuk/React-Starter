@@ -5,7 +5,7 @@ import { BUTTON_VARIANTS, Button } from 'components/Button/Button';
 
 import { StyledPage } from 'styles/StyledPage';
 import { useAsync } from 'hooks/useAsync';
-import { useAuth } from 'hooks/useAuth';
+import { useAuthActions } from 'hooks/useAuthActions';
 
 const StyledLogin = styled.nav`
   display: flex;
@@ -13,7 +13,7 @@ const StyledLogin = styled.nav`
 
 export default function Login() {
   const { t } = useTranslation();
-  const { loginUser } = useAuth();
+  const { loginUser } = useAuthActions();
   const { isLoading, run, error } = useAsync();
 
   if (error) {

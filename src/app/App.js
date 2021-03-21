@@ -4,7 +4,7 @@ import { useTranslation } from 'react-i18next';
 import { ErrorBoundary } from 'react-error-boundary';
 
 import { StyledPage } from 'styles/StyledPage';
-import { useAuth } from 'hooks/useAuth';
+import { useAuthState } from 'hooks/useAuthState';
 
 import { StyledApp } from './StyledApp';
 
@@ -12,7 +12,7 @@ const AuthenticatedApp = lazy(() => import(/* webpackPrefetch: true */ './Authen
 const UnAuthenticatedApp = lazy(() => import('./UnAuthenticatedApp'));
 
 export function App() {
-  const { user } = useAuth();
+  const user = useAuthState();
   const { t } = useTranslation();
 
   return (

@@ -18,6 +18,8 @@ export function LanguageSwitcher() {
   );
 
   function changeLanguage(lng) {
-    i18n.changeLanguage(lng);
+    if (i18n.language !== lng) {
+      i18n.changeLanguage(lng);
+    }
   }
 }

@@ -9,11 +9,13 @@ import { StyledPage } from 'styles/StyledPage';
 import { useAsync } from 'hooks/useAsync';
 import ls from 'utils/localStorage';
 
-export const AuthContext = createContext();
+// Making separate actions and state contexts to avoid unnecessary rerender in some components when user changes
+export const AuthStateContext = createContext();
+export const AuthActionsContext = createContext();
 
 export function AuthProvider({ children }) {
   const { t } = useTranslation();
-  const { data: user, setData, isLoading, run } = useAsync({ isLoading: !!areAuthTokensPresent() });
+  const { data: getUserResponse, setData, isLoading, run } = useAsync({ isLoading: !!areAuthTokensPresent() });
 
   useEffect(() => {
     if (areAuthTokensPresent()) {
@@ -45,14 +47,13 @@ export function AuthProvider({ children }) {
     }
   }, [logoutUser]);
 
-  const value = useMemo(
+  const authActionsContextValue = useMemo(
     () => ({
-      user,
       loginUser,
       logoutUser,
       refreshUserToken,
     }),
-    [user, loginUser, logoutUser, refreshUserToken],
+    [loginUser, logoutUser, refreshUserToken],
   );
 
   if (isLoading) {
@@ -63,7 +64,11 @@ export function AuthProvider({ children }) {
     );
   }
 
-  return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
+  return (
+    <AuthStateContext.Provider value={getUserResponse?.data?.user}>
+      <AuthActionsContext.Provider value={authActionsContextValue}>{children}</AuthActionsContext.Provider>
+    </AuthStateContext.Provider>
+  );
 
   function setAuthTokens({ refreshToken, accessToken }) {
     ls.setItem(ACCESS_TOKEN_LS_KEY, accessToken);
