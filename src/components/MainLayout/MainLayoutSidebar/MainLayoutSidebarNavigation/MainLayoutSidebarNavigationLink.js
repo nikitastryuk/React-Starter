@@ -6,7 +6,7 @@ import {
   StyledMainLayoutSidebarNavigationLink,
 } from './StyledMainLayoutSidebarNavigationLink';
 
-export function MainLayoutSidebarNavigationLink({ route }) {
+export const MainLayoutSidebarNavigationLink = ({ route }) => {
   return (
     <StyledMainLayoutSidebarNavigationLink activeClassName="active" exact to={route.path}>
       <StyleMainLayoutSidebarNavigationLinkContent>
@@ -15,7 +15,7 @@ export function MainLayoutSidebarNavigationLink({ route }) {
       </StyleMainLayoutSidebarNavigationLinkContent>
     </StyledMainLayoutSidebarNavigationLink>
   );
-}
+};
 
 MainLayoutSidebarNavigationLink.propTypes = {
   route: PropTypes.shape({
