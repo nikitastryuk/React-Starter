@@ -1,3 +1,4 @@
+/* eslint-disable no-underscore-dangle */
 import { useEffect } from 'react';
 
 import { ACCESS_TOKEN_LS_KEY, REFRESH_TOKEN_LS_KEY } from 'constants';
@@ -7,7 +8,7 @@ import ls from 'utils/localStorage';
 
 const TOKEN_EXPIRED_STATUS_CODE = 403;
 const UNAUTHORIZED_STATUS_CODE = 401;
-const AUTHORIZATION_PREFIX = 'Bearer';
+const AUTHORIZATION_TOKEN_PREFIX = 'Bearer';
 
 // Accessing private resource:
 // 1. Valid access token - access granted
@@ -27,7 +28,7 @@ export function AxiosInterceptorsProvider({ children }) {
           if (accessToken) {
             // eslint-disable-next-line no-param-reassign
             config.headers = {
-              Authorization: `${AUTHORIZATION_PREFIX} ${accessToken}`,
+              Authorization: `${AUTHORIZATION_TOKEN_PREFIX} ${accessToken}`,
             };
           }
           return config;
@@ -49,14 +50,11 @@ export function AxiosInterceptorsProvider({ children }) {
           if (error?.response?.status === UNAUTHORIZED_STATUS_CODE) {
             return logoutUser();
           }
-          // eslint-disable-next-line no-underscore-dangle
           if (error?.response?.status === TOKEN_EXPIRED_STATUS_CODE && !originalRequest._retry) {
-            // eslint-disable-next-line no-underscore-dangle
             originalRequest._retry = true;
-
             const refreshToken = ls.getItem(REFRESH_TOKEN_LS_KEY);
             if (refreshToken) {
-              axios.defaults.headers.common.Authorization = `${AUTHORIZATION_PREFIX} ${await refreshUserToken()}`;
+              axios.defaults.headers.common.Authorization = `${AUTHORIZATION_TOKEN_PREFIX} ${await refreshUserToken()}`;
               return axios(originalRequest);
             }
           }

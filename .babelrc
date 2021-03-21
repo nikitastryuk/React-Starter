@@ -30,7 +30,8 @@
           "utils": "./src/utils",
           "store": "./src/store",
           "hooks": "./src/hooks",
-          "constants": "./src/constants"
+          "constants": "./src/constants",
+          "styles": "./src/styles"
         }
       }
     ]

@@ -2,7 +2,8 @@ import { useTranslation } from 'react-i18next';
 import styled from 'styled-components';
 
 import { BUTTON_VARIANTS, Button } from 'components/Button/Button';
-import { StyledMainLayoutPage } from 'components/MainLayout/StyledMainLayout';
+
+import { StyledPage } from 'styles/StyledPage';
 import { useAsync } from 'hooks/useAsync';
 import { useAuth } from 'hooks/useAuth';
 
@@ -17,29 +18,29 @@ export default function Login() {
 
   if (error) {
     return (
-      <StyledMainLayoutPage>
+      <StyledPage>
         <h1>{error}</h1>
-      </StyledMainLayoutPage>
+      </StyledPage>
     );
   }
 
   if (isLoading) {
     return (
-      <StyledMainLayoutPage>
-        <h1>{t('login.loading')}</h1>
-      </StyledMainLayoutPage>
+      <StyledPage>
+        <h1>{t('global.loading')}</h1>
+      </StyledPage>
     );
   }
 
   return (
-    <StyledMainLayoutPage>
+    <StyledPage>
       <StyledLogin>
         <h1>{t('login.title')}</h1>
         <Button variant={BUTTON_VARIANTS.PRIMARY} onClick={handleLogin}>
           {t('login.buttonText')}
         </Button>
       </StyledLogin>
-    </StyledMainLayoutPage>
+    </StyledPage>
   );
 
   async function handleLogin() {

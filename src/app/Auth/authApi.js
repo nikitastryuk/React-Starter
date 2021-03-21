@@ -28,16 +28,6 @@ export class AuthApi {
     );
   }
 
-  static loginUserSync({ username, password }) {
-    return {
-      data: {
-        accessToken: 'accessToken',
-        refreshToken: 'refreshToken',
-        user: USER,
-      },
-    };
-  }
-
   static getUser() {
     return new Promise((resolve) =>
       setTimeout(() => {
