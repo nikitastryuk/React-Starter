@@ -2,7 +2,7 @@ import { useTranslation } from 'react-i18next';
 
 import { useAuthActions } from 'hooks/useAuthActions';
 
-import { SidebarNavigation } from './MainLayoutSidebarNavigation/MainLayoutSidebarNavigation';
+import { MainLayoutSidebarNavigation } from './MainLayoutSidebarNavigation/MainLayoutSidebarNavigation';
 
 import {
   StyledMainLayoutSidebar,
@@ -17,7 +17,7 @@ export function MainLayoutSidebar() {
   return (
     <StyledMainLayoutSidebar>
       <StyledMainLayoutSidebarLogo>LOGO</StyledMainLayoutSidebarLogo>
-      <SidebarNavigation />
+      <MainLayoutSidebarNavigation />
       <StyledMainLayoutSidebarLogoutButton onClick={handleLogout}>
         {t('sidebar.logout')}
       </StyledMainLayoutSidebarLogoutButton>

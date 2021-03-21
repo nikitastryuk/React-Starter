@@ -1,15 +1,14 @@
-import { memo } from 'react';
 import PropTypes from 'prop-types';
 
 import { BUTTON_VARIANTS, StyledButton } from './StyledButton';
 
-export const Button = memo(({ variant, disabled, children, onClick }) => {
+export function Button({ variant, disabled, children, onClick }) {
   return (
     <StyledButton onClick={onClick} disabled={disabled} variant={variant}>
       {children}
     </StyledButton>
   );
-});
+}
 
 Button.propTypes = {
   variant: PropTypes.oneOf(Object.values(BUTTON_VARIANTS)).isRequired,

@@ -7,7 +7,7 @@ import { ROUTE_PATHS } from 'app/routing/routePaths';
 import { MainLayoutSidebarNavigationLink } from './MainLayoutSidebarNavigationLink';
 import { StyledMainLayoutSidebarNavigationLink } from './StyledMainLayoutSidebarNavigationLink';
 
-const StyledSidebarNavigation = styled.nav`
+const StyledMainLayoutSidebarNavigation = styled.nav`
   display: flex;
   flex-direction: column;
   font-size: 16px;
@@ -17,7 +17,7 @@ const StyledSidebarNavigation = styled.nav`
   }
 `;
 
-export function SidebarNavigation() {
+export function MainLayoutSidebarNavigation() {
   const { t } = useTranslation();
 
   const SIDEBAR_ROUTES = [
@@ -30,10 +30,10 @@ export function SidebarNavigation() {
   ];
 
   return (
-    <StyledSidebarNavigation>
+    <StyledMainLayoutSidebarNavigation>
       {SIDEBAR_ROUTES.map((route) => (
         <MainLayoutSidebarNavigationLink key={`${route.path}.${route.label}`} route={route} />
       ))}
-    </StyledSidebarNavigation>
+    </StyledMainLayoutSidebarNavigation>
   );
 }

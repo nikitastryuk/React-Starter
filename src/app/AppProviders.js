@@ -20,9 +20,9 @@ export function AppProviders({ children }) {
           <AuthProvider>
             <AxiosInterceptorsProvider>{children}</AxiosInterceptorsProvider>
           </AuthProvider>
-          <ReactQueryDevtools />
         </AppThemeProvider>
       </BrowserRouter>
+      <ReactQueryDevtools />
     </QueryClientProvider>
   );
 }
