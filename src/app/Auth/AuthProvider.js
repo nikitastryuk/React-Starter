@@ -26,7 +26,7 @@ export function AuthProvider({ children }) {
   const loginUser = useCallback(async () => {
     const { data } = await AuthApi.loginUser({ username: 'Username', password: 'Password' });
     setAuthTokens(data);
-    setData(data.user);
+    setData({ data });
   }, [setData]);
 
   const logoutUser = useCallback(() => {

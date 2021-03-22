@@ -21,8 +21,8 @@ function useAsync(initialState) {
         setIsLoading(false);
         return result;
       } catch (e) {
-        setIsLoading(false);
         setError(e);
+        setIsLoading(false);
         return Promise.reject(e);
       }
     },

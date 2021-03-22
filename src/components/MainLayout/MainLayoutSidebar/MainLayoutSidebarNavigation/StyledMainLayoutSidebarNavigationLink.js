@@ -29,5 +29,6 @@ export const StyledMainLayoutSidebarNavigationLink = styled(NavLink)`
       ${({ theme }) => theme.palette.primary.dark}
     );
     border-left: ${({ theme }) => theme.spacing(1)} solid ${borderColor};
+    pointer-events: none;
   }
 `;

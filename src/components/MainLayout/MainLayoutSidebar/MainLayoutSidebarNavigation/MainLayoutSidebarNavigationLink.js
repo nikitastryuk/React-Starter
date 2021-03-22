@@ -1,3 +1,4 @@
+import { useTranslation } from 'react-i18next';
 import PropTypes from 'prop-types';
 
 import {
@@ -6,21 +7,20 @@ import {
   StyledMainLayoutSidebarNavigationLink,
 } from './StyledMainLayoutSidebarNavigationLink';
 
-export const MainLayoutSidebarNavigationLink = ({ route }) => {
+export const MainLayoutSidebarNavigationLink = ({ path, icon, label }) => {
+  const { t } = useTranslation();
   return (
-    <StyledMainLayoutSidebarNavigationLink activeClassName="active" exact to={route.path}>
+    <StyledMainLayoutSidebarNavigationLink activeClassName="active" exact to={path}>
       <StyleMainLayoutSidebarNavigationLinkContent>
-        {route.icon}
-        <StyleMainLayoutSidebarNavigationLinkLabel>{route.label}</StyleMainLayoutSidebarNavigationLinkLabel>
+        {icon}
+        <StyleMainLayoutSidebarNavigationLinkLabel>{t(label)}</StyleMainLayoutSidebarNavigationLinkLabel>
       </StyleMainLayoutSidebarNavigationLinkContent>
     </StyledMainLayoutSidebarNavigationLink>
   );
 };
 
 MainLayoutSidebarNavigationLink.propTypes = {
-  route: PropTypes.shape({
-    path: PropTypes.string.isRequired,
-    icon: PropTypes.node.isRequired,
-    label: PropTypes.string.isRequired,
-  }).isRequired,
+  path: PropTypes.string.isRequired,
+  icon: PropTypes.node.isRequired,
+  label: PropTypes.string.isRequired,
 };
