@@ -14,7 +14,7 @@ jobs:
       - name: Unit tests
       - run: npm run test:unit
       - name: Cypress
-      - uses: cypress-io/github-action@v2
+        uses: cypress-io/github-action@v2
         with:
           build: npm run build
           start: npm run serve-prod-build
