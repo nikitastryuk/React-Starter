@@ -1,5 +1,6 @@
-name: Test
+name: Lint
 
+# Trigger the workflow on push (only for the master branch) or pull request
 on:
   pull_request:
   push:

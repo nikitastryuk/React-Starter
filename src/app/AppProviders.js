@@ -1,8 +1,7 @@
 import { BrowserRouter } from 'react-router-dom';
 import { QueryClient, QueryClientProvider } from 'react-query';
-import PropTypes from 'prop-types';
-// TODO: Remove from prod bundle
 import { ReactQueryDevtools } from 'react-query/devtools';
+import PropTypes from 'prop-types';
 
 import { AppThemeProvider } from 'app/theme/ThemeProvider';
 import { AuthProvider } from 'app/auth/AuthProvider';
