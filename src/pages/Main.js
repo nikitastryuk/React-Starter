@@ -10,7 +10,7 @@ export default function Main() {
   const { t } = useTranslation();
 
   return (
-    <StyledPage>
+    <StyledPage data-test-id="main-page">
       {t(TEST_LABELS.HI)}
       <h1>{t('main.title')}</h1>
       <h1>{t('main.items', { postProcess: 'interval', count: 0 })}</h1>

@@ -36,7 +36,7 @@ export default function Login() {
     <StyledPage>
       <StyledLogin>
         <h1>{t('login.title')}</h1>
-        <Button variant={BUTTON_VARIANTS.PRIMARY} onClick={handleLogin}>
+        <Button type="submit" variant={BUTTON_VARIANTS.PRIMARY} onClick={handleLogin}>
           {t('login.buttonText')}
         </Button>
       </StyledLogin>

@@ -2,9 +2,9 @@ import PropTypes from 'prop-types';
 
 import { BUTTON_VARIANTS, StyledButton } from './StyledButton';
 
-export function Button({ variant, disabled, children, onClick }) {
+export function Button({ variant, disabled, children, onClick, ...rest }) {
   return (
-    <StyledButton onClick={onClick} disabled={disabled} variant={variant}>
+    <StyledButton {...rest} onClick={onClick} disabled={disabled} variant={variant}>
       {children}
     </StyledButton>
   );
