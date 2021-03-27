@@ -1,4 +1,5 @@
-# Trigger the workflow on push (only for the master branch) or pull request
+name: Unit tests & Cypress
+
 on:
   pull_request:
   push:
@@ -6,13 +7,12 @@ on:
       - master
 
 jobs:
-  lint:
+  cypress:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
       - name: Cypress run
         uses: cypress-io/github-action@v2
         with:
-          build: npm run build
-          serve-prod-build: npm run serve-prod-build
+          build: npm run dev
           wait-on: http://localhost:8080/
