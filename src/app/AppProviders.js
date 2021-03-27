@@ -1,6 +1,6 @@
+import { BrowserRouter } from 'react-router-dom';
 import { QueryClient, QueryClientProvider } from 'react-query';
 import { ReactQueryDevtools } from 'react-query/devtools';
-import { BrowserRouter as Router } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
 import { AppThemeProvider } from 'app/theme/ThemeProvider';
@@ -13,14 +13,14 @@ const queryClient = new QueryClient();
 export function AppProviders({ children }) {
   return (
     <QueryClientProvider client={queryClient}>
-      <Router>
+      <BrowserRouter>
         <AppThemeProvider>
           <GlobalStyle />
           <AuthProvider>
             <AxiosInterceptorsProvider>{children}</AxiosInterceptorsProvider>
           </AuthProvider>
         </AppThemeProvider>
-      </Router>
+      </BrowserRouter>
       <ReactQueryDevtools />
     </QueryClientProvider>
   );
