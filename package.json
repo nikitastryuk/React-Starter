@@ -9,7 +9,7 @@
     "lint:js": "eslint src",
     "lint:style": "stylelint src --config .stylelintrc",
     "generate-webpack-stats": "NODE_ENV=production webpack --config webpack/webpack.stats.js",
-    "serve-prod-build": "npx serve -l 8080 -C -d dist"
+    "serve-prod-build": "npx serve -s -l 8080 -C -d dist"
   },
   "author": "Nikita Striuk",
   "license": "ISC",
