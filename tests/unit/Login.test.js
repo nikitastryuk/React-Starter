@@ -1,3 +1,7 @@
+it('true -> true', async () => {
+  expect(true).toBe(true);
+});
+
 // TODO: Test
 // import { I18nextProvider } from 'react-i18next';
 // import { Router } from 'react-router-dom';
