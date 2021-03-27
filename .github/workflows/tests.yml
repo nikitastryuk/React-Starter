@@ -1,10 +1,6 @@
 name: Unit tests & Cypress
 
-on:
-  pull_request:
-  push:
-    branches:
-      - master
+on: pull_request
 
 jobs:
   cypress:
@@ -14,7 +10,7 @@ jobs:
       - name: Unit tests
       - run: npm run test:unit
       - name: Cypress
-        uses: cypress-io/github-action@v2
+      - uses: cypress-io/github-action@v2
         with:
           build: npm run build
           start: npm run serve-prod-build
