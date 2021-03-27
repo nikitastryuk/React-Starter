@@ -17,3 +17,9 @@ jobs:
           build: npm run build
           start: npm run serve-prod-build
           wait-on: http://localhost:8080/
+  unit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Unit
+      - run: npm run test:unit
