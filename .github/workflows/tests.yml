@@ -1,0 +1,21 @@
+name: Unit tests & Cypress
+
+on:
+  pull_request:
+  push:
+    branches:
+      - master
+
+jobs:
+  cypress:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Unit tests
+      - run: npm run test:unit
+      - name: Cypress
+        uses: cypress-io/github-action@v2
+        with:
+          build: npm run build
+          start: npm run serve-prod-build
+          wait-on: http://localhost:8080/
