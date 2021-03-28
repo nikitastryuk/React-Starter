@@ -17,4 +17,3 @@ jobs:
           build: npm run build
           start: npm run serve-prod-build
           wait-on: http://localhost:8080/
-
