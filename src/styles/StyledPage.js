@@ -6,6 +6,7 @@ export const StyledPage = styled.div`
   align-items: center;
   justify-content: center;
   height: 100%;
-  font-size: 150px;
+  padding: 0 ${({ theme }) => theme.spacing(2)};
+  font-size: 100px;
   text-align: center;
 `;

@@ -1,4 +1,4 @@
-import { BrowserRouter, HashRouter } from 'react-router-dom';
+import { HashRouter } from 'react-router-dom';
 import { QueryClient, QueryClientProvider } from 'react-query';
 import { ReactQueryDevtools } from 'react-query/devtools';
 import PropTypes from 'prop-types';
@@ -8,7 +8,14 @@ import { AuthProvider } from 'app/auth/AuthProvider';
 import { AxiosInterceptorsProvider } from 'app/auth/AxiosInterceptorsProvider';
 import { GlobalStyle } from 'app/GlobalStyle';
 
-const queryClient = new QueryClient();
+const queryClient = new QueryClient({
+  defaultOptions: {
+    queries: {
+      suspense: true,
+      retry: false,
+    },
+  },
+});
 
 export function AppProviders({ children }) {
   return (
