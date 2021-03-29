@@ -19,12 +19,9 @@ After installing modules, you're ready to start the project!
 | `npm <script>` | Description                                                    |
 | -------------- | -------------------------------------------------------------- |
 | `dev`          | Serves your app at `localhost:8080` with hot reloading enabled |
-| `build`        | Builds the application to ./dist                               |
+| `build`        | Builds the application to ./build                              |
 | `test:unit`    | Runs all unit tests                                            |
 | `cypress`      | Opens cypress                                                  |
 | `lint:js`      | Runs eslint                                                    |
 | `lint:style`   | Runs stylelint                                                 |
-
-## Deploy
-
-In progress
+| `deploy`       | Deploys to github pages                                        |
