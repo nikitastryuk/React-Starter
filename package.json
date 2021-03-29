@@ -1,7 +1,7 @@
 {
   "name": "react-starter",
   "version": "1.0.0",
-  "homepage": "https://nikitastryuk.github.io/React-starter/",
+  "homepage": "https://nikitastryuk.github.io/React-starter",
   "scripts": {
     "dev": "NODE_ENV=development webpack serve --config webpack/webpack.dev.js",
     "build": "NODE_ENV=production webpack --config webpack/webpack.prod.js",
