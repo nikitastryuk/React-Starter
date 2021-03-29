@@ -20,6 +20,9 @@ const queryClient = new QueryClient({
 export function AppProviders({ children }) {
   return (
     <QueryClientProvider client={queryClient}>
+      {
+        // TODO: Can we use BrowserRouter with gh-pages?
+      }
       <HashRouter>
         <AppThemeProvider>
           <GlobalStyle />

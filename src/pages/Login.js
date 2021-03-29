@@ -7,7 +7,7 @@ import { StyledPage } from 'styles/StyledPage';
 import { useAsync } from 'hooks/useAsync';
 import { useAuthActions } from 'hooks/useAuthActions';
 
-const StyledLogin = styled.nav`
+const StyledLogin = styled.div`
   display: flex;
 `;
 

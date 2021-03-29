@@ -25,7 +25,7 @@ export default function Main() {
   }
 
   return (
-    <StyledPage data-test-id="main-page">
+    <StyledPage fontsize="50px" data-test-id="main-page">
       <h1>{joke}</h1>
       <h2>{t('main.items', { postProcess: 'interval', count: 0 })}</h2>
     </StyledPage>
