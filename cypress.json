@@ -1,7 +1,7 @@
 {
   "baseUrl": "http://localhost:8080",
   "integrationFolder": "tests/e2e",
-  "supportFile": "tests/e2e/support",
+  "supportFile": "tests/e2e/support/index.js",
   "fixturesFolder": false,
   "pluginsFile": false
 }
