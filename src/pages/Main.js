@@ -1,19 +1,42 @@
+import { useQuery } from 'react-query';
 import { useTranslation } from 'react-i18next';
 
 import { StyledPage } from 'styles/StyledPage';
+import axios from 'utils/axios';
 
-const TEST_LABELS = {
-  HI: 'main.title',
-};
+class TestApi {
+  static getTestData() {
+    return axios.get('https://api.chucknorris.io/jokes/random');
+  }
+}
 
 export default function Main() {
   const { t } = useTranslation();
+  const { error, data: joke, isFetching } = useQuery('testData', getTestData, {
+    staleTime: 5000,
+  });
+
+  if (isFetching) {
+    return <StyledPage>{t('global.loading')}</StyledPage>;
+  }
+
+  if (error) {
+    return <StyledPage>{error}</StyledPage>;
+  }
 
   return (
     <StyledPage data-test-id="main-page">
-      {t(TEST_LABELS.HI)}
-      <h1>{t('main.title')}</h1>
-      <h1>{t('main.items', { postProcess: 'interval', count: 0 })}</h1>
+      <h1>{joke}</h1>
+      <h2>{t('main.items', { postProcess: 'interval', count: 0 })}</h2>
     </StyledPage>
   );
+
+  async function getTestData() {
+    try {
+      const { data } = await TestApi.getTestData();
+      return data?.value;
+    } catch (e) {
+      throw new Error('test');
+    }
+  }
 }
