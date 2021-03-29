@@ -1,4 +1,4 @@
-import { BrowserRouter } from 'react-router-dom';
+import { BrowserRouter, HashRouter } from 'react-router-dom';
 import { QueryClient, QueryClientProvider } from 'react-query';
 import { ReactQueryDevtools } from 'react-query/devtools';
 import PropTypes from 'prop-types';
@@ -13,14 +13,14 @@ const queryClient = new QueryClient();
 export function AppProviders({ children }) {
   return (
     <QueryClientProvider client={queryClient}>
-      <BrowserRouter>
+      <HashRouter>
         <AppThemeProvider>
           <GlobalStyle />
           <AuthProvider>
             <AxiosInterceptorsProvider>{children}</AxiosInterceptorsProvider>
           </AuthProvider>
         </AppThemeProvider>
-      </BrowserRouter>
+      </HashRouter>
       <ReactQueryDevtools />
     </QueryClientProvider>
   );
