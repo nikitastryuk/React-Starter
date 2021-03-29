@@ -7,7 +7,7 @@ const PUBLIC_DIR = resolve(ROOT_DIR, './public');
 const APP_ENTRY = resolve(SRC_DIR, './index.js');
 const APP_TEMPLATE = resolve(PUBLIC_DIR, './index.html');
 const FAV_ICON = resolve(PUBLIC_DIR, './favicon.ico');
-const DIST_DIR = resolve(ROOT_DIR, './dist');
+const DIST_DIR = resolve(ROOT_DIR, './build');
 
 const MODES = {
   DEVELOPMENT: 'development',
