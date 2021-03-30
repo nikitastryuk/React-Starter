@@ -78,4 +78,4 @@ jobs:
           path: node_modules
           key: ${{ runner.os }}-${{ env.cache-name }}-${{ hashFiles('**/package-lock.json') }}
       - name: Run Jest
-        run: npm run test:coverage
+        run: npm run test
