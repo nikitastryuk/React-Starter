@@ -8,7 +8,6 @@ on:
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
-    needs: [dependencies]
     name: Run Build and Deploy
     steps:
       - name: Checkout
