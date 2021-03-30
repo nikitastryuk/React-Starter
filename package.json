@@ -84,7 +84,7 @@
     "webpack-merge": "5.7.3"
   },
   "lint-staged": {
-    "*": "prettier --check",
+    "*": "prettier --write",
     "*.js": [
       "npm run lint:js",
       "npm run lint:style"
