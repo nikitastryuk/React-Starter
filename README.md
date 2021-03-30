@@ -3,13 +3,12 @@
 ## Tech Stack
 
 - **React / React Router**
-- **Styled-components**
-- **Styled-icons**
-- **React-Query**
+- **Styled-components / Styled-icons**
+- **Axios / React-Query**
 - **React-i18next**
 - **EsLint / StyleLint / Prettier**
 - **Babel / Webpack**
-- **Husky / Lint-staged**
+- **Simple-git-hooks / Lint-staged**
 - **Jest / Cypress / Rtl**
 
 ## Running the Project
@@ -22,6 +21,7 @@ After installing modules, you're ready to start the project!
 | `build`        | Builds the application to ./build                              |
 | `test:unit`    | Runs all unit tests                                            |
 | `cypress`      | Opens cypress                                                  |
+| `format:check` | Runs prettier                                                  |
 | `lint:js`      | Runs eslint                                                    |
 | `lint:style`   | Runs stylelint                                                 |
 | `deploy`       | Deploys to github pages                                        |

@@ -10,15 +10,7 @@
     "plugin:jest/recommended"
   ],
   // Plugin provides a set of rules to apply manually.
-  "plugins": [
-    "react",
-    "react-hooks",
-    "cypress",
-    "testing-library",
-    "jest",
-    "prettier",
-    "sort-imports-es6-autofix"
-  ],
+  "plugins": ["react", "react-hooks", "cypress", "testing-library", "jest", "prettier", "sort-imports-es6-autofix"],
   // An environment defines global variables that are predefined.
   "env": {
     "browser": true,
@@ -32,9 +24,7 @@
   "settings": {
     "import/resolver": {
       "node": {
-        "paths": [
-          "src"
-        ]
+        "paths": ["src"]
       }
     }
   },
@@ -56,12 +46,7 @@
       {
         "ignoreCase": false,
         "ignoreMemberSort": false,
-        "memberSyntaxSortOrder": [
-          "none",
-          "all",
-          "multiple",
-          "single"
-        ]
+        "memberSyntaxSortOrder": ["none", "all", "multiple", "single"]
       }
     ],
     // React
