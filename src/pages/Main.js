@@ -9,7 +9,9 @@ class TestApi {
     return axios.get('https://api.chucknorris.io/jokes/random');
   }
 }
-    const a =1;
+            const a =1;
+
+
 export default function Main() {
   const { t } = useTranslation();
   const { error, data: joke, isFetching } = useQuery('testData', getTestData, {
