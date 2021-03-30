@@ -7,6 +7,7 @@
     "build": "NODE_ENV=production webpack --config webpack/webpack.prod.js",
     "cypress": "cypress open",
     "test": "jest",
+    "prettier": "prettier . --write",
     "lint:js": "eslint src",
     "lint:style": "stylelint src --config .stylelintrc",
     "generate-webpack-stats": "NODE_ENV=production webpack --config webpack/webpack.stats.js",
@@ -83,12 +84,8 @@
     "webpack-dev-server": "3.11.2",
     "webpack-merge": "5.7.3"
   },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
-  },
   "lint-staged": {
-    "*.js": "eslint --fix"
+    "*": "npm run prettier",
+    "*.js": "npm run lint:js && npm run lint:style"
   }
 }
