@@ -21,7 +21,7 @@ jobs:
           path: node_modules
           key: ${{ runner.os }}-${{ env.cache-name }}-${{ hashFiles('**/package-lock.json') }}
       - name: Install dependencies
-        run: npm i
+        run: npm ci
 
   lint-and-format:
     runs-on: ubuntu-latest
