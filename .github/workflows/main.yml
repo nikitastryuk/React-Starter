@@ -16,7 +16,7 @@ jobs:
       - name: Cache node modules
         uses: actions/cache@v2
         env:
-          cache-name: dependencies-cache
+          cache-name: cached-dependencies
         with:
           path: client/node_modules
           key: ${{ runner.os }}-${{ env.cache-name }}-${{ hashFiles('**/package-lock.json') }}
@@ -33,7 +33,7 @@ jobs:
       - name: Restore cached dependencies
         uses: actions/cache@v2
         env:
-          cache-name: dependencies-cache
+          cache-name: cached-dependencies
         with:
           path: client/node_modules
           key: ${{ runner.os }}-${{ env.cache-name }}-${{ hashFiles('**/package-lock.json') }}
@@ -54,7 +54,7 @@ jobs:
       - name: Restore cached dependencies
         uses: actions/cache@v2
         env:
-          cache-name: dependencies-cache
+          cache-name: cached-dependencies
         with:
           path: client/node_modules
           key: ${{ runner.os }}-${{ env.cache-name }}-${{ hashFiles('**/package-lock.json') }}
@@ -73,7 +73,7 @@ jobs:
       - name: Restore cached dependencies
         uses: actions/cache@v2
         env:
-          cache-name: dependencies-cache
+          cache-name: cached-dependencies
         with:
           path: client/node_modules
           key: ${{ runner.os }}-${{ env.cache-name }}-${{ hashFiles('**/package-lock.json') }}
