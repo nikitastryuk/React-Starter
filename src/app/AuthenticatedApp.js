@@ -4,19 +4,22 @@ import { memo } from 'react';
 
 import { MainLayout } from 'components/MainLayout/MainLayout';
 import { ROUTE_PATHS } from 'app/routing/routePaths';
-import Main from 'pages/Main';
+import Main, { MainErrorBoundary } from 'pages/Main';
 import NotFound from 'pages/NotFound';
-
-// Just for testing the Error boundary
-// function Bomb() {
-//   throw new Error('💥 CABOOM 💥');
-// }
 
 function AuthenticatedApp() {
   return (
     <MainLayout>
       <Switch>
-        <Route exact path={ROUTE_PATHS.MAIN} component={Main} />
+        <Route
+          exact
+          path={ROUTE_PATHS.MAIN}
+          render={() => (
+            <MainErrorBoundary>
+              <Main />
+            </MainErrorBoundary>
+          )}
+        />
         <Redirect from={ROUTE_PATHS.LOGIN} to={ROUTE_PATHS.MAIN} />
         <Route component={NotFound} />
       </Switch>

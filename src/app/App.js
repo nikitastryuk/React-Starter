@@ -1,7 +1,6 @@
+import { ErrorBoundary } from 'react-error-boundary';
 import { Suspense, lazy } from 'react';
 import { useTranslation } from 'react-i18next';
-
-import { ErrorBoundary } from 'react-error-boundary';
 
 import { StyledPage } from 'styles/StyledPage';
 import { useAuthState } from 'hooks/useAuthState';
