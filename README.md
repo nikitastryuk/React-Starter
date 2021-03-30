@@ -3,9 +3,8 @@
 ## Tech Stack
 
 - **React / React Router**
-- **Styled-components**
-- **Styled-icons**
-- **React-Query**
+- **Styled-components / Styled-icons**
+- **Axios / React-Query**
 - **React-i18next**
 - **EsLint / StyleLint / Prettier**
 - **Babel / Webpack**

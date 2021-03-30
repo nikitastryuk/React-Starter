@@ -10,8 +10,10 @@ jobs:
   lint-and-format:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-      - uses: bahmutov/npm-install@v1
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Install or get cached dependencies
+        uses: bahmutov/npm-install@v1
       - run: npm run format
       - run: npm run lint:js
       - run: npm run lint:style
