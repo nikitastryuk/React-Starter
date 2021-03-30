@@ -14,7 +14,7 @@ const StyledLogin = styled.div`
 export default function Login() {
   const { t } = useTranslation();
   const { loginUser } = useAuthActions();
-  const { isLoading, run, error } = useAsync();
+  const { isLoading, error, run } = useAsync();
 
   if (error) {
     return (

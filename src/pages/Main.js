@@ -25,18 +25,15 @@ export default function Main() {
   }
 
   return (
-    <StyledPage fontsize="50px" data-test-id="main-page">
-      <h1>{joke}</h1>
-      <h2>{t('main.items', { postProcess: 'interval', count: 0 })}</h2>
+    <StyledPage fontsize="50px" data-testid="main-page">
+      <h1 data-testid="main-page-joke">{joke}</h1>
+      {/* <h2>{t('main.items', { postProcess: 'interval', count: 0 })}</h2> */}
     </StyledPage>
   );
 
   async function getTestData() {
-    try {
-      const { data } = await TestApi.getTestData();
-      return data?.value;
-    } catch (e) {
-      throw new Error('test');
-    }
+    // TODO: Check error handling
+    const { data } = await TestApi.getTestData();
+    return data?.value;
   }
 }

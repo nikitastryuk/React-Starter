@@ -9,6 +9,8 @@ import { AuthProvider } from 'app/auth/AuthProvider';
 import { AxiosInterceptorsProvider } from 'app/auth/AxiosInterceptorsProvider';
 import { GlobalStyle } from 'app/GlobalStyle';
 
+import 'i18n/i18n';
+
 const queryClient = new QueryClient({
   defaultOptions: {
     queries: {
