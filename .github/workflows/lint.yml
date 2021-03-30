@@ -1,4 +1,4 @@
-name: EsLint & StyleLint
+name: EsLint & StyleLint & Prettier
 
 on:
   pull_request:
@@ -12,5 +12,6 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - run: npm ci
+      - run: npm run format
       - run: npm run lint:js
       - run: npm run lint:style
