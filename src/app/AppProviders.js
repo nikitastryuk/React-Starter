@@ -1,3 +1,4 @@
+// TODO: Using HashRouter instead BrowserRouter to have gh-pages working
 import { HashRouter } from 'react-router-dom';
 import { QueryClient, QueryClientProvider } from 'react-query';
 import { ReactQueryDevtools } from 'react-query/devtools';
@@ -20,9 +21,6 @@ const queryClient = new QueryClient({
 export function AppProviders({ children }) {
   return (
     <QueryClientProvider client={queryClient}>
-      {
-        // TODO: Can we use BrowserRouter with gh-pages?
-      }
       <HashRouter>
         <AppThemeProvider>
           <GlobalStyle />
