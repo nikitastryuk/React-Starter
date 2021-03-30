@@ -4,7 +4,6 @@ import { useTranslation } from 'react-i18next';
 import { StyledPage } from 'styles/StyledPage';
 import axios from 'utils/axios';
       const a=2;
-
     console.log('test')
 class TestApi {
   static getTestData() {
