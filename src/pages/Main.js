@@ -37,23 +37,24 @@ class TestApi {
 }
 
 export default function Main() {
-  const { t } = useTranslation();
-  const { data: joke, isFetching } = useQuery('testData', getTestData, {
-    staleTime: 2500,
-    // Want errors to be thrown in the render phase and propagate to the nearest error boundary
-    useErrorBoundary: true,
-  });
+  return 123;
+  // const { t } = useTranslation();
+  // const { data: joke, isFetching } = useQuery('testData', getTestData, {
+  //   staleTime: 2500,
+  //   // Want errors to be thrown in the render phase and propagate to the nearest error boundary
+  //   useErrorBoundary: true,
+  // });
 
-  if (isFetching) {
-    return <StyledPage>{t('global.loading')}</StyledPage>;
-  }
+  // if (isFetching) {
+  //   return <StyledPage>{t('global.loading')}</StyledPage>;
+  // }
 
-  return (
-    <StyledPage fontsize="50px" data-testid="main-page">
-      <h1 data-testid="main-page-joke">{joke}</h1>
-      {/* <h2>{t('main.items', { postProcess: 'interval', count: 0 })}</h2> */}
-    </StyledPage>
-  );
+  // return (
+  //   <StyledPage fontsize="50px" data-testid="main-page">
+  //     <h1 data-testid="main-page-joke">{joke}</h1>
+  //     {/* <h2>{t('main.items', { postProcess: 'interval', count: 0 })}</h2> */}
+  //   </StyledPage>
+  // );
 
   async function getTestData() {
     const { data } = await TestApi.getTestData();
