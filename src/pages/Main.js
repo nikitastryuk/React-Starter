@@ -5,6 +5,7 @@ import { StyledPage } from 'styles/StyledPage';
 import axios from 'utils/axios';
       const a=2;
 
+    console.log('test')
 class TestApi {
   static getTestData() {
     return axios.get('https://api.chucknorris.io/jokes/random');
