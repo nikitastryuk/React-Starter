@@ -6,7 +6,7 @@
     "dev": "NODE_ENV=development webpack serve --config webpack/webpack.dev.js",
     "build": "NODE_ENV=production webpack --config webpack/webpack.prod.js",
     "cypress": "cypress open",
-    "test:unit": "jest",
+    "test": "jest",
     "lint:js": "eslint src",
     "lint:style": "stylelint src --config .stylelintrc",
     "generate-webpack-stats": "NODE_ENV=production webpack --config webpack/webpack.stats.js",
