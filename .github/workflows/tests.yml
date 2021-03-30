@@ -7,6 +7,12 @@ on:
       - master
 
 jobs:
+  unit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: bahmutov/npm-install@v1
+      - run: npm run test
   cypress:
     runs-on: ubuntu-latest
     steps:
@@ -16,9 +22,3 @@ jobs:
         with:
           start: npm run dev
           wait-on: http://localhost:8080/
-  unit:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-      - run: npm ci
-      - run: npm run test
