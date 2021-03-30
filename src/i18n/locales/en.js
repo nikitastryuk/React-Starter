@@ -7,6 +7,7 @@ export const en = {
       hi: 'Hello',
       title: 'Main',
       items: '(0)[no items];(1)[one item];(2-7)[a few items];(7-inf)[a lot of items];',
+      tryAgain: 'Try again',
     },
     app: {
       error: 'Oops. Error occurred',

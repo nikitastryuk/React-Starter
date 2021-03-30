@@ -11,14 +11,15 @@ export function Button({ variant, disabled, children, onClick, ...rest }) {
 }
 
 Button.propTypes = {
-  variant: PropTypes.oneOf(Object.values(BUTTON_VARIANTS)).isRequired,
   onClick: PropTypes.func.isRequired,
   children: PropTypes.node.isRequired,
+  variant: PropTypes.oneOf(Object.values(BUTTON_VARIANTS)),
   disabled: PropTypes.bool,
 };
 
 Button.defaultProps = {
   disabled: false,
+  variant: BUTTON_VARIANTS.PRIMARY,
 };
 
 export { BUTTON_VARIANTS };
