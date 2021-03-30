@@ -18,7 +18,7 @@ jobs:
         env:
           cache-name: cached-dependencies
         with:
-          path: client/node_modules
+          path: node_modules
           key: ${{ runner.os }}-${{ env.cache-name }}-${{ hashFiles('**/package-lock.json') }}
       - name: Install dependencies
         run: npm i
@@ -35,7 +35,7 @@ jobs:
         env:
           cache-name: cached-dependencies
         with:
-          path: client/node_modules
+          path: node_modules
           key: ${{ runner.os }}-${{ env.cache-name }}-${{ hashFiles('**/package-lock.json') }}
       - name: Run prettier
         run: npm run format:check
@@ -56,7 +56,7 @@ jobs:
         env:
           cache-name: cached-dependencies
         with:
-          path: client/node_modules
+          path: node_modules
           key: ${{ runner.os }}-${{ env.cache-name }}-${{ hashFiles('**/package-lock.json') }}
       - name: Run Cypress
         uses: cypress-io/github-action@v2
@@ -75,7 +75,7 @@ jobs:
         env:
           cache-name: cached-dependencies
         with:
-          path: client/node_modules
+          path: node_modules
           key: ${{ runner.os }}-${{ env.cache-name }}-${{ hashFiles('**/package-lock.json') }}
       - name: Run Jest
         run: npm run test
