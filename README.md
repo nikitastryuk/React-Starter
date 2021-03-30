@@ -11,17 +11,27 @@
 - **Simple-git-hooks / Lint-staged**
 - **Jest / Cypress / Rtl**
 
-## Running the Project
+### Running the project
 
-After installing modules, you're ready to start the project!
+After installing `node_modules`, you're ready!
 
-| `npm <script>` | Description                                                    |
-| -------------- | -------------------------------------------------------------- |
-| `dev`          | Serves your app at `localhost:8080` with hot reloading enabled |
-| `build`        | Builds the application to ./build                              |
-| `test:unit`    | Runs all unit tests                                            |
-| `cypress`      | Opens cypress                                                  |
-| `format:check` | Runs prettier                                                  |
-| `lint:js`      | Runs eslint                                                    |
-| `lint:style`   | Runs stylelint                                                 |
-| `deploy`       | Deploys to github pages                                        |
+### Commonly used scripts
+
+| `npm <script>` | Description                                               |
+| -------------- | --------------------------------------------------------- |
+| `dev`          | Serves app at `localhost:8080` with hot reloading enabled |
+| `build`        | Builds the application to ./build                         |
+| `test:unit`    | Runs all Unit tests                                       |
+| `cypress`      | Opens Cypress                                             |
+| `format:check` | Runs Prettier                                             |
+| `lint:js`      | Runs EsLint                                               |
+| `lint:style`   | Runs StyleLint                                            |
+| `deploy`       | Deploys to Github Pages                                   |
+
+### CI jobs
+
+- Install and Cache dependencies
+- Run Format & Lint (Prettier, EsLint, StyleLint)
+- Run e2e tests (Cypress)
+- Run Unit tests (Jest)
+- Build and Deploy (gh-pages)
