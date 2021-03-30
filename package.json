@@ -7,7 +7,7 @@
     "build": "NODE_ENV=production webpack --config webpack/webpack.prod.js",
     "cypress": "cypress open",
     "test": "jest",
-    "prettier": "prettier . --write",
+    "prettier": "prettier . --check",
     "lint:js": "eslint src",
     "lint:style": "stylelint src --config .stylelintrc",
     "generate-webpack-stats": "NODE_ENV=production webpack --config webpack/webpack.stats.js",
@@ -87,7 +87,8 @@
   "lint-staged": {
     "*": "npm run prettier",
     "*.js": [
-      "npm run lint:js && npm run lint:style"
+      "npm run lint:js",
+      "npm run lint:style"
     ]
   },
   "simple-git-hooks": {
