@@ -13,13 +13,8 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
-      - name: Restore cached dependencies
-        uses: actions/cache@v2
-        env:
-          cache-name: cached-dependencies
-        with:
-          path: node_modules
-          key: ${{ runner.os }}-${{ env.cache-name }}-${{ hashFiles('**/package-lock.json') }}
+      - name: Install dependencies
+        run: npm ci
       - name: Run Build 🔨
         run: npm run build
       - name: Run Deploy 🚀
