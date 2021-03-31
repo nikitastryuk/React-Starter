@@ -1,11 +1,9 @@
 import { createContext, useCallback, useEffect, useMemo } from 'react';
-import { useTranslation } from 'react-i18next';
 import PropTypes from 'prop-types';
 
 import { ACCESS_TOKEN_LS_KEY, REFRESH_TOKEN_LS_KEY } from 'constants';
-import { AuthApi } from 'app/auth/authApi';
-import { StyledApp } from 'app/StyledApp';
-import { StyledPage } from 'styles/StyledPage';
+import { AuthApi } from 'app/AppProviders/AuthProvider/authApi';
+import { AuthProviderLoading } from 'app/AppProviders/AuthProvider/AuthProviderLoading';
 import { useAsync } from 'hooks/useAsync';
 import ls from 'utils/localStorage';
 
@@ -14,7 +12,6 @@ export const AuthStateContext = createContext();
 export const AuthActionsContext = createContext();
 
 export function AuthProvider({ children }) {
-  const { t } = useTranslation();
   const { data: getUserResponse, setData, isLoading, run } = useAsync({ isLoading: !!areAuthTokensPresent() });
 
   useEffect(() => {
@@ -57,11 +54,7 @@ export function AuthProvider({ children }) {
   );
 
   if (isLoading) {
-    return (
-      <StyledApp>
-        <StyledPage style={{ height: '100vh' }}>{t('global.loading')}</StyledPage>;
-      </StyledApp>
-    );
+    return <AuthProviderLoading />;
   }
 
   return (

@@ -1,21 +1,21 @@
 import styled from 'styled-components';
 import theming from 'styled-theming';
 
-import { THEME_MODES } from 'app/theme/ThemeProvider';
+import { THEMES } from 'app/AppProviders/ThemeProvider/ThemeProvider';
 
 export const BUTTON_VARIANTS = {
   PRIMARY: 'primary',
   SECONDARY: 'secondary',
 };
 
-const backgroundColor = theming.variants('themeMode', 'selectedThemeMode', {
-  [THEME_MODES.LIGHT]: {
-    [THEME_MODES.LIGHT]: ({ theme }) => theme.palette.common.white,
-    [THEME_MODES.DARK]: ({ theme }) => theme.palette.common.white,
+const backgroundColor = theming.variants('theme', 'selectedTheme', {
+  [THEMES.LIGHT]: {
+    [THEMES.LIGHT]: ({ theme }) => theme.palette.common.white,
+    [THEMES.DARK]: ({ theme }) => theme.palette.common.white,
   },
-  [THEME_MODES.DARK]: {
-    [THEME_MODES.LIGHT]: ({ theme }) => theme.palette.common.black,
-    [THEME_MODES.DARK]: ({ theme }) => theme.palette.common.black,
+  [THEMES.DARK]: {
+    [THEMES.LIGHT]: ({ theme }) => theme.palette.common.black,
+    [THEMES.DARK]: ({ theme }) => theme.palette.common.black,
   },
 });
 

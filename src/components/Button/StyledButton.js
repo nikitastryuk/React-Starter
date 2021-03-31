@@ -1,32 +1,32 @@
 import styled from 'styled-components';
 import theming from 'styled-theming';
 
-import { THEME_MODES } from 'app/theme/ThemeProvider';
+import { THEMES } from 'app/AppProviders/ThemeProvider/ThemeProvider';
 
 export const BUTTON_VARIANTS = {
   PRIMARY: 'primary',
   SECONDARY: 'secondary',
 };
 
-const textColor = theming.variants('themeMode', 'variant', {
+const textColor = theming.variants('theme', 'variant', {
   [BUTTON_VARIANTS.PRIMARY]: {
-    [THEME_MODES.LIGHT]: ({ theme }) => theme.palette.common.black,
-    [THEME_MODES.DARK]: ({ theme }) => theme.palette.common.white,
+    [THEMES.LIGHT]: ({ theme }) => theme.palette.common.black,
+    [THEMES.DARK]: ({ theme }) => theme.palette.common.white,
   },
   [BUTTON_VARIANTS.SECONDARY]: {
-    [THEME_MODES.LIGHT]: ({ theme }) => theme.palette.common.black,
-    [THEME_MODES.DARK]: ({ theme }) => theme.palette.common.white,
+    [THEMES.LIGHT]: ({ theme }) => theme.palette.common.black,
+    [THEMES.DARK]: ({ theme }) => theme.palette.common.white,
   },
 });
 
-const backgroundColor = theming.variants('themeMode', 'variant', {
+const backgroundColor = theming.variants('theme', 'variant', {
   [BUTTON_VARIANTS.PRIMARY]: {
-    [THEME_MODES.LIGHT]: ({ theme }) => theme.palette.common.white,
-    [THEME_MODES.DARK]: ({ theme }) => theme.palette.common.black,
+    [THEMES.LIGHT]: ({ theme }) => theme.palette.common.white,
+    [THEMES.DARK]: ({ theme }) => theme.palette.common.black,
   },
   [BUTTON_VARIANTS.SECONDARY]: {
-    [THEME_MODES.LIGHT]: ({ theme }) => theme.palette.common.white,
-    [THEME_MODES.DARK]: ({ theme }) => theme.palette.common.black,
+    [THEMES.LIGHT]: ({ theme }) => theme.palette.common.white,
+    [THEMES.DARK]: ({ theme }) => theme.palette.common.black,
   },
 });
 

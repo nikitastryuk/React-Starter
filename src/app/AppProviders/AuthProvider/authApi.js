@@ -14,7 +14,7 @@ const USER = {
 };
 
 export class AuthApi {
-  static loginUser({ username, password }) {
+  static loginUser() {
     return new Promise((resolve) =>
       setTimeout(() => {
         resolve({

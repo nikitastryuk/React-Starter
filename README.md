@@ -13,7 +13,8 @@
 
 ### Running the project
 
-After installing `node_modules`, you're ready!
+- Run `npx simple-git-hooks` to set all git hooks
+- Run `npm i` to install dependencies
 
 ### Commonly used scripts
 

@@ -1,4 +1,4 @@
-const { ROUTE_PATHS } = require('app/routing/routePaths');
+const { ROUTE_PATHS } = require('routes');
 
 Cypress.Commands.add('login', () => {
   cy.visit(ROUTE_PATHS.LOGIN);

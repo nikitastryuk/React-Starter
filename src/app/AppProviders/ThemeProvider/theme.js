@@ -1,4 +1,7 @@
-import { THEME_MODES } from 'app/theme/useThemeMode';
+export const THEMES = {
+  LIGHT: 'light',
+  DARK: 'dark',
+};
 
 function createLightPalette() {
   return {
@@ -37,10 +40,10 @@ export function getTheme(mode) {
   const THEME = {
     spacing: (multiplier) => createSpacing(multiplier),
   };
-  if (mode === THEME_MODES.LIGHT) {
+  if (mode === THEMES.LIGHT) {
     THEME.palette = createLightPalette();
   }
-  if (mode === THEME_MODES.DARK) {
+  if (mode === THEMES.DARK) {
     THEME.palette = createDarkPalette();
   }
   return THEME;

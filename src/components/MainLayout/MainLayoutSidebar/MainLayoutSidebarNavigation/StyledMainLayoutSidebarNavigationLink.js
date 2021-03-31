@@ -2,11 +2,11 @@ import { NavLink } from 'react-router-dom';
 import styled from 'styled-components';
 import theming from 'styled-theming';
 
-import { THEME_MODES } from 'app/theme/useThemeMode';
+import { THEMES } from 'app/AppProviders/ThemeProvider/ThemeProvider';
 
-const borderColor = theming('themeMode', {
-  [THEME_MODES.LIGHT]: ({ theme }) => theme.palette.common.black,
-  [THEME_MODES.DARK]: ({ theme }) => theme.palette.common.white,
+const borderColor = theming('theme', {
+  [THEMES.LIGHT]: ({ theme }) => theme.palette.common.black,
+  [THEMES.DARK]: ({ theme }) => theme.palette.common.white,
 });
 
 export const StyleMainLayoutSidebarNavigationLinkLabel = styled.span`

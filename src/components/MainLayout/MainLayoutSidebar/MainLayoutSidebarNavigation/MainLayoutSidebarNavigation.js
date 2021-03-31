@@ -1,7 +1,7 @@
 import { Airbnb, Algolia, Amazon, CreativeCommons, Digg, Figma } from '@styled-icons/boxicons-logos';
 import styled from 'styled-components';
 
-import { ROUTE_PATHS } from 'app/routing/routePaths';
+import { ROUTE_PATHS } from 'routes';
 
 import { MainLayoutSidebarNavigationLink } from './MainLayoutSidebarNavigationLink';
 import { StyledMainLayoutSidebarNavigationLink } from './StyledMainLayoutSidebarNavigationLink';
