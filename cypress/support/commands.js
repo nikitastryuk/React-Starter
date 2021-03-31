@@ -1,4 +1,3 @@
-// TODO: Why cy lists this file?
 const { ROUTE_PATHS } = require('app/routing/routePaths');
 
 Cypress.Commands.add('login', () => {
