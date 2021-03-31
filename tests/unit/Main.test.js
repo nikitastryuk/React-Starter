@@ -1,6 +1,6 @@
 import { render } from '@testing-library/react';
 
-import { AppProviders } from 'app/AppProviders';
+import { AppProviders } from 'app/AppProviders/AppProviders';
 import Main from 'pages/Main';
 
 // TODO: Need more configurable providers for tests? Move to shared namespace.
