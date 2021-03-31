@@ -24,7 +24,7 @@
 | `build`        | Builds the application to ./build                         |
 | `test:unit`    | Runs all Unit tests                                       |
 | `cypress`      | Opens Cypress                                             |
-| `format:check` | Runs Prettier                                             |
+| `format`       | Runs Prettier                                             |
 | `lint:js`      | Runs EsLint                                               |
 | `lint:style`   | Runs StyleLint                                            |
 | `deploy`       | Deploys to Github Pages                                   |
