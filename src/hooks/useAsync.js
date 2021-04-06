@@ -10,6 +10,7 @@ function useAsync(initialState) {
   const run = useCallback(
     async (promise) => {
       if (!promise || !promise.then) {
+        // When you throw an Error in an async function, the error is automatically caught and used to reject the Promise
         throw new Error(
           `The argument passed to useAsync().run must be a promise. Maybe a function that's passed isn't returning anything?`,
         );
