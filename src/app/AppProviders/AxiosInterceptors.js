@@ -20,7 +20,7 @@ export function AxiosInterceptors() {
   const { logoutUser, refreshUserToken } = useAuthActions();
 
   useEffect(() => {
-    // Set request interceptors for
+    // Set request interceptors
     const setAuthorizationHeaderInterceptor = axios.interceptors.request.use(
       makeSetAuthorizationHeaderInterceptor(),
       (error) => Promise.reject(error),

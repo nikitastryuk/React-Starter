@@ -4,8 +4,6 @@
 // Then, you need to use the freshly retrieved token for the next API requests until, of course that token will expire as well.
 // http://blog.logicwind.com/content/images/2020/05/WPQA0.png
 
-import axios from 'utils/axios';
-
 const REQUEST_TIMEOUT = 1500;
 
 const USER = {
@@ -48,7 +46,16 @@ export class AuthApi {
     );
   }
 
-  static refreshUserToken({ refreshToken }) {
-    return axios.post('http://localhost:3000/refreshToken', { refreshToken });
+  static refreshUserToken() {
+    return new Promise((resolve) =>
+      setTimeout(() => {
+        resolve({
+          data: {
+            accessToken: 'newAccessToken',
+            refreshToken: 'newRefreshToken',
+          },
+        });
+      }, REQUEST_TIMEOUT),
+    );
   }
 }
