@@ -1,4 +1,4 @@
-const { ROUTE_PATHS } = require('routes');
+import { ROUTE_PATHS } from 'routes';
 
 beforeEach(() => {
   cy.login();

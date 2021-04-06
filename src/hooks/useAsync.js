@@ -18,12 +18,12 @@ function useAsync(initialState) {
         setIsLoading(true);
         const result = await promise;
         setData(result);
-        setIsLoading(false);
         return result;
       } catch (e) {
         setError(e);
-        setIsLoading(false);
         return Promise.reject(e);
+      } finally {
+        setIsLoading(false);
       }
     },
     [setData, setError, setIsLoading],

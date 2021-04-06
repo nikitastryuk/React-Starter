@@ -1,20 +1,20 @@
-import { useContext } from 'react';
-
 import { THEMES } from 'app/AppProviders/ThemeProvider/ThemeProvider';
-import { ThemeContext } from 'styled-components';
+import { useTheme } from 'hooks/useTheme';
 
 import { StyledCircleButton, StyledThemeSwitcher } from './StyledThemeSwitcher';
 
 export function ThemeSwitcher() {
-  const { theme, setTheme } = useContext(ThemeContext);
+  const { theme, setTheme } = useTheme();
   return (
     <StyledThemeSwitcher>
       <StyledCircleButton
+        data-testid="light-theme-button"
         selectedTheme={THEMES.LIGHT}
         selected={theme === THEMES.LIGHT}
         onClick={() => setTheme(THEMES.LIGHT)}
       />
       <StyledCircleButton
+        data-testid="dark-theme-button"
         selectedTheme={THEMES.DARK}
         selected={theme === THEMES.DARK}
         onClick={() => setTheme(THEMES.DARK)}

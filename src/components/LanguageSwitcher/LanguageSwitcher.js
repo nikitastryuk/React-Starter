@@ -1,7 +1,7 @@
-import { LANGUAGES } from 'i18n/i18n';
 import { useTranslation } from 'react-i18next';
 
 import { BUTTON_VARIANTS, Button } from 'components/Button/Button';
+import { LANGUAGES } from 'constants';
 
 export function LanguageSwitcher() {
   const { i18n } = useTranslation();

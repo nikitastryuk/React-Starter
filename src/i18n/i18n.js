@@ -3,13 +3,10 @@ import LanguageDetector from 'i18next-browser-languagedetector';
 import i18next from 'i18next';
 import intervalPlural from 'i18next-intervalplural-postprocessor';
 
+import { LANGUAGES } from 'constants';
+
 import { en } from './locales/en';
 import { ru } from './locales/ru';
-
-export const LANGUAGES = {
-  RU: 'ru',
-  EN: 'en',
-};
 
 i18next
   .use(LanguageDetector)
