@@ -61,6 +61,12 @@ describe('<AxiosInterceptors />', () => {
       interceptorErrorHandler(error);
       expect(mockedLogout).toHaveBeenCalledTimes(1);
     });
+    it('should reject in another cases', async () => {
+      const error = 'Error';
+      const interceptorErrorHandler = makeUnauthorizedResponseInterceptorErrorHandler();
+      const response = interceptorErrorHandler(error);
+      await expect(response).rejects.toEqual(error);
+    });
   });
   describe('Refresh user token interceptor', () => {
     beforeEach(() => {

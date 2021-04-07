@@ -8,7 +8,10 @@ export function AuthProviderLoading() {
 
   return (
     <StyledApp>
-      <StyledPage style={{ height: '100vh' }}>{t('global.loading')}</StyledPage>;
+      <StyledPage data-testid="auth-provider-loading" style={{ height: '100vh' }}>
+        {t('global.loading')}
+      </StyledPage>
+      ;
     </StyledApp>
   );
 }

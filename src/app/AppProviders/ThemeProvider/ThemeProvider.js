@@ -9,9 +9,9 @@ const DEFAULT_THEME = THEMES.DARK;
 
 export function ThemeProvider({ children }) {
   const [theme, setTheme] = useLocalStorageState(THEME_LS_KEY, DEFAULT_THEME);
-
+  const validatedTheme = Object.values(THEMES).includes(theme) ? theme : DEFAULT_THEME;
   return (
-    <StyledComponentsThemeProvider theme={{ theme, setTheme, ...getTheme(theme) }}>
+    <StyledComponentsThemeProvider theme={{ theme: validatedTheme, setTheme, ...getTheme(validatedTheme) }}>
       {children}
     </StyledComponentsThemeProvider>
   );

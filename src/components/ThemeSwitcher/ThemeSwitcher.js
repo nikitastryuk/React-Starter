@@ -1,5 +1,5 @@
 import { THEMES } from 'app/AppProviders/ThemeProvider/ThemeProvider';
-import { useTheme } from 'hooks/useTheme';
+import { useTheme } from 'styled-components';
 
 import { StyledCircleButton, StyledThemeSwitcher } from './StyledThemeSwitcher';
 

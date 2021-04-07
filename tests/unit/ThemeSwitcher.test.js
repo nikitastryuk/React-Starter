@@ -1,20 +1,18 @@
 import { render } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
+import * as styledComponents from 'styled-components';
 import { THEMES, ThemeProvider } from 'app/AppProviders/ThemeProvider/ThemeProvider';
 import { ThemeSwitcher } from 'components/ThemeSwitcher/ThemeSwitcher';
 
 const mockedSetTheme = jest.fn();
 
-jest.mock('hooks/useTheme', () => ({
-  useTheme: () => {
-    return {
-      setTheme: mockedSetTheme,
-    };
-  },
-}));
-
 describe('<ThemeSwitcher />', () => {
+  beforeAll(() => {
+    jest.spyOn(styledComponents, 'useTheme').mockImplementation(() => ({
+      setTheme: mockedSetTheme,
+    }));
+  });
   it('should change theme to light', async () => {
     const { getByTestId } = render(<ThemeSwitcher />, { wrapper: ThemeProvider });
     const button = getByTestId('light-theme-button');
