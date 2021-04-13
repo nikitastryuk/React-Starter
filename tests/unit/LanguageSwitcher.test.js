@@ -1,4 +1,4 @@
-import { render } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
 import { LANGUAGES } from 'constants';
@@ -18,14 +18,14 @@ jest.mock('react-i18next', () => ({
 
 describe('<LanguageSwitcher />', () => {
   it('should change language to russian', async () => {
-    const { getByRole } = render(<LanguageSwitcher />);
-    const button = getByRole('button', { name: LANGUAGES.RU });
+    render(<LanguageSwitcher />);
+    const button = screen.getByRole('button', { name: LANGUAGES.RU });
     userEvent.click(button);
     expect(mockedChangeLanguage).toBeCalledWith(LANGUAGES.RU);
   });
   it('should change language to english', async () => {
-    const { getByRole } = render(<LanguageSwitcher />);
-    const button = getByRole('button', { name: LANGUAGES.EN });
+    render(<LanguageSwitcher />);
+    const button = screen.getByRole('button', { name: LANGUAGES.EN });
     userEvent.click(button);
     expect(mockedChangeLanguage).toBeCalledWith(LANGUAGES.EN);
   });

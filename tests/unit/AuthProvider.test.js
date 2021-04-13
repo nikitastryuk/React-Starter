@@ -1,4 +1,4 @@
-import { render } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
 import { ACCESS_TOKEN_LS_KEY, REFRESH_TOKEN_LS_KEY } from 'constants';
@@ -66,37 +66,37 @@ describe('<AuthProvider />', () => {
     jest.clearAllMocks();
   });
   it('should have empty initial state', async () => {
-    const { getByTestId } = renderWithProviders();
-    expect(getByTestId('auth-provider-state-value').textContent).toBe('');
+    renderWithProviders();
+    expect(screen.getByTestId('auth-provider-state-value').textContent).toBe('');
   });
 
   it('should not load user if auth tokens are not stored', async () => {
-    const { queryByTestId } = renderWithProviders();
-    expect(queryByTestId('auth-provider-loading')).toBeNull();
+    renderWithProviders();
+    expect(screen.queryByTestId('auth-provider-loading')).toBeNull();
   });
 
   it('should get user if auth tokens are stored', async () => {
     const getUserResponse = { data: { user: USER } };
     jest.spyOn(ls, 'getItem').mockReturnValue('tokens');
     jest.spyOn(AuthApi, 'getUser').mockReturnValue(Promise.resolve(getUserResponse));
-    const { getByTestId, findByTestId } = renderWithProviders();
+    renderWithProviders();
     expect(AuthApi.getUser).toHaveBeenCalledTimes(1);
-    expect(getByTestId('auth-provider-loading')).toBeTruthy();
-    expect((await findByTestId('auth-provider-state-value')).textContent).toBe(USER);
+    expect(screen.getByTestId('auth-provider-loading')).toBeTruthy();
+    expect((await screen.findByTestId('auth-provider-state-value')).textContent).toBe(USER);
   });
 
   it('should login and logout user', async () => {
     const loginUserResponse = { data: { user: USER, ...AUTH_TOKENS } };
     jest.spyOn(AuthApi, 'loginUser').mockReturnValue(Promise.resolve(loginUserResponse));
-    const { getByRole, findByTestId } = renderWithProviders();
-    userEvent.click(getByRole('button', { name: 'Login' }));
+    renderWithProviders();
+    userEvent.click(screen.getByRole('button', { name: 'Login' }));
     expect(AuthApi.loginUser).toHaveBeenCalledTimes(1);
-    expect((await findByTestId('auth-provider-state-value')).textContent).toBe(USER);
+    expect((await screen.findByTestId('auth-provider-state-value')).textContent).toBe(USER);
     expectAuthTokensAreSet();
 
-    userEvent.click(getByRole('button', { name: 'Logout' }));
+    userEvent.click(screen.getByRole('button', { name: 'Logout' }));
     expect(AuthApi.logoutUser).toHaveBeenCalledTimes(1);
-    expect((await findByTestId('auth-provider-state-value')).textContent).toBe('');
+    expect((await screen.findByTestId('auth-provider-state-value')).textContent).toBe('');
   });
 
   it('should refresh user token', async () => {
@@ -106,8 +106,8 @@ describe('<AuthProvider />', () => {
       },
     };
     jest.spyOn(AuthApi, 'refreshUserToken').mockReturnValue(Promise.resolve(refreshUserResponse));
-    const { getByRole } = renderWithProviders();
-    userEvent.click(getByRole('button', { name: 'Refresh token' }));
+    renderWithProviders();
+    userEvent.click(screen.getByRole('button', { name: 'Refresh token' }));
     // ls.setItem calls happens in microtask queue - await refreshUserToken is done
     await expect(AuthApi.refreshUserToken).toHaveBeenCalledTimes(1);
     expectAuthTokensAreSet();
@@ -115,8 +115,8 @@ describe('<AuthProvider />', () => {
 
   it('should logout user if refersh token fails', async () => {
     jest.spyOn(AuthApi, 'refreshUserToken').mockReturnValue(Promise.reject());
-    const { getByRole } = renderWithProviders();
-    userEvent.click(getByRole('button', { name: 'Refresh token' }));
+    renderWithProviders();
+    userEvent.click(screen.getByRole('button', { name: 'Refresh token' }));
     // logoutUser call happens in microtask queue - await refreshUserToken is done
     await expect(AuthApi.refreshUserToken).toHaveBeenCalledTimes(1);
     expect(AuthApi.logoutUser).toHaveBeenCalledTimes(1);

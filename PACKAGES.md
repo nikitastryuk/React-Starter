@@ -22,6 +22,8 @@
 > - **eslint-webpack-plugin** // ESLint plugin for webpack.
 > - **clean-webpack-plugin** // Plugin to remove/clean your build folder(s).
 
+- **dotenv-webpack** // Plugin to do a text replace in the resulting bundle for any instances of process.env.
+
 > ### EsLint
 >
 > - **babel-eslint** // Compiler parser
